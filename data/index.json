@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "generated_from": "tools/*.yaml",
+  "tools": [
+    {
+      "slug": "cursor",
+      "name": "Cursor Hobby",
+      "vendor": "Anysphere",
+      "category": "agentic-ide",
+      "status": "active",
+      "free_tier_types": [
+        "dynamic_rate_limit"
+      ],
+      "plan_name": "Hobby",
+      "credit_card_required": "no",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "agent_requests",
+          "amount": "undisclosed",
+          "unit": "requests",
+          "period": "dynamic",
+          "cap": null,
+          "notes": "Pricing page says limited Agent requests."
+        },
+        {
+          "name": "tab_completions",
+          "amount": "undisclosed",
+          "unit": "completions",
+          "period": "dynamic",
+          "cap": null,
+          "notes": "Current pricing/Start pages describe limited Tab completions."
+        }
+      ],
+      "resets": [
+        {
+          "period": "dynamic",
+          "time": null,
+          "timezone": null,
+          "notes": "Exact public reset mechanics and numeric quota are not asserted."
+        }
+      ],
+      "after_exhaustion": "Wait for allowance availability or upgrade.",
+      "product_url": "https://cursor.com/",
+      "pricing_url": "https://cursor.com/en-US/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://cursor.com/en-US/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "Hobby Free",
+            "no credit card",
+            "limited Agent requests"
+          ]
+        },
+        {
+          "url": "https://cursor.com/start",
+          "type": "official_pricing",
+          "supports": [
+            "limited Tab completions"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "vendor": "Amazon Web Services",
+      "category": "agentic-ide",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_monthly"
+      ],
+      "plan_name": "Kiro Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "agent_credits",
+          "amount": 50,
+          "unit": "credits",
+          "period": "billing_cycle",
+          "cap": null,
+          "notes": "Fractional credits; task cost varies by prompt complexity/model."
+        }
+      ],
+      "resets": [
+        {
+          "period": "billing_cycle",
+          "time": null,
+          "timezone": null,
+          "notes": "Usage cap renews at the beginning of the next billing cycle."
+        }
+      ],
+      "after_exhaustion": "Free tier cannot buy add-on credits; wait for reset or upgrade.",
+      "product_url": "https://kiro.dev/",
+      "pricing_url": "https://kiro.dev/pricing/",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://kiro.dev/pricing/",
+          "type": "official_pricing",
+          "supports": [
+            "50 credits",
+            "perpetual Free tier",
+            "model access"
+          ]
+        },
+        {
+          "url": "https://kiro.dev/docs/billing/",
+          "type": "official_docs",
+          "supports": [
+            "billing-cycle reset",
+            "no rollover"
+          ]
+        },
+        {
+          "url": "https://kiro.dev/faq/",
+          "type": "official_docs",
+          "supports": [
+            "GovCloud exclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "base44",
+      "name": "Base44",
+      "vendor": "Base44",
+      "category": "app-builder",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_daily",
+        "recurring_monthly"
+      ],
+      "plan_name": "Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "message_credits",
+          "amount": 25,
+          "unit": "credits",
+          "period": "month",
+          "cap": "5/day",
+          "notes": "Free plan has a 5-message-credit daily cap."
+        },
+        {
+          "name": "integration_credits",
+          "amount": 100,
+          "unit": "credits",
+          "period": "month",
+          "cap": null,
+          "notes": "Used for integration-backed actions in live apps."
+        }
+      ],
+      "resets": [
+        {
+          "period": "daily",
+          "time": null,
+          "timezone": null,
+          "notes": "Daily message-credit cap applies."
+        },
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "Credits refresh each billing cycle and do not stack."
+        }
+      ],
+      "after_exhaustion": "Wait for daily/monthly reset or use an available paid option.",
+      "product_url": "https://base44.com/",
+      "pricing_url": "https://base44.com/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://base44.com/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "25 message credits/month",
+            "100 integration credits/month"
+          ]
+        },
+        {
+          "url": "https://base44.com/blog/best-free-ai-app-builders",
+          "type": "official_blog",
+          "supports": [
+            "5 message credits/day cap",
+            "up to 5 apps"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bolt",
+      "name": "Bolt.new",
+      "vendor": "StackBlitz",
+      "category": "app-builder",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_daily",
+        "recurring_monthly"
+      ],
+      "plan_name": "Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "ai_tokens",
+          "amount": 300000,
+          "unit": "tokens",
+          "period": "day",
+          "cap": "1,000,000/month",
+          "notes": "Daily token limit."
+        },
+        {
+          "name": "ai_tokens_monthly",
+          "amount": 1000000,
+          "unit": "tokens",
+          "period": "month",
+          "cap": null,
+          "notes": "Monthly token limit."
+        },
+        {
+          "name": "web_requests",
+          "amount": 333000,
+          "unit": "requests",
+          "period": "month",
+          "cap": null,
+          "notes": "Pricing page says up to 333k web requests."
+        }
+      ],
+      "resets": [
+        {
+          "period": "daily",
+          "time": null,
+          "timezone": null,
+          "notes": "Daily token allowance."
+        },
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "Monthly free token allowance."
+        }
+      ],
+      "after_exhaustion": "Wait for the relevant allowance to reset or upgrade.",
+      "product_url": "https://bolt.new/",
+      "pricing_url": "https://bolt.new/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://bolt.new/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "300K tokens/day",
+            "1M tokens/month",
+            "free-plan hosting and file limits"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "emergent",
+      "name": "Emergent",
+      "vendor": "Emergent",
+      "category": "app-builder",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_monthly"
+      ],
+      "plan_name": "Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "build_credits",
+          "amount": 10,
+          "unit": "credits",
+          "period": "month",
+          "cap": null,
+          "notes": "Official pricing advertises 10 free monthly credits."
+        }
+      ],
+      "resets": [
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "Free credits are monthly."
+        }
+      ],
+      "after_exhaustion": "Wait for the monthly refresh or upgrade.",
+      "product_url": "https://emergent.sh/",
+      "pricing_url": "https://emergent.sh/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://emergent.sh/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "10 free monthly credits",
+            "no-cost free plan"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lovable",
+      "name": "Lovable",
+      "vendor": "Lovable",
+      "category": "app-builder",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_daily",
+        "recurring_monthly"
+      ],
+      "plan_name": "Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "build_credits",
+          "amount": 5,
+          "unit": "credits",
+          "period": "day",
+          "cap": "30/month",
+          "notes": "Daily build grant, capped at 30 build credits in the month."
+        },
+        {
+          "name": "cloud_credits",
+          "amount": 20,
+          "unit": "credits",
+          "period": "month",
+          "cap": null,
+          "notes": "Monthly Cloud grant."
+        },
+        {
+          "name": "ai_credits",
+          "amount": 4,
+          "unit": "credits",
+          "period": "month",
+          "cap": null,
+          "notes": "Monthly grant for AI features inside deployed user apps."
+        }
+      ],
+      "resets": [
+        {
+          "period": "daily",
+          "time": null,
+          "timezone": null,
+          "notes": "Included daily build credits expire at end of each day and do not roll over."
+        },
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "Monthly grants/cap renew on the plan cycle."
+        }
+      ],
+      "after_exhaustion": "Wait for the relevant daily/monthly grant to refresh or upgrade/top up if available.",
+      "product_url": "https://lovable.dev/",
+      "pricing_url": "https://lovable.dev/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://lovable.dev/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "free plan",
+            "5 build credits/day",
+            "30/month cap",
+            "20 Cloud credits/month",
+            "4 AI credits/month"
+          ]
+        },
+        {
+          "url": "https://lovable.dev/blog/simplifying-billing",
+          "type": "official_blog",
+          "supports": [
+            "credit system and monthly grants"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "v0",
+      "name": "v0",
+      "vendor": "Vercel",
+      "category": "app-builder",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_daily",
+        "recurring_monthly"
+      ],
+      "plan_name": "Free",
+      "credit_card_required": "no",
+      "quantity_published": true,
+      "allowances": [
+        {
+          "name": "included_credits",
+          "amount": 5,
+          "unit": "USD credits",
+          "period": "month",
+          "cap": null,
+          "notes": "Included monthly credits."
+        },
+        {
+          "name": "messages",
+          "amount": 7,
+          "unit": "messages",
+          "period": "day",
+          "cap": null,
+          "notes": "Daily message gate."
+        }
+      ],
+      "resets": [
+        {
+          "period": "daily",
+          "time": null,
+          "timezone": null,
+          "notes": "7-message daily limit."
+        },
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "$5 included credits renew monthly."
+        }
+      ],
+      "after_exhaustion": "Wait for reset or upgrade to a paid plan.",
+      "product_url": "https://v0.dev/",
+      "pricing_url": "https://api2.v0.dev/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_exact",
+      "sources": [
+        {
+          "url": "https://api2.v0.dev/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "$5 included monthly credits",
+            "7 messages/day"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "aider",
+      "name": "Aider",
+      "vendor": "Aider",
+      "category": "cli-agent",
+      "status": "active",
+      "free_tier_types": [
+        "open_source_byok"
+      ],
+      "plan_name": "Open source",
+      "credit_card_required": "not_applicable",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "client_usage",
+          "amount": "unlimited client",
+          "unit": "software usage",
+          "period": "not_applicable",
+          "cap": null,
+          "notes": "Aider itself is open-source; provider/API usage is separate."
+        }
+      ],
+      "resets": [
+        {
+          "period": "provider_specific",
+          "time": null,
+          "timezone": null,
+          "notes": "Depends on the configured provider or local model."
+        }
+      ],
+      "after_exhaustion": "Switch provider/model or use a local model.",
+      "product_url": "https://aider.chat/",
+      "pricing_url": "https://aider.chat/docs/",
+      "repo_url": "https://github.com/Aider-AI/aider",
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://aider.chat/docs/",
+          "type": "official_docs",
+          "supports": [
+            "open-source/BYOK workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "replit",
+      "name": "Replit Starter",
+      "vendor": "Replit",
+      "category": "cloud-ide",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_daily"
+      ],
+      "plan_name": "Starter",
+      "credit_card_required": "no",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "agent_credits",
+          "amount": "undisclosed",
+          "unit": "credits",
+          "period": "day",
+          "cap": null,
+          "notes": "Replit advertises free daily Agent credits but does not publish a fixed number on the public pricing page."
+        }
+      ],
+      "resets": [
+        {
+          "period": "daily",
+          "time": null,
+          "timezone": null,
+          "notes": "Public pricing states daily Agent credits."
+        }
+      ],
+      "after_exhaustion": "Wait for next daily grant or upgrade.",
+      "product_url": "https://replit.com/",
+      "pricing_url": "https://ld.replit.com/pricing",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://ld.replit.com/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "free daily Agent credits",
+            "publish 1 live project"
+          ]
+        },
+        {
+          "url": "https://replit.com/",
+          "type": "official_pricing",
+          "supports": [
+            "Starter Free plan"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "openai-codex",
+      "name": "OpenAI Codex",
+      "vendor": "OpenAI",
+      "category": "coding-agent",
+      "status": "active",
+      "free_tier_types": [
+        "dynamic_rate_limit"
+      ],
+      "plan_name": "ChatGPT Free (Codex included)",
+      "credit_card_required": "no",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "codex_usage",
+          "amount": "undisclosed",
+          "unit": "plan-dependent usage",
+          "period": "dynamic",
+          "cap": null,
+          "notes": "OpenAI states Codex is included across ChatGPT plans including Free and Go; usage limits vary by plan."
+        }
+      ],
+      "resets": [
+        {
+          "period": "dynamic",
+          "time": null,
+          "timezone": null,
+          "notes": "Wait for applicable usage limit reset; exact Free quota is not published as a single fixed number."
+        }
+      ],
+      "after_exhaustion": "Wait for the applicable reset or use options shown for the account/plan.",
+      "product_url": "https://openai.com/codex/",
+      "pricing_url": "https://help.openai.com/en/articles/11369540",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://help.openai.com/en/articles/11369540",
+          "type": "official_help",
+          "supports": [
+            "Codex included on Free",
+            "usage limits vary by plan",
+            "exhaustion behavior"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot Free",
+      "vendor": "GitHub",
+      "category": "coding-assistant",
+      "status": "active",
+      "free_tier_types": [
+        "recurring_monthly",
+        "dynamic_rate_limit"
+      ],
+      "plan_name": "Copilot Free",
+      "credit_card_required": "no",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "inline_completions",
+          "amount": 2000,
+          "unit": "completions",
+          "period": "month",
+          "cap": null,
+          "notes": "Exact published completion limit."
+        },
+        {
+          "name": "chat_and_agent",
+          "amount": "undisclosed",
+          "unit": "GitHub AI Credits / limited usage",
+          "period": "month",
+          "cap": null,
+          "notes": "GitHub confirms an allowance of AI credits but the Free numeric amount is not fixed in the public plan table."
+        }
+      ],
+      "resets": [
+        {
+          "period": "monthly",
+          "time": null,
+          "timezone": null,
+          "notes": "Completion allowance is monthly; GitHub UI shows reset date after limits are reached."
+        }
+      ],
+      "after_exhaustion": "GitHub prompts the user with reset date and paid upgrade options.",
+      "product_url": "https://github.com/features/copilot",
+      "pricing_url": "https://docs.github.com/en/copilot/get-started/plans",
+      "repo_url": null,
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://docs.github.com/en/copilot/get-started/plans",
+          "type": "official_docs",
+          "supports": [
+            "2000 completions/month",
+            "AI-credit allowance is limited and not numerically published for Free"
+          ]
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+          "type": "official_docs",
+          "supports": [
+            "what happens on exhaustion and reset-date prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cline",
+      "name": "Cline",
+      "vendor": "Cline",
+      "category": "open-source-agent",
+      "status": "active",
+      "free_tier_types": [
+        "open_source_byok"
+      ],
+      "plan_name": "Open-source extension",
+      "credit_card_required": "not_applicable",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "client_usage",
+          "amount": "unlimited client",
+          "unit": "software usage",
+          "period": "not_applicable",
+          "cap": null,
+          "notes": "The extension is free; inference cost/quota comes from the selected provider."
+        }
+      ],
+      "resets": [
+        {
+          "period": "provider_specific",
+          "time": null,
+          "timezone": null,
+          "notes": "Depends on the selected model/provider."
+        }
+      ],
+      "after_exhaustion": "Switch provider/model, use a local model, or pay the inference provider.",
+      "product_url": "https://cline.bot/",
+      "pricing_url": "https://cline.bot/pricing",
+      "repo_url": "https://github.com/cline/cline",
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://cline.bot/pricing",
+          "type": "official_pricing",
+          "supports": [
+            "open-source extension is free",
+            "BYOK",
+            "inference is separate"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "roo-code",
+      "name": "Roo Code",
+      "vendor": "Roo Code",
+      "category": "open-source-agent",
+      "status": "active",
+      "free_tier_types": [
+        "open_source_byok"
+      ],
+      "plan_name": "Open source",
+      "credit_card_required": "not_applicable",
+      "quantity_published": false,
+      "allowances": [
+        {
+          "name": "client_usage",
+          "amount": "unlimited client",
+          "unit": "software usage",
+          "period": "not_applicable",
+          "cap": null,
+          "notes": "Extension is open source; inference/provider cost is separate."
+        }
+      ],
+      "resets": [
+        {
+          "period": "provider_specific",
+          "time": null,
+          "timezone": null,
+          "notes": "Provider-specific."
+        }
+      ],
+      "after_exhaustion": "Switch provider/model or use local inference.",
+      "product_url": "https://roocode.com/",
+      "pricing_url": "https://roocode.com/",
+      "repo_url": "https://github.com/RooCodeInc/Roo-Code",
+      "last_verified": "2026-08-27",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://github.com/RooCodeInc/Roo-Code",
+          "type": "official_repo",
+          "supports": [
+            "open-source agent"
+          ]
+        }
+      ]
+    }
+  ]
+}
