@@ -1,0 +1,30 @@
+name: Report a quota change
+description: Report a changed free allowance, reset, trial, or availability status
+title: "[Quota change]: "
+labels: ["quota-change"]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What changed?
+      description: State old and new values and the reset behavior.
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date verified (YYYY-MM-DD)
+    validations:
+      required: true
