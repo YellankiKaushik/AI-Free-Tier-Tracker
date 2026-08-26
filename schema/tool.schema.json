@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/schema/tool.schema.json",
+  "title": "AI Free Tier Tracker tool record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "name",
+    "slug",
+    "vendor",
+    "category",
+    "product_url",
+    "status",
+    "free_tier",
+    "verification"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "vendor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": [
+        "coding-assistant",
+        "agentic-ide",
+        "coding-agent",
+        "cli-agent",
+        "app-builder",
+        "cloud-ide",
+        "open-source-agent",
+        "model-api"
+      ]
+    },
+    "product_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "pricing_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "repo_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "status": {
+      "type": "object",
+      "required": [
+        "availability"
+      ],
+      "properties": {
+        "availability": {
+          "enum": [
+            "active",
+            "legacy",
+            "discontinued",
+            "restricted-new-signups"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "free_tier": {
+      "type": "object",
+      "required": [
+        "available",
+        "types",
+        "plan_name",
+        "credit_card_required",
+        "allowances",
+        "after_exhaustion"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "recurring_daily",
+              "recurring_weekly",
+              "recurring_monthly",
+              "dynamic_rate_limit",
+              "one_time_signup",
+              "time_limited_trial",
+              "student",
+              "open_source_byok",
+              "promotional",
+              "legacy",
+              "discontinued"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "plan_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "credit_card_required": {
+          "enum": [
+            "yes",
+            "no",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "quantity_published": {
+          "type": "boolean"
+        },
+        "allowances": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "amount",
+              "unit",
+              "period"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": "string"
+              },
+              "period": {
+                "enum": [
+                  "day",
+                  "week",
+                  "month",
+                  "billing_cycle",
+                  "dynamic",
+                  "one_time",
+                  "provider_specific",
+                  "not_applicable"
+                ]
+              },
+              "cap": {
+                "type": [
+                  "number",
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "resets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "period"
+            ],
+            "properties": {
+              "period": {
+                "enum": [
+                  "daily",
+                  "weekly",
+                  "monthly",
+                  "billing_cycle",
+                  "dynamic",
+                  "provider_specific",
+                  "not_applicable"
+                ]
+              },
+              "time": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "timezone": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "rollover": {
+          "enum": [
+            "yes",
+            "no",
+            "partial",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "after_exhaustion": {
+          "type": "string"
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "eligibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "trial": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "duration_days": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "allowance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recurring": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "last_verified",
+        "confidence",
+        "sources"
+      ],
+      "properties": {
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "confidence": {
+          "enum": [
+            "official_exact",
+            "official_undisclosed",
+            "mixed",
+            "community_only"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "url",
+              "type",
+              "supports"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "type": {
+                "enum": [
+                  "official_pricing",
+                  "official_docs",
+                  "official_help",
+                  "official_blog",
+                  "official_repo",
+                  "secondary",
+                  "community"
+                ]
+              },
+              "supports": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
