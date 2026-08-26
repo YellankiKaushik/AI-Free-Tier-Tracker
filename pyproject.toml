@@ -1,0 +1,14 @@
+[project]
+name = "ai-free-tier-tracker"
+version = "0.1.0"
+description = "Verified free-tier and quota tracker for AI coding tools"
+requires-python = ">=3.10"
+dependencies = [
+  "beautifulsoup4>=4.12,<5",
+  "jsonschema>=4.23,<5",
+  "PyYAML>=6,<7",
+  "requests>=2.32,<3",
+]
+
+[tool.ruff]
+line-length = 100
