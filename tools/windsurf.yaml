@@ -1,0 +1,70 @@
+schema_version: 2
+name: Windsurf
+slug: windsurf
+vendor: Windsurf
+category: agentic-ide
+product_url: https://windsurf.com/
+pricing_url: https://windsurf.com/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- desktop
+- vscode
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: Free
+  quantity_published: false
+  quota_pools:
+  - id: free-usage
+    name: Free usage
+    amount: undisclosed
+    unit: credits
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: Use base/free capabilities or upgrade when premium usage is exhausted.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.85
+  sources:
+  - url: https://windsurf.com/pricing
+    type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free plan
+    - usage limits not normalized in tracker
+    page_sha256: null

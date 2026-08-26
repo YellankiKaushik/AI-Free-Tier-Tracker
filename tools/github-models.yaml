@@ -1,0 +1,60 @@
+schema_version: 2
+name: GitHub Models
+slug: github-models
+vendor: GitHub
+category: model-api
+product_url: https://docs.github.com/en/github-models
+pricing_url: https://docs.github.com/en/github-models
+repo_url: null
+status:
+  availability: discontinued
+  notes: GitHub Models retired on July 30, 2026.
+platforms:
+- api
+- github
+- web
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: false
+  types:
+  - discontinued
+  - legacy
+  plan_name: Retired service
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Service retired; use Azure AI Foundry or GitHub Copilot where appropriate.
+  rollover: not_applicable
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.98
+  sources:
+  - url: https://docs.github.com/en/github-models
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - GitHub Models has been retired
+    - retired July 30, 2026
+    - inference API no longer available
+    page_sha256: null

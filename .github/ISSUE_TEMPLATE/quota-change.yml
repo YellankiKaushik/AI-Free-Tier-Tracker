@@ -19,12 +19,19 @@ body:
     id: change
     attributes:
       label: What changed?
-      description: State old and new values and the reset behavior.
+      description: State the exact field, old value, new value, unit, reset behavior, and whether the new claim is exact or undisclosed.
     validations:
       required: true
   - type: input
     id: checked
     attributes:
       label: Date verified (YYYY-MM-DD)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence summary
+      description: Paraphrase the official source. Do not paste large page excerpts.
     validations:
       required: true

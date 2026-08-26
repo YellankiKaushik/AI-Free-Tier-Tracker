@@ -1,0 +1,78 @@
+schema_version: 2
+name: Cloudflare Workers AI
+slug: cloudflare-workers-ai
+vendor: Cloudflare
+category: model-api
+product_url: https://developers.cloudflare.com/workers-ai/
+pricing_url: https://developers.cloudflare.com/workers-ai/platform/pricing/
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- api
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  plan_name: Workers Free
+  quantity_published: true
+  quota_pools:
+  - id: neurons
+    name: Workers AI free allocation
+    amount: 10000
+    unit: neurons
+    period: day
+    cap: null
+    reset:
+      period: daily
+      time: 00:00
+      timezone: UTC
+      notes: null
+    rollover: 'no'
+    notes: Some models require paid billing method.
+  after_exhaustion: Further operations fail above free allocation unless on Workers Paid or prepaid AI Gateway credits.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.98
+  sources:
+  - url: https://developers.cloudflare.com/workers-ai/platform/pricing/
+    type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Workers Free
+    - 10,000 Neurons per day
+    - All limits reset daily at 00:00 UTC
+    page_sha256: null
+  - url: https://developers.cloudflare.com/workers-ai/
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Available on Free and Paid plans
+    page_sha256: null

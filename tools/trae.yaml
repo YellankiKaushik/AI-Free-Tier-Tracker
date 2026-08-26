@@ -1,0 +1,71 @@
+schema_version: 2
+name: TRAE
+slug: trae
+vendor: TRAE
+category: agentic-ide
+product_url: https://www.trae.ai/
+pricing_url: https://www.trae.ai/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- desktop
+authentication:
+  account_required: 'yes'
+  credit_card_required: unknown
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: Free/Basic usage
+  quantity_published: false
+  quota_pools:
+  - id: basic-usage
+    name: Basic usage
+    amount: undisclosed
+    unit: usage
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: When usage runs out, follow TRAE pricing FAQ/reset behavior.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.78
+  sources:
+  - url: https://www.trae.ai/pricing
+    type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Pricing FAQ
+    - Basic Usage
+    - Bonus Usage
+    - what happens when usage runs out
+    page_sha256: null

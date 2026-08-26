@@ -1,0 +1,59 @@
+schema_version: 2
+name: OpenCode
+slug: opencode
+vendor: SST
+category: open-source-agent
+product_url: https://opencode.ai/
+pricing_url: https://github.com/sst/opencode
+repo_url: https://github.com/sst/opencode
+status:
+  availability: active
+  notes: null
+platforms:
+- cli
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open-source client
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Inference cost and limits depend on configured provider.
+  rollover: not_applicable
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.88
+  sources:
+  - url: https://github.com/sst/opencode
+    type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - open-source terminal coding agent
+    - provider-dependent inference
+    page_sha256: null

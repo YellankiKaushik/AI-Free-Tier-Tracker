@@ -1,0 +1,79 @@
+schema_version: 2
+name: Atlassian Rovo Dev
+slug: atlassian-rovo-dev
+vendor: Atlassian
+category: coding-agent
+product_url: https://www.atlassian.com/software/rovo/dev
+pricing_url: https://www.atlassian.com/software/rovo-dev/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- cli
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_monthly
+  plan_name: Rovo Dev Free
+  quantity_published: true
+  quota_pools:
+  - id: usage
+    name: Rovo Dev credits
+    amount: 350
+    unit: credits
+    period: month
+    cap: null
+    reset:
+      period: billing_cycle
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Rovo Dev stops working until usage resets in the next billing cycle or the user upgrades.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.97
+  sources:
+  - url: https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Rovo Dev Free
+    - 350 credits per user per month
+    - stops working until next billing cycle
+    page_sha256: null
+  - url: https://www.atlassian.com/software/rovo-dev/pricing
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Standard includes 2,000 Rovo Dev credits per developer per month
+    - extra usage is $0.01 per credit
+    page_sha256: null

@@ -1,0 +1,30 @@
+name: Tool discontinued
+description: Report a discontinued, renamed, merged, or restricted product
+title: "[Discontinued]: "
+labels: ["discontinued"]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool slug or product name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Status change
+      description: State whether the product is legacy, discontinued, replaced, or restricted for new signups.
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date checked (YYYY-MM-DD)
+    validations:
+      required: true

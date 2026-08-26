@@ -1,0 +1,30 @@
+name: Source broken
+description: Report an official source URL that is broken, redirected, blocked, or no longer supports a field
+title: "[Source broken]: "
+labels: ["source-broken"]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool slug
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What happened?
+      description: Include status code, redirect target, or the field that is no longer supported.
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date checked (YYYY-MM-DD)
+    validations:
+      required: true

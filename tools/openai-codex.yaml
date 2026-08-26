@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: OpenAI Codex
 slug: openai-codex
 vendor: OpenAI
@@ -9,43 +9,63 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- web
+- cli
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - dynamic_rate_limit
-  plan_name: ChatGPT Free (Codex included)
-  credit_card_required: 'no'
+  plan_name: Included with eligible ChatGPT plans
   quantity_published: false
-  allowances:
-  - name: codex_usage
+  quota_pools:
+  - id: usage
+    name: Plan-managed usage
     amount: undisclosed
-    unit: plan-dependent usage
+    unit: requests
     period: dynamic
     cap: null
-    notes: OpenAI states Codex is included across ChatGPT plans including Free and Go; usage limits vary by plan.
-  resets:
-  - period: dynamic
-    time: null
-    timezone: null
-    notes: Wait for applicable usage limit reset; exact Free quota is not published as a single fixed number.
-  rollover: not_applicable
-  after_exhaustion: Wait for the applicable reset or use options shown for the account/plan.
-  limits:
-  - Exact Free numeric allowance is intentionally not asserted.
-  - Sites is not available on Free/Go according to current help documentation.
-  models:
-  - Plan-dependent
-  eligibility:
-  - ChatGPT Free account in supported regions
-trial: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: Usage is governed by ChatGPT plan limits.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
+  confidence_score: 0.9
   sources:
   - url: https://help.openai.com/en/articles/11369540
     type: official_help
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - Codex included on Free
-    - usage limits vary by plan
-    - exhaustion behavior
+    - Codex included across ChatGPT plans including Free
+    - exact Free quantity undisclosed
+    page_sha256: null

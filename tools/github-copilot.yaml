@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: GitHub Copilot Free
 slug: github-copilot
 vendor: GitHub
@@ -9,53 +9,80 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- vscode
+- jetbrains
+- visual-studio
+- github
+- cli
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - recurring_monthly
   - dynamic_rate_limit
   plan_name: Copilot Free
-  credit_card_required: 'no'
-  quantity_published: false
-  allowances:
-  - name: inline_completions
+  quantity_published: true
+  quota_pools:
+  - id: completions
+    name: Completions
     amount: 2000
     unit: completions
     period: month
     cap: null
-    notes: Exact published completion limit.
-  - name: chat_and_agent
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  - id: premium-requests
+    name: Premium requests
     amount: undisclosed
-    unit: GitHub AI Credits / limited usage
+    unit: requests
     period: month
     cap: null
-    notes: GitHub confirms an allowance of AI credits but the Free numeric amount is not fixed in the public plan table.
-  resets:
-  - period: monthly
-    time: null
-    timezone: null
-    notes: Completion allowance is monthly; GitHub UI shows reset date after limits are reached.
-  rollover: unknown
-  after_exhaustion: GitHub prompts the user with reset date and paid upgrade options.
-  limits:
-  - Auto model selection only on Free.
-  - Copilot Free availability excludes some managed/organization scenarios.
-  models:
-  - Auto model selection only
-  eligibility:
-  - Individual developers without an organization-provided Copilot plan, subject to GitHub eligibility rules
-trial: null
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Wait for monthly refresh or upgrade.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  confidence: mixed
+  confidence_score: 0.92
   sources:
   - url: https://docs.github.com/en/copilot/get-started/plans
     type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - 2000 completions/month
-    - AI-credit allowance is limited and not numerically published for Free
-  - url: https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan
-    type: official_docs
-    supports:
-    - what happens on exhaustion and reset-date prompt
+    - Copilot Free
+    - 2,000 completions/month
+    - limited chat/agent AI credits
+    page_sha256: null

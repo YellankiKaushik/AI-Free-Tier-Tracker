@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: Emergent
 slug: emergent
 vendor: Emergent
@@ -9,42 +9,62 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- web
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - recurring_monthly
   plan_name: Free
-  credit_card_required: 'no'
   quantity_published: true
-  allowances:
-  - name: build_credits
+  quota_pools:
+  - id: credits
+    name: Credits
     amount: 10
     unit: credits
     period: month
     cap: null
-    notes: Official pricing advertises 10 free monthly credits.
-  resets:
-  - period: monthly
-    time: null
-    timezone: null
-    notes: Free credits are monthly.
-  rollover: unknown
-  after_exhaustion: Wait for the monthly refresh or upgrade.
-  limits:
-  - Core platform features included.
-  - Official pricing advertises web and mobile building on Free.
-  models:
-  - Vendor-selected advanced models
-  eligibility:
-  - Free account
-trial: null
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Wait for monthly reset or upgrade.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
+  confidence_score: 0.95
   sources:
   - url: https://emergent.sh/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - 10 free monthly credits
-    - no-cost free plan
+    - Free plan
+    - 10 credits/month
+    page_sha256: null

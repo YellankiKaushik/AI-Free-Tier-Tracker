@@ -1,48 +1,59 @@
-schema_version: 1
+schema_version: 2
 name: Roo Code
 slug: roo-code
 vendor: Roo Code
 category: open-source-agent
 product_url: https://roocode.com/
-pricing_url: https://roocode.com/
+pricing_url: https://github.com/RooCodeInc/Roo-Code
 repo_url: https://github.com/RooCodeInc/Roo-Code
 status:
   availability: active
+  notes: null
+platforms:
+- vscode
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
   notes: null
 free_tier:
   available: true
   types:
   - open_source_byok
-  plan_name: Open source
-  credit_card_required: not_applicable
+  plan_name: Open-source client
   quantity_published: false
-  allowances:
-  - name: client_usage
-    amount: unlimited client
-    unit: software usage
-    period: not_applicable
-    cap: null
-    notes: Extension is open source; inference/provider cost is separate.
-  resets:
-  - period: provider_specific
-    time: null
-    timezone: null
-    notes: Provider-specific.
+  quota_pools: []
+  after_exhaustion: Inference cost and rate limits depend on connected model provider.
   rollover: not_applicable
-  after_exhaustion: Switch provider/model or use local inference.
-  limits:
-  - Provider terms and model limits apply independently.
-  models:
-  - Multiple providers/local models
-  eligibility:
-  - Open-source software
-trial: null
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
+  confidence_score: 0.9
   sources:
   - url: https://github.com/RooCodeInc/Roo-Code
     type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - open-source agent
+    - open-source VS Code agent
+    - BYOK/provider-dependent inference
+    page_sha256: null

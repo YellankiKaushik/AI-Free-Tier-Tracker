@@ -1,0 +1,95 @@
+schema_version: 2
+name: Qoder
+slug: qoder
+vendor: Qoder
+category: agentic-ide
+product_url: https://qoder.com/
+pricing_url: https://docs.qoder.com/account/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- desktop
+- cli
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  - time_limited_trial
+  - open_source_byok
+  plan_name: Community Edition / Free
+  quantity_published: true
+  quota_pools:
+  - id: trial-credits
+    name: Pro trial credits
+    amount: 300
+    unit: credits
+    period: one_time
+    cap: null
+    reset:
+      period: not_applicable
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  - id: basic-models
+    name: Basic models
+    amount: undisclosed
+    unit: messages
+    period: dynamic
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: When credits run out, Qoder switches to basic models with daily limits; wait or upgrade/top up.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: true
+  duration_days: 14
+  allowance: 300 credits with Pro trial
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: mixed
+  confidence_score: 0.92
+  sources:
+  - url: https://docs.qoder.com/account/pricing
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free plan
+    - 2-week Pro trial
+    - 300 credits
+    - basic models for limited user messages
+    page_sha256: null
+  - url: https://qoder.com/blog/qoder-community
+    type: official_blog
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Community Edition
+    - BYOK free for everyone
+    page_sha256: null

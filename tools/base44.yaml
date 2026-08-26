@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: Base44
 slug: base44
 vendor: Base44
@@ -9,57 +9,78 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- web
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - recurring_daily
   - recurring_monthly
   plan_name: Free
-  credit_card_required: 'no'
   quantity_published: true
-  allowances:
-  - name: message_credits
+  quota_pools:
+  - id: message-credits
+    name: Message credits
     amount: 25
     unit: credits
     period: month
     cap: 5/day
-    notes: Free plan has a 5-message-credit daily cap.
-  - name: integration_credits
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  - id: integration-credits
+    name: Integration credits
     amount: 100
     unit: credits
     period: month
     cap: null
-    notes: Used for integration-backed actions in live apps.
-  resets:
-  - period: daily
-    time: null
-    timezone: null
-    notes: Daily message-credit cap applies.
-  - period: monthly
-    time: null
-    timezone: null
-    notes: Credits refresh each billing cycle and do not stack.
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Wait for daily/monthly limits to refresh or upgrade.
   rollover: 'no'
-  after_exhaustion: Wait for daily/monthly reset or use an available paid option.
-  limits:
-  - Up to 5 apps on Free according to official Base44 material.
-  - GitHub integration is a paid-plan feature on the current pricing page.
-  models: []
-  eligibility:
-  - Free account
-trial: null
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
+  confidence_score: 0.97
   sources:
   - url: https://base44.com/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
+    - Free plan
     - 25 message credits/month
+    - 5/day
     - 100 integration credits/month
-  - url: https://base44.com/blog/best-free-ai-app-builders
-    type: official_blog
-    supports:
-    - 5 message credits/day cap
-    - up to 5 apps
+    page_sha256: null

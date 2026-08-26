@@ -43,6 +43,12 @@ state/*
 !state/.gitkeep
 candidates/*
 !candidates/.gitkeep
+evidence/**
+!evidence/
+!evidence/.gitkeep
+history/**
+!history/
+!history/.gitkeep
 
 .DS_Store
 Thumbs.db

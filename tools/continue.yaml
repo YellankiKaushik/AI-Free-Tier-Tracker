@@ -1,0 +1,60 @@
+schema_version: 2
+name: Continue
+slug: continue
+vendor: Continue
+category: open-source-agent
+product_url: https://www.continue.dev/
+pricing_url: https://github.com/continuedev/continue
+repo_url: https://github.com/continuedev/continue
+status:
+  availability: active
+  notes: null
+platforms:
+- vscode
+- jetbrains
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open-source client
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Inference cost and limits depend on connected model provider or local model.
+  rollover: not_applicable
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.9
+  sources:
+  - url: https://github.com/continuedev/continue
+    type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - open-source coding assistant
+    - BYOK/local model support
+    page_sha256: null

@@ -1,0 +1,124 @@
+schema_version: 2
+name: CodeRabbit
+slug: coderabbit
+vendor: CodeRabbit
+category: coding-assistant
+product_url: https://www.coderabbit.ai/
+pricing_url: https://docs.coderabbit.ai/management/plans
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- github
+- vscode
+- cli
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  - time_limited_trial
+  plan_name: Free
+  quantity_published: true
+  quota_pools:
+  - id: pr-reviews
+    name: PR reviews
+    amount: 3
+    unit: reviews
+    period: day
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  - id: ide-reviews
+    name: IDE reviews
+    amount: 1
+    unit: reviews
+    period: day
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  - id: cli-reviews
+    name: CLI reviews
+    amount: 3
+    unit: reviews
+    period: day
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  - id: files-per-review
+    name: Files per review
+    amount: 150
+    unit: files
+    period: provider_specific
+    cap: null
+    reset:
+      period: provider_specific
+      time: null
+      timezone: null
+      notes: null
+    rollover: not_applicable
+    notes: null
+  after_exhaustion: Use lower Free limits, open-source plan where eligible, or upgrade.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: true
+  duration_days: 14
+  allowance: Pro+ trial with full Pro+ access
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.95
+  sources:
+  - url: https://docs.coderabbit.ai/management/plans
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free plan
+    - no credit card required
+    - 14-day Pro+ trial
+    - Free 3 PR reviews
+    - 1 IDE review
+    - 3 CLI reviews
+    - 150 files/review
+    page_sha256: null
+  - url: https://www.coderabbit.ai/pricing
+    type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - 14-day free trial
+    - no credit card required
+    page_sha256: null

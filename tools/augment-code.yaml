@@ -1,0 +1,73 @@
+schema_version: 2
+name: Augment Code
+slug: augment-code
+vendor: Augment Code
+category: coding-assistant
+product_url: https://www.augmentcode.com/
+pricing_url: https://www.augmentcode.com/blog/augment-codes-pricing-is-changing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- vscode
+- jetbrains
+- cli
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'yes'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - time_limited_trial
+  - one_time_signup
+  plan_name: Trial
+  quantity_published: true
+  quota_pools:
+  - id: trial-credits
+    name: Trial credits
+    amount: 30000
+    unit: credits
+    period: one_time
+    cap: null
+    reset:
+      period: not_applicable
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Upgrade, top up credits, or move to free plan depending on current terms.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: true
+  duration_days: null
+  allowance: 30,000 credit pool upon signup with valid credit card
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.9
+  sources:
+  - url: https://www.augmentcode.com/blog/augment-codes-pricing-is-changing
+    type: official_blog
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Trial users
+    - 30,000 credit pool
+    - valid credit card
+    page_sha256: null

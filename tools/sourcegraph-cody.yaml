@@ -1,0 +1,80 @@
+schema_version: 2
+name: Sourcegraph Cody
+slug: sourcegraph-cody
+vendor: Sourcegraph
+category: coding-assistant
+product_url: https://sourcegraph.com/cody
+pricing_url: https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans
+repo_url: null
+status:
+  availability: discontinued
+  notes: Cody Free and Pro were discontinued for impacted users on July 23, 2025.
+platforms:
+- vscode
+- jetbrains
+- web
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: false
+  types:
+  - discontinued
+  - legacy
+  plan_name: Cody Free
+  quantity_published: true
+  quota_pools:
+  - id: legacy-chat
+    name: Legacy chat messages
+    amount: 200
+    unit: messages
+    period: month
+    cap: null
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Free and Pro plans were discontinued; Sourcegraph points users to Amp or Enterprise offerings.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.94
+  sources:
+  - url: https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans
+    type: official_blog
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Cody Free discontinued July 23, 2025
+    - new signups unavailable June 25, 2025
+    page_sha256: null
+  - url: https://6.2.sourcegraph.com/pricing/plans/free
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free plan
+    - 200 chat messages and prompts per month
+    page_sha256: null

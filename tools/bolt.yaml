@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: Bolt.new
 slug: bolt
 vendor: StackBlitz
@@ -9,60 +9,77 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- web
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - recurring_daily
   - recurring_monthly
   plan_name: Free
-  credit_card_required: 'no'
   quantity_published: true
-  allowances:
-  - name: ai_tokens
+  quota_pools:
+  - id: tokens-daily
+    name: Daily tokens
     amount: 300000
     unit: tokens
     period: day
-    cap: 1,000,000/month
-    notes: Daily token limit.
-  - name: ai_tokens_monthly
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  - id: tokens-monthly
+    name: Monthly tokens
     amount: 1000000
     unit: tokens
     period: month
     cap: null
-    notes: Monthly token limit.
-  - name: web_requests
-    amount: 333000
-    unit: requests
-    period: month
-    cap: null
-    notes: Pricing page says up to 333k web requests.
-  resets:
-  - period: daily
-    time: null
-    timezone: null
-    notes: Daily token allowance.
-  - period: monthly
-    time: null
-    timezone: null
-    notes: Monthly free token allowance.
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Wait for token limits to refresh or upgrade.
   rollover: 'no'
-  after_exhaustion: Wait for the relevant allowance to reset or upgrade.
-  limits:
-  - 10MB file upload limit.
-  - Bolt branding on free hosted sites.
-  - Public and private projects are included.
-  models: []
-  eligibility:
-  - Free account
-trial: null
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
+  confidence_score: 0.97
   sources:
   - url: https://bolt.new/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
+    - Free plan
     - 300K tokens/day
     - 1M tokens/month
-    - free-plan hosting and file limits
+    page_sha256: null

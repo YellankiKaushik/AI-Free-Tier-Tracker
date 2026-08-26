@@ -1,0 +1,58 @@
+schema_version: 2
+name: NVIDIA NIM
+slug: nvidia-nim
+vendor: NVIDIA
+category: model-api
+product_url: https://build.nvidia.com/
+pricing_url: https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- api
+- self-hosted
+- cloud
+authentication:
+  account_required: unknown
+  credit_card_required: unknown
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: NIM offering
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Self-hosting/runtime costs depend on infrastructure or NVIDIA-hosted terms.
+  rollover: not_applicable
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.9
+  sources:
+  - url: https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - NIM is available at no charge under applicable license terms
+    - not covered by NVIDIA Enterprise support
+    page_sha256: null

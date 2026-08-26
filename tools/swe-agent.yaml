@@ -1,0 +1,59 @@
+schema_version: 2
+name: SWE-agent
+slug: swe-agent
+vendor: SWE-agent
+category: open-source-agent
+product_url: https://swe-agent.com/
+pricing_url: https://github.com/SWE-agent/SWE-agent
+repo_url: https://github.com/SWE-agent/SWE-agent
+status:
+  availability: active
+  notes: null
+platforms:
+- cli
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open-source client
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Inference/API usage depends on configured model provider.
+  rollover: not_applicable
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.88
+  sources:
+  - url: https://github.com/SWE-agent/SWE-agent
+    type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - open-source software engineering agent
+    - provider-dependent inference
+    page_sha256: null
