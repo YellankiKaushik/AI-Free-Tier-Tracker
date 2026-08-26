@@ -64,7 +64,9 @@ Local commands run from repository root:
 
 ## 8. Remote Actions
 
-Pending for repair branch at report creation time. After pushing, the branch workflow to verify is `Validate tracker data` for `codex/ci-pages-repair`.
+Repair branch remote validation:
+
+- Validate tracker data: run `33011108693`, branch `codex/ci-pages-repair`, commit `fe1f6f280c538616a45e693502cbbed8b6ff9dbe`, conclusion `success`. URL: https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/runs/33011108693
 
 Pages cannot be proven green until the repository-level Pages source is enabled or an elevated token/secret is configured for automatic enablement.
 
@@ -109,11 +111,13 @@ A local Ollama server was reachable and listed model `gemma4:e4b`. Optional live
 
 ## 13. Commits
 
-Pending until commit is created.
+- `fe1f6f280c538616a45e693502cbbed8b6ff9dbe` - `fix: repair Linux CI and Pages workflow`
 
 ## 14. PR
 
-Pending. `gh` is not installed locally. GitHub MCP access available in this environment is read-oriented for pull requests and Actions, so PR creation may need the compare URL after branch push.
+PR creation was attempted through the GitHub connector and failed with `403 Resource not accessible by integration`. `gh` is not installed locally.
+
+PR creation URL: https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/pull/new/codex/ci-pages-repair
 
 ## 15. Remaining blockers
 
