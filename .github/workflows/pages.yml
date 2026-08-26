@@ -22,11 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
       - run: pip install -r requirements.txt
       - run: python scripts/build_index.py
       - run: python scripts/build_dashboard.py
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Verify dashboard artifact
+        run: test -f site/index.html && test -f site/app.js && test -f site/styles.css && test -f site/index.json
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
   deploy:
@@ -37,4 +42,5 @@ jobs:
     needs: build
     steps:
       - id: deployment
+        name: Deploy dashboard
         uses: actions/deploy-pages@v4
