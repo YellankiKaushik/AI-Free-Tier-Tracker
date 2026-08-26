@@ -1,0 +1,73 @@
+schema_version: 1
+name: Lovable
+slug: lovable
+vendor: Lovable
+category: app-builder
+product_url: https://lovable.dev/
+pricing_url: https://lovable.dev/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  - recurring_monthly
+  plan_name: Free
+  credit_card_required: 'no'
+  quantity_published: true
+  allowances:
+  - name: build_credits
+    amount: 5
+    unit: credits
+    period: day
+    cap: 30/month
+    notes: Daily build grant, capped at 30 build credits in the month.
+  - name: cloud_credits
+    amount: 20
+    unit: credits
+    period: month
+    cap: null
+    notes: Monthly Cloud grant.
+  - name: ai_credits
+    amount: 4
+    unit: credits
+    period: month
+    cap: null
+    notes: Monthly grant for AI features inside deployed user apps.
+  resets:
+  - period: daily
+    time: null
+    timezone: null
+    notes: Included daily build credits expire at end of each day and do not roll over.
+  - period: monthly
+    time: null
+    timezone: null
+    notes: Monthly grants/cap renew on the plan cycle.
+  rollover: 'no'
+  after_exhaustion: Wait for the relevant daily/monthly grant to refresh or upgrade/top up if available.
+  limits:
+  - Build-credit consumption varies by task complexity.
+  - Free tier monthly build cap can be reached after six days at 5/day.
+  models: []
+  eligibility:
+  - Free workspace
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  sources:
+  - url: https://lovable.dev/pricing
+    type: official_pricing
+    supports:
+    - free plan
+    - 5 build credits/day
+    - 30/month cap
+    - 20 Cloud credits/month
+    - 4 AI credits/month
+  - url: https://lovable.dev/blog/simplifying-billing
+    type: official_blog
+    supports:
+    - credit system and monthly grants
