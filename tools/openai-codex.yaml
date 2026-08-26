@@ -1,0 +1,51 @@
+schema_version: 1
+name: OpenAI Codex
+slug: openai-codex
+vendor: OpenAI
+category: coding-agent
+product_url: https://openai.com/codex/
+pricing_url: https://help.openai.com/en/articles/11369540
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: ChatGPT Free (Codex included)
+  credit_card_required: 'no'
+  quantity_published: false
+  allowances:
+  - name: codex_usage
+    amount: undisclosed
+    unit: plan-dependent usage
+    period: dynamic
+    cap: null
+    notes: OpenAI states Codex is included across ChatGPT plans including Free and Go; usage limits vary by plan.
+  resets:
+  - period: dynamic
+    time: null
+    timezone: null
+    notes: Wait for applicable usage limit reset; exact Free quota is not published as a single fixed number.
+  rollover: not_applicable
+  after_exhaustion: Wait for the applicable reset or use options shown for the account/plan.
+  limits:
+  - Exact Free numeric allowance is intentionally not asserted.
+  - Sites is not available on Free/Go according to current help documentation.
+  models:
+  - Plan-dependent
+  eligibility:
+  - ChatGPT Free account in supported regions
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://help.openai.com/en/articles/11369540
+    type: official_help
+    supports:
+    - Codex included on Free
+    - usage limits vary by plan
+    - exhaustion behavior
