@@ -1,0 +1,61 @@
+schema_version: 1
+name: Cursor Hobby
+slug: cursor
+vendor: Anysphere
+category: agentic-ide
+product_url: https://cursor.com/
+pricing_url: https://cursor.com/en-US/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: Hobby
+  credit_card_required: 'no'
+  quantity_published: false
+  allowances:
+  - name: agent_requests
+    amount: undisclosed
+    unit: requests
+    period: dynamic
+    cap: null
+    notes: Pricing page says limited Agent requests.
+  - name: tab_completions
+    amount: undisclosed
+    unit: completions
+    period: dynamic
+    cap: null
+    notes: Current pricing/Start pages describe limited Tab completions.
+  resets:
+  - period: dynamic
+    time: null
+    timezone: null
+    notes: Exact public reset mechanics and numeric quota are not asserted.
+  rollover: unknown
+  after_exhaustion: Wait for allowance availability or upgrade.
+  limits:
+  - No credit card required.
+  - Composer access included.
+  models:
+  - Vendor-selected/free-plan models
+  eligibility:
+  - Hobby users
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://cursor.com/en-US/pricing
+    type: official_pricing
+    supports:
+    - Hobby Free
+    - no credit card
+    - limited Agent requests
+  - url: https://cursor.com/start
+    type: official_pricing
+    supports:
+    - limited Tab completions
