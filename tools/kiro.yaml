@@ -1,0 +1,61 @@
+schema_version: 1
+name: Kiro
+slug: kiro
+vendor: Amazon Web Services
+category: agentic-ide
+product_url: https://kiro.dev/
+pricing_url: https://kiro.dev/pricing/
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_monthly
+  plan_name: Kiro Free
+  credit_card_required: 'no'
+  quantity_published: true
+  allowances:
+  - name: agent_credits
+    amount: 50
+    unit: credits
+    period: billing_cycle
+    cap: null
+    notes: Fractional credits; task cost varies by prompt complexity/model.
+  resets:
+  - period: billing_cycle
+    time: null
+    timezone: null
+    notes: Usage cap renews at the beginning of the next billing cycle.
+  rollover: 'no'
+  after_exhaustion: Free tier cannot buy add-on credits; wait for reset or upgrade.
+  limits:
+  - Free tier unavailable in AWS GovCloud (US).
+  - Free tier model access is rate-limited.
+  models:
+  - Open-weight models
+  - Claude Sonnet 4.5 (with limits)
+  eligibility:
+  - Commercial regions where Kiro Free is offered
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  sources:
+  - url: https://kiro.dev/pricing/
+    type: official_pricing
+    supports:
+    - 50 credits
+    - perpetual Free tier
+    - model access
+  - url: https://kiro.dev/docs/billing/
+    type: official_docs
+    supports:
+    - billing-cycle reset
+    - no rollover
+  - url: https://kiro.dev/faq/
+    type: official_docs
+    supports:
+    - GovCloud exclusion
