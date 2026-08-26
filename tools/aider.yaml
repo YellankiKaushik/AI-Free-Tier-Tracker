@@ -1,0 +1,48 @@
+schema_version: 1
+name: Aider
+slug: aider
+vendor: Aider
+category: cli-agent
+product_url: https://aider.chat/
+pricing_url: https://aider.chat/docs/
+repo_url: https://github.com/Aider-AI/aider
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open source
+  credit_card_required: not_applicable
+  quantity_published: false
+  allowances:
+  - name: client_usage
+    amount: unlimited client
+    unit: software usage
+    period: not_applicable
+    cap: null
+    notes: Aider itself is open-source; provider/API usage is separate.
+  resets:
+  - period: provider_specific
+    time: null
+    timezone: null
+    notes: Depends on the configured provider or local model.
+  rollover: not_applicable
+  after_exhaustion: Switch provider/model or use a local model.
+  limits:
+  - Inference availability and limits depend on the configured model provider.
+  models:
+  - Multiple providers/local models
+  eligibility:
+  - Open-source software
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://aider.chat/docs/
+    type: official_docs
+    supports:
+    - open-source/BYOK workflow
