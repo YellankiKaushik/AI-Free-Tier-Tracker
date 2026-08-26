@@ -1,0 +1,68 @@
+schema_version: 1
+name: Bolt.new
+slug: bolt
+vendor: StackBlitz
+category: app-builder
+product_url: https://bolt.new/
+pricing_url: https://bolt.new/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  - recurring_monthly
+  plan_name: Free
+  credit_card_required: 'no'
+  quantity_published: true
+  allowances:
+  - name: ai_tokens
+    amount: 300000
+    unit: tokens
+    period: day
+    cap: 1,000,000/month
+    notes: Daily token limit.
+  - name: ai_tokens_monthly
+    amount: 1000000
+    unit: tokens
+    period: month
+    cap: null
+    notes: Monthly token limit.
+  - name: web_requests
+    amount: 333000
+    unit: requests
+    period: month
+    cap: null
+    notes: Pricing page says up to 333k web requests.
+  resets:
+  - period: daily
+    time: null
+    timezone: null
+    notes: Daily token allowance.
+  - period: monthly
+    time: null
+    timezone: null
+    notes: Monthly free token allowance.
+  rollover: 'no'
+  after_exhaustion: Wait for the relevant allowance to reset or upgrade.
+  limits:
+  - 10MB file upload limit.
+  - Bolt branding on free hosted sites.
+  - Public and private projects are included.
+  models: []
+  eligibility:
+  - Free account
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  sources:
+  - url: https://bolt.new/pricing
+    type: official_pricing
+    supports:
+    - 300K tokens/day
+    - 1M tokens/month
+    - free-plan hosting and file limits
