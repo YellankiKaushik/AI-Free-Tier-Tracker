@@ -1,0 +1,50 @@
+schema_version: 1
+name: Emergent
+slug: emergent
+vendor: Emergent
+category: app-builder
+product_url: https://emergent.sh/
+pricing_url: https://emergent.sh/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_monthly
+  plan_name: Free
+  credit_card_required: 'no'
+  quantity_published: true
+  allowances:
+  - name: build_credits
+    amount: 10
+    unit: credits
+    period: month
+    cap: null
+    notes: Official pricing advertises 10 free monthly credits.
+  resets:
+  - period: monthly
+    time: null
+    timezone: null
+    notes: Free credits are monthly.
+  rollover: unknown
+  after_exhaustion: Wait for the monthly refresh or upgrade.
+  limits:
+  - Core platform features included.
+  - Official pricing advertises web and mobile building on Free.
+  models:
+  - Vendor-selected advanced models
+  eligibility:
+  - Free account
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  sources:
+  - url: https://emergent.sh/pricing
+    type: official_pricing
+    supports:
+    - 10 free monthly credits
+    - no-cost free plan
