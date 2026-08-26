@@ -1,0 +1,30 @@
+name: Add a new tool
+description: Propose a new AI coding tool or app builder
+title: "[Tool]: "
+labels: ["new-tool"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Canonical product name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official product/pricing URL
+    validations:
+      required: true
+  - type: textarea
+    id: allowance
+    attributes:
+      label: Free allowance and reset behavior
+      description: Do not guess; write "undisclosed" if the vendor does not publish it.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Official sources
+    validations:
+      required: true
