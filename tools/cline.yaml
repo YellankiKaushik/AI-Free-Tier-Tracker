@@ -1,0 +1,51 @@
+schema_version: 1
+name: Cline
+slug: cline
+vendor: Cline
+category: open-source-agent
+product_url: https://cline.bot/
+pricing_url: https://cline.bot/pricing
+repo_url: https://github.com/cline/cline
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open-source extension
+  credit_card_required: not_applicable
+  quantity_published: false
+  allowances:
+  - name: client_usage
+    amount: unlimited client
+    unit: software usage
+    period: not_applicable
+    cap: null
+    notes: The extension is free; inference cost/quota comes from the selected provider.
+  resets:
+  - period: provider_specific
+    time: null
+    timezone: null
+    notes: Depends on the selected model/provider.
+  rollover: not_applicable
+  after_exhaustion: Switch provider/model, use a local model, or pay the inference provider.
+  limits:
+  - No subscription fee for the open-source individual extension.
+  models:
+  - BYOK providers
+  - local/self-hosted options
+  eligibility:
+  - Individual developers; inference provider terms separately apply
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://cline.bot/pricing
+    type: official_pricing
+    supports:
+    - open-source extension is free
+    - BYOK
+    - inference is separate
