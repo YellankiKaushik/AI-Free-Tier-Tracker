@@ -1,0 +1,54 @@
+schema_version: 1
+name: Replit Starter
+slug: replit
+vendor: Replit
+category: cloud-ide
+product_url: https://replit.com/
+pricing_url: https://ld.replit.com/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  plan_name: Starter
+  credit_card_required: 'no'
+  quantity_published: false
+  allowances:
+  - name: agent_credits
+    amount: undisclosed
+    unit: credits
+    period: day
+    cap: null
+    notes: Replit advertises free daily Agent credits but does not publish a fixed number on the public pricing page.
+  resets:
+  - period: daily
+    time: null
+    timezone: null
+    notes: Public pricing states daily Agent credits.
+  rollover: unknown
+  after_exhaustion: Wait for next daily grant or upgrade.
+  limits:
+  - Publish 1 live project on Starter.
+  - Built-in database included.
+  models:
+  - Vendor-managed
+  eligibility:
+  - Starter account
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://ld.replit.com/pricing
+    type: official_pricing
+    supports:
+    - free daily Agent credits
+    - publish 1 live project
+  - url: https://replit.com/
+    type: official_pricing
+    supports:
+    - Starter Free plan
