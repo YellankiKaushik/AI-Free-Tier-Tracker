@@ -1,0 +1,418 @@
+{
+  "generated_from": "tools/*.yaml",
+  "description": "Scheduled theoretical resets based on documented plan rules, not personal balances.",
+  "reset_groups": {
+    "billing_cycle": [
+      {
+        "tool": "kiro",
+        "name": "Kiro",
+        "pool": "credits",
+        "amount": 50,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "atlassian-rovo-dev",
+        "name": "Atlassian Rovo Dev",
+        "pool": "usage",
+        "amount": 350,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ],
+    "daily": [
+      {
+        "tool": "qoder",
+        "name": "Qoder",
+        "pool": "basic-models",
+        "amount": "undisclosed",
+        "unit": "messages",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "base44",
+        "name": "Base44",
+        "pool": "message-credits",
+        "amount": 25,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "bolt",
+        "name": "Bolt.new",
+        "pool": "tokens-daily",
+        "amount": 300000,
+        "unit": "tokens",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "lovable",
+        "name": "Lovable",
+        "pool": "build-credits",
+        "amount": 5,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "v0",
+        "name": "v0",
+        "pool": "messages",
+        "amount": 7,
+        "unit": "messages",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "replit",
+        "name": "Replit Starter",
+        "pool": "agent-credits",
+        "amount": "undisclosed",
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "pr-reviews",
+        "amount": 3,
+        "unit": "reviews",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "ide-reviews",
+        "amount": 1,
+        "unit": "reviews",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "cli-reviews",
+        "amount": 3,
+        "unit": "reviews",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "cloudflare-workers-ai",
+        "name": "Cloudflare Workers AI",
+        "pool": "neurons",
+        "amount": 10000,
+        "unit": "neurons",
+        "reset_time": "00:00",
+        "timezone": "UTC",
+        "notes": null
+      },
+      {
+        "tool": "openrouter",
+        "name": "OpenRouter Free Models",
+        "pool": "free-model-requests",
+        "amount": 50,
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ],
+    "dynamic": [
+      {
+        "tool": "cursor",
+        "name": "Cursor Hobby",
+        "pool": "agent-requests",
+        "amount": "undisclosed",
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "cursor",
+        "name": "Cursor Hobby",
+        "pool": "tab-completions",
+        "amount": "undisclosed",
+        "unit": "completions",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "trae",
+        "name": "TRAE",
+        "pool": "basic-usage",
+        "amount": "undisclosed",
+        "unit": "usage",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "windsurf",
+        "name": "Windsurf",
+        "pool": "free-usage",
+        "amount": "undisclosed",
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "create-xyz",
+        "name": "Create.xyz",
+        "pool": "usage",
+        "amount": "undisclosed",
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "github-spark",
+        "name": "GitHub Spark",
+        "pool": "usage",
+        "amount": "undisclosed",
+        "unit": "dynamic",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "openai-codex",
+        "name": "OpenAI Codex",
+        "pool": "usage",
+        "amount": "undisclosed",
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "warp",
+        "name": "Warp",
+        "pool": "agent-usage",
+        "amount": "undisclosed",
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "zed-ai",
+        "name": "Zed AI",
+        "pool": "usage",
+        "amount": "undisclosed",
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "gemini-api",
+        "name": "Gemini API",
+        "pool": "rate-limits",
+        "amount": "published per model",
+        "unit": "requests/tokens",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "groq",
+        "name": "Groq API",
+        "pool": "model-rate-limits",
+        "amount": "published per model",
+        "unit": "requests/tokens",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ],
+    "monthly": [
+      {
+        "tool": "base44",
+        "name": "Base44",
+        "pool": "integration-credits",
+        "amount": 100,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "bolt",
+        "name": "Bolt.new",
+        "pool": "tokens-monthly",
+        "amount": 1000000,
+        "unit": "tokens",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "emergent",
+        "name": "Emergent",
+        "pool": "credits",
+        "amount": 10,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "lovable",
+        "name": "Lovable",
+        "pool": "cloud-credits",
+        "amount": 20,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "lovable",
+        "name": "Lovable",
+        "pool": "ai-credits",
+        "amount": 4,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "v0",
+        "name": "v0",
+        "pool": "included-credits",
+        "amount": 5,
+        "unit": "USD credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "github-copilot",
+        "name": "GitHub Copilot Free",
+        "pool": "completions",
+        "amount": 2000,
+        "unit": "completions",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "github-copilot",
+        "name": "GitHub Copilot Free",
+        "pool": "premium-requests",
+        "amount": "undisclosed",
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "sourcegraph-cody",
+        "name": "Sourcegraph Cody",
+        "pool": "legacy-chat",
+        "amount": 200,
+        "unit": "messages",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "hugging-face-inference",
+        "name": "Hugging Face Inference Providers",
+        "pool": "monthly-credits",
+        "amount": 0.1,
+        "unit": "USD credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ],
+    "not_applicable": [
+      {
+        "tool": "qoder",
+        "name": "Qoder",
+        "pool": "trial-credits",
+        "amount": 300,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "augment-code",
+        "name": "Augment Code",
+        "pool": "trial-credits",
+        "amount": 30000,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "jetbrains-ai-assistant",
+        "name": "JetBrains AI Assistant",
+        "pool": "cloud-llm",
+        "amount": "undisclosed",
+        "unit": "quota",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "cerebras-inference",
+        "name": "Cerebras Inference",
+        "pool": "trial-credits",
+        "amount": 5,
+        "unit": "USD credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ],
+    "provider_specific": [
+      {
+        "tool": "replit",
+        "name": "Replit Starter",
+        "pool": "published-apps",
+        "amount": 1,
+        "unit": "project",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "files-per-review",
+        "amount": 150,
+        "unit": "files",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      }
+    ]
+  }
+}

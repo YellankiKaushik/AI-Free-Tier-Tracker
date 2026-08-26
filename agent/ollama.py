@@ -1,9 +1,12 @@
 from __future__ import annotations
-import json, os
+
+import json
+import os
+
 import requests
 
 BASE = os.getenv('OLLAMA_URL','http://127.0.0.1:11434').rstrip('/')
-MODEL = os.getenv('OLLAMA_MODEL','gemma4')
+MODEL = os.getenv('OLLAMA_MODEL','gemma3:4b')
 
 def extract_json(system: str, user: str, timeout: int = 180) -> dict:
     payload = {

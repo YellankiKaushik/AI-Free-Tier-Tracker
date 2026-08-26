@@ -1,0 +1,72 @@
+schema_version: 2
+name: JetBrains AI Assistant
+slug: jetbrains-ai-assistant
+vendor: JetBrains
+category: coding-assistant
+product_url: https://www.jetbrains.com/ai/
+pricing_url: https://www.jetbrains.com/help/ai/ai-service-license.html
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- jetbrains
+- desktop
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - one_time_signup
+  - time_limited_trial
+  plan_name: AI FREE
+  quantity_published: false
+  quota_pools:
+  - id: cloud-llm
+    name: Cloud LLM usage
+    amount: undisclosed
+    unit: quota
+    period: one_time
+    cap: null
+    reset:
+      period: not_applicable
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: After trial/free quota, continue with AI FREE limitations or upgrade.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: true
+  duration_days: 30
+  allowance: AI Pro trial with limited time and usage volume
+  recurring: false
+  notes: Available to new users with paid or complimentary JetBrains IDE licenses.
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.92
+  sources:
+  - url: https://www.jetbrains.com/help/ai/ai-service-license.html
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - AI FREE plan
+    - one-time non-renewable limited quota
+    - AI TRIAL lasts 30 days
+    page_sha256: null

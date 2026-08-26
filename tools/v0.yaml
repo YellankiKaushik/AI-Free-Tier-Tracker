@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: v0
 slug: v0
 vendor: Vercel
@@ -9,52 +9,77 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- web
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - recurring_daily
   - recurring_monthly
   plan_name: Free
-  credit_card_required: 'no'
   quantity_published: true
-  allowances:
-  - name: included_credits
+  quota_pools:
+  - id: included-credits
+    name: Included credits
     amount: 5
     unit: USD credits
     period: month
     cap: null
-    notes: Included monthly credits.
-  - name: messages
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  - id: messages
+    name: Messages
     amount: 7
     unit: messages
     period: day
     cap: null
-    notes: Daily message gate.
-  resets:
-  - period: daily
-    time: null
-    timezone: null
-    notes: 7-message daily limit.
-  - period: monthly
-    time: null
-    timezone: null
-    notes: $5 included credits renew monthly.
-  rollover: unknown
-  after_exhaustion: Wait for reset or upgrade to a paid plan.
-  limits:
-  - Deploy apps to Vercel.
-  - Design Mode and GitHub sync included on Free.
-  models: []
-  eligibility:
-  - Free account
-trial: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: Wait for daily/monthly refresh or upgrade.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
+  confidence_score: 0.97
   sources:
   - url: https://api2.v0.dev/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - $5 included monthly credits
+    - Free plan
+    - $5 included credits/month
     - 7 messages/day
+    page_sha256: null

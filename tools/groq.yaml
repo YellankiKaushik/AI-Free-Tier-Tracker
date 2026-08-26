@@ -1,0 +1,71 @@
+schema_version: 2
+name: Groq API
+slug: groq
+vendor: Groq
+category: model-api
+product_url: https://groq.com/
+pricing_url: https://console.groq.com/docs/rate-limits
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- api
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: Free Plan
+  quantity_published: false
+  quota_pools:
+  - id: model-rate-limits
+    name: Model-specific free plan rate limits
+    amount: published per model
+    unit: requests/tokens
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: 429 Too Many Requests; wait for request/token reset or upgrade.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.92
+  sources:
+  - url: https://console.groq.com/docs/rate-limits
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free Plan Limits
+    - model-specific RPM/RPD/TPM/TPD table
+    - 429 Too Many Requests
+    page_sha256: null

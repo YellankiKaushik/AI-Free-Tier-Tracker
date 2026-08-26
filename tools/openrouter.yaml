@@ -1,0 +1,79 @@
+schema_version: 2
+name: OpenRouter Free Models
+slug: openrouter
+vendor: OpenRouter
+category: model-api
+product_url: https://openrouter.ai/
+pricing_url: https://openrouter.ai/docs/faq
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- api
+- web
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  - dynamic_rate_limit
+  plan_name: Free models
+  quantity_published: true
+  quota_pools:
+  - id: free-model-requests
+    name: Free model API requests
+    amount: 50
+    unit: requests
+    period: day
+    cap: null
+    reset:
+      period: daily
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: If at least 10 credits are purchased, free model limit can be 1000 requests/day.
+  after_exhaustion: Free models are low-rate-limit; buy credits or use paid models for more capacity.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.95
+  sources:
+  - url: https://openrouter.ai/docs/faq
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - free models
+    - 50 free model API requests per day
+    - 1000 requests per day if at least 10 credits purchased
+    page_sha256: null
+  - url: https://openrouter.ai/docs/guides/routing/model-variants/free
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - :free model variant
+    page_sha256: null

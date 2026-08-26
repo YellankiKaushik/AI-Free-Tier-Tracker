@@ -1,0 +1,70 @@
+schema_version: 2
+name: Create.xyz
+slug: create-xyz
+vendor: Create
+category: app-builder
+product_url: https://www.create.xyz/
+pricing_url: https://www.create.xyz/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- web
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: unknown
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: Free
+  quantity_published: false
+  quota_pools:
+  - id: usage
+    name: Free usage
+    amount: undisclosed
+    unit: credits
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: Wait for vendor-managed free usage to refresh or upgrade.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.78
+  sources:
+  - url: https://www.create.xyz/pricing
+    type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free plan
+    - exact tracked quota needs recheck
+    page_sha256: null

@@ -1,165 +1,240 @@
 # AI Free Tier Tracker
 
-> A verified, machine-readable tracker of **free tiers, recurring quotas, trials, reset windows, and practical limits** across AI coding assistants, agentic IDEs, CLI agents, and prompt-to-app builders.
+> A verified, machine-readable database of free tiers, recurring quotas, trials, reset windows, and practical restrictions across AI coding assistants, coding agents, app builders, cloud IDEs, open-source/BYOK tools, and model/API tiers useful to coding workflows.
 
-[![Data Status](https://img.shields.io/badge/data-official--source%20first-brightgreen)](#verification-policy)
+[![CI](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/workflows/validate.yml/badge.svg)](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/workflows/validate.yml)
+[![Data](https://img.shields.io/badge/data-official--source%20first-brightgreen)](#verification-methodology)
+[![Python](https://img.shields.io/badge/python-3.12-blue)](pyproject.toml)
 [![Code License](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data License](https://img.shields.io/badge/data-CC0-lightgrey.svg)](DATA_LICENSE)
 
-## Why this exists
+## What This Is
 
-Most AI-tool lists answer *what tools exist?* This project answers the operational questions developers actually need:
+This project answers practical developer questions:
 
-- **How much can I use for $0?**
-- **When does the allowance reset?**
-- **Is it recurring, a signup grant, a trial, a student offer, or open-source/BYOK?**
-- **What happens when I exhaust it?**
-- **Is the number officially published or intentionally undisclosed?**
-- **When was the entry last verified?**
+- How much legitimate $0 AI coding usage is available?
+- Is the allowance recurring, dynamic, a trial, a signup grant, or open-source/BYOK?
+- When does it reset?
+- Is a credit card required?
+- What happens after exhaustion?
+- Which claims are exact, and which are officially undisclosed?
 
-Credits are **not comparable across vendors**. One Lovable build credit is not equivalent to a Kiro credit, a v0 dollar credit, a Bolt token, or a Replit Agent credit. This repository therefore does not publish fake aggregate totals.
+It is not an "awesome tools" list. Credits are not summed across vendors because a Lovable build credit, a Kiro credit, a Bolt token, a v0 dollar credit, and a Replit Agent credit are different units.
 
-## Verified snapshot — 2026-08-27
+## Source Of Truth
 
-| Tool | Category | Current $0 allowance | Reset | Recurring? | Card | Evidence |
+Canonical records live in [`tools/`](tools/). Generated artifacts are:
+
+- [`data/index.json`](data/index.json)
+- [`data/reset-calendar.json`](data/reset-calendar.json)
+- generated README tables between the markers below
+- static dashboard files in [`site/`](site/)
+
+<!-- GENERATED:TOOLS:START -->
+## Dataset Statistics
+
+- Total tracked tools: **43**
+- Active tools: **41**
+- Recurring/dynamic free access records: **24**
+- Open-source/BYOK clients: **15**
+- Official exact records: **14**
+- Official undisclosed records: **26**
+
+## Active Recurring And Dynamic Free Tiers
+
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
 |---|---|---|---|---|---|---|
-| [Lovable](https://lovable.dev/pricing) | App builder | 5 build credits/day, max 30/month; +20 Cloud +4 AI credits/month | Daily + monthly | Yes | No | Official |
-| [Base44](https://base44.com/pricing) | App builder | 25 message credits/month, capped at 5/day; 100 integration credits/month | Daily + monthly | Yes | No | Official |
-| [Bolt.new](https://bolt.new/pricing) | App builder | 300K tokens/day; 1M tokens/month | Daily + monthly | Yes | No | Official |
-| [v0](https://api2.v0.dev/pricing) | App builder | $5 included credits/month; 7 messages/day | Daily + monthly | Yes | No | Official |
-| [Emergent](https://emergent.sh/pricing) | App builder | 10 credits/month | Monthly | Yes | No | Official |
-| [Kiro](https://kiro.dev/pricing/) | Agentic IDE / CLI | 50 credits/month | Billing cycle | Yes | No | Official |
-| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | Coding assistant | 2,000 completions/month + limited chat/agent AI credits | Monthly | Yes | No | Official; exact chat/agent quantity undisclosed |
-| [Cursor Hobby](https://cursor.com/en-US/pricing) | Agentic IDE | Limited Agent requests + limited Tab completions | Vendor-managed | Yes | No | Official; exact quantity undisclosed |
-| [Replit Starter](https://replit.com/) | Cloud IDE / agent | Free daily Agent credits; 1 published live project | Daily | Yes | No | Official; numeric Agent quota undisclosed |
-| [OpenAI Codex](https://help.openai.com/en/articles/11369540) | Coding agent | Included across ChatGPT plans including Free; exact Free quantity varies by plan | Dynamic plan limits | Yes | No | Official; exact quantity undisclosed |
-| [Cline](https://cline.bot/pricing) | Open-source agent | Client free; inference is BYOK/provider-dependent | Provider-specific | Client: yes | N/A | Official |
+| [Cursor Hobby](https://cursor.com/en-US/pricing) | agentic-ide | undisclosed requests / dynamic; undisclosed completions / dynamic | dynamic | no | official undisclosed | current |
+| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits / billing cycle | billing cycle | no | official exact | current |
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | 300 credits / one time; undisclosed messages / dynamic | daily, not applicable | no | mixed | current |
+| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage / dynamic | dynamic | unknown | official undisclosed | current |
+| [Windsurf](https://windsurf.com/pricing) | agentic-ide | undisclosed credits / dynamic | dynamic | no | official undisclosed | current |
+| [Base44](https://base44.com/pricing) | app-builder | 25 credits / month, cap 5/day; 100 credits / month | daily, monthly | no | official exact | current |
+| [Bolt.new](https://bolt.new/pricing) | app-builder | 300000 tokens / day; 1000000 tokens / month | daily, monthly | no | official exact | current |
+| [Create.xyz](https://www.create.xyz/pricing) | app-builder | undisclosed credits / dynamic | dynamic | unknown | official undisclosed | current |
+| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Emergent](https://emergent.sh/pricing) | app-builder | 10 credits / month | monthly | no | official exact | current |
+| [GitHub Spark](https://github.com/features/spark) | app-builder | undisclosed dynamic / dynamic | dynamic | unknown | official undisclosed | current |
+| [Lovable](https://lovable.dev/pricing) | app-builder | 5 credits / day, cap 30/month; 20 credits / month; 4 credits / month | daily, monthly | no | official exact | current |
+| [v0](https://api2.v0.dev/pricing) | app-builder | 5 USD credits / month; 7 messages / day | daily, monthly | no | official exact | current |
+| [Claude Code](https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code) | cli-agent | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [Replit Starter](https://ld.replit.com/pricing) | cloud-ide | undisclosed credits / day; 1 project / provider specific | daily, provider specific | no | mixed | current |
+| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits / month | billing cycle | no | official exact | current |
+| [OpenAI Codex](https://help.openai.com/en/articles/11369540) | coding-agent | undisclosed requests / dynamic | dynamic | no | official undisclosed | current |
+| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits / one time | not applicable | yes | official exact | current |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | 3 reviews / day; 1 reviews / day; 3 reviews / day; 150 files / provider specific | daily, provider specific | no | official exact | current |
+| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | 2000 completions / month; undisclosed requests / month | monthly | no | mixed | current |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai/ai-service-license.html) | coding-assistant | undisclosed quota / one time | not applicable | no | official undisclosed | current |
+| [Warp](https://www.warp.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | no | official undisclosed | current |
+| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | unknown | official undisclosed | current |
+| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits / one time | not applicable | no | official exact | current |
+| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons / day | daily | no | official exact | current |
+| [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
+| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
+| [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits / month | monthly | no | official exact | current |
+| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests / day | daily | no | official exact | current |
+| [Aider](https://aider.chat/docs/) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Cline](https://cline.bot/pricing) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Continue](https://github.com/continuedev/continue) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Goose](https://github.com/block/goose) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Kilo Code](https://github.com/Kilo-Org/kilocode) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [OpenCode](https://github.com/sst/opencode) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [OpenHands](https://github.com/All-Hands-AI/OpenHands) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Qwen Code](https://github.com/QwenLM/qwen-code) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Roo Code](https://github.com/RooCodeInc/Roo-Code) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [SWE-agent](https://github.com/SWE-agent/SWE-agent) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Tabby](https://github.com/TabbyML/tabby) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 
-The source of truth is the YAML under [`tools/`](tools/). Generated indexes live under [`data/`](data/).
+## App Builders
 
-## Status taxonomy
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Base44](https://base44.com/pricing) | app-builder | 25 credits / month, cap 5/day; 100 credits / month | daily, monthly | no | official exact | current |
+| [Bolt.new](https://bolt.new/pricing) | app-builder | 300000 tokens / day; 1000000 tokens / month | daily, monthly | no | official exact | current |
+| [Create.xyz](https://www.create.xyz/pricing) | app-builder | undisclosed credits / dynamic | dynamic | unknown | official undisclosed | current |
+| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Emergent](https://emergent.sh/pricing) | app-builder | 10 credits / month | monthly | no | official exact | current |
+| [GitHub Spark](https://github.com/features/spark) | app-builder | undisclosed dynamic / dynamic | dynamic | unknown | official undisclosed | current |
+| [Lovable](https://lovable.dev/pricing) | app-builder | 5 credits / day, cap 30/month; 20 credits / month; 4 credits / month | daily, monthly | no | official exact | current |
+| [v0](https://api2.v0.dev/pricing) | app-builder | 5 USD credits / month; 7 messages / day | daily, monthly | no | official exact | current |
 
-Offers are explicitly classified instead of being mixed into a single “free” bucket:
+## Coding Assistants And Agents
 
-`recurring_daily`, `recurring_weekly`, `recurring_monthly`, `dynamic_rate_limit`, `one_time_signup`, `time_limited_trial`, `student`, `open_source_byok`, `promotional`, `legacy`, `discontinued`.
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Cursor Hobby](https://cursor.com/en-US/pricing) | agentic-ide | undisclosed requests / dynamic; undisclosed completions / dynamic | dynamic | no | official undisclosed | current |
+| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits / billing cycle | billing cycle | no | official exact | current |
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | 300 credits / one time; undisclosed messages / dynamic | daily, not applicable | no | mixed | current |
+| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage / dynamic | dynamic | unknown | official undisclosed | current |
+| [Windsurf](https://windsurf.com/pricing) | agentic-ide | undisclosed credits / dynamic | dynamic | no | official undisclosed | current |
+| [Claude Code](https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code) | cli-agent | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits / month | billing cycle | no | official exact | current |
+| [OpenAI Codex](https://help.openai.com/en/articles/11369540) | coding-agent | undisclosed requests / dynamic | dynamic | no | official undisclosed | current |
+| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits / one time | not applicable | yes | official exact | current |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | 3 reviews / day; 1 reviews / day; 3 reviews / day; 150 files / provider specific | daily, provider specific | no | official exact | current |
+| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | 2000 completions / month; undisclosed requests / month | monthly | no | mixed | current |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai/ai-service-license.html) | coding-assistant | undisclosed quota / one time | not applicable | no | official undisclosed | current |
+| [Warp](https://www.warp.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | no | official undisclosed | current |
+| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | unknown | official undisclosed | current |
 
-## Freshness policy
+## Model/API Free Tiers Useful To Agents
 
-| Age since verification | Meaning |
-|---|---|
-| 0–30 days | Current |
-| 31–60 days | Needs recheck |
-| >60 days | Stale |
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits / one time | not applicable | no | official exact | current |
+| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons / day | daily | no | official exact | current |
+| [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
+| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
+| [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits / month | monthly | no | official exact | current |
+| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests / day | daily | no | official exact | current |
 
-A stale entry is not automatically wrong. It is automatically **untrusted until rechecked**.
+## Trials And Signup Grants
 
-## Verification policy
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | 300 credits / one time; undisclosed messages / dynamic | daily, not applicable | no | mixed | current |
+| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits / one time | not applicable | yes | official exact | current |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | 3 reviews / day; 1 reviews / day; 3 reviews / day; 150 files / provider specific | daily, provider specific | no | official exact | current |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai/ai-service-license.html) | coding-assistant | undisclosed quota / one time | not applicable | no | official undisclosed | current |
+| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits / one time | not applicable | no | official exact | current |
 
-1. Numerical quotas in the verified dataset require an **official pricing page, documentation page, help-center article, or vendor announcement**.
-2. Community reports may be stored as notes, but they do not overwrite official values.
-3. Every record includes `last_verified`, source URLs, source type, and confidence.
-4. If a vendor does not publish an exact quota, record `undisclosed`; do not reverse-engineer a fake number.
-5. Free plans, trials, signup bonuses, student grants, promotions, and open-source/BYOK tools stay distinct.
-6. Historical offers are preserved as `legacy` or `discontinued`, rather than silently deleted.
-7. Automated LLM extraction may propose a change; it **cannot mark itself verified**.
+## Open-Source/BYOK Agents
 
-## Repo layout
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | 300 credits / one time; undisclosed messages / dynamic | daily, not applicable | no | mixed | current |
+| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | unknown | official undisclosed | current |
+| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [Aider](https://aider.chat/docs/) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Cline](https://cline.bot/pricing) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Continue](https://github.com/continuedev/continue) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Goose](https://github.com/block/goose) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Kilo Code](https://github.com/Kilo-Org/kilocode) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [OpenCode](https://github.com/sst/opencode) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [OpenHands](https://github.com/All-Hands-AI/OpenHands) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Qwen Code](https://github.com/QwenLM/qwen-code) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Roo Code](https://github.com/RooCodeInc/Roo-Code) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [SWE-agent](https://github.com/SWE-agent/SWE-agent) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
+| [Tabby](https://github.com/TabbyML/tabby) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 
-```text
-AI-Free-Tier-Tracker/
-├── README.md
-├── AGENTS.md
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-├── LICENSE
-├── DATA_LICENSE
-├── schema/tool.schema.json
-├── tools/*.yaml                  # canonical records
-├── data/index.json               # generated machine-readable index
-├── scripts/
-│   ├── validate_data.py
-│   ├── build_index.py
-│   ├── check_stale_entries.py
-│   └── check_links.py
-├── agent/
-│   ├── run.py                    # source watcher + local LLM extractor
-│   ├── crawler.py
-│   ├── ollama.py
-│   ├── search.py                 # optional SearXNG discovery
-│   └── prompts.py
-├── candidates/                   # unverified agent output (gitignored)
-├── state/                        # local page hashes/cache metadata (gitignored)
-├── docs/
-│   ├── METHODOLOGY.md
-│   ├── AGENT_ARCHITECTURE.md
-│   ├── DATA_MODEL.md
-│   └── ZERO_DOLLAR_RECIPES.md
-└── .github/
-    ├── workflows/
-    └── ISSUE_TEMPLATE/
-```
+## Legacy And Discontinued Entries
 
-## Local AI verification agent
+| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |
+|---|---|---|---|---|---|---|
+| [Sourcegraph Cody](https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans) | coding-assistant | 200 messages / month | monthly | no | official exact | current |
+| [GitHub Models](https://docs.github.com/en/github-models) | model-api | No recurring published quota | not applicable | no | official undisclosed | current |
+<!-- GENERATED:TOOLS:END -->
+## Reset Calendar
 
-The intended pipeline is:
+[`data/reset-calendar.json`](data/reset-calendar.json) describes theoretical reset schedules based on documented plan rules. It never claims to know your personal remaining balance.
 
-```text
-Official source URLs
-      ↓
-HTTP fetch + content hashing
-      ↓
-HTML → clean text
-      ↓
-Local Ollama model (Gemma or another model)
-      ↓
-Structured candidate JSON
-      ↓
-Schema + source checks
-      ↓
-Human review
-      ↓
-Git branch / PR
-```
+See [`docs/RESET_CALENDAR.md`](docs/RESET_CALENDAR.md) for a readable view.
 
-The local LLM is an **extractor and reviewer**, not the crawler and not the merger. This makes the system much easier to audit.
+## Dashboard
 
-Quick start:
+The static dashboard in [`site/`](site/) works without API keys or a backend. Open [`site/index.html`](site/index.html) after running:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate           # Windows: .venv\\Scripts\\activate
-pip install -r requirements.txt
+python scripts/build_index.py
+python scripts/build_dashboard.py
+```
 
-# Point this at the exact Ollama model name installed on your machine.
-export OLLAMA_MODEL=gemma4
+It supports search, category/status filters, exact-vs-undisclosed filters, no-credit-card filtering, open-source/BYOK filtering, reset-period filtering, freshness display, and official source links.
+
+## Verification Methodology
+
+Trust hierarchy:
+
+1. Official pricing page
+2. Official documentation/help center
+3. Official vendor announcement/blog/changelog
+4. Official GitHub repository
+5. Reputable secondary source
+6. Community report
+
+No exact numeric quota enters the verified dataset unless an official source supports it. If the official source confirms free access but not an exact number, the record uses `quantity_published: false` and `confidence: official_undisclosed`.
+
+## Local Research Agent
+
+The local Ollama agent is an extractor and reviewer, not a source of truth:
+
+```text
+official URLs -> fetch -> normalize -> SHA-256 -> diff -> Ollama -> candidate JSON -> deterministic validation -> human review
+```
+
+Useful environment variables:
+
+```bash
+export OLLAMA_URL=http://127.0.0.1:11434
+export OLLAMA_MODEL=gemma3:4b
 python -m agent.run --tool lovable
 ```
 
-If your Ollama tag is different, use that exact tag, e.g. `OLLAMA_MODEL=gemma3:4b`. The project does not hard-code a model name.
+Generated model candidates are written under `candidates/`, remain unverified, and are ignored by Git until a human promotes a change.
 
-For broader discovery without scraping Google/Bing HTML, optionally run a local SearXNG instance and set:
-
-```bash
-export SEARXNG_URL=http://localhost:8080
-python -m agent.search "AI coding agent free tier credits"
-```
-
-Read [`docs/AGENT_ARCHITECTURE.md`](docs/AGENT_ARCHITECTURE.md) before enabling unattended runs.
-
-## Build and validate
+## Build And Validate
 
 ```bash
 python scripts/validate_data.py
 python scripts/build_index.py
+python scripts/generate_readme.py
+python scripts/build_reset_calendar.py
+python scripts/build_dashboard.py
 python scripts/check_stale_entries.py
+pytest
 ```
 
 ## Contributing
 
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md). One non-negotiable rule:
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md). A contribution must include the exact field being changed, the official source URL, the date checked, and whether the claim is exact or undisclosed.
 
-> **No numerical quota enters the verified dataset without an official vendor source.**
+## Data Licensing
+
+Code is MIT licensed. The structured data is released under CC0 via [`DATA_LICENSE`](DATA_LICENSE).
 
 ## Disclaimer
 
-Independent community project; not affiliated with the vendors listed. Pricing, limits, model access, regional eligibility, and promotions change frequently. Re-check the official source before making a purchase or relying on a quota for critical work.
+Independent community project; not affiliated with the vendors listed. Pricing, limits, model access, regional eligibility, and promotions change frequently. Re-check official sources before making a purchase or relying on a quota for critical work.

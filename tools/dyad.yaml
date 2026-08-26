@@ -1,0 +1,59 @@
+schema_version: 2
+name: Dyad
+slug: dyad
+vendor: Dyad
+category: app-builder
+product_url: https://www.dyad.sh/
+pricing_url: https://github.com/dyad-sh/dyad
+repo_url: https://github.com/dyad-sh/dyad
+status:
+  availability: active
+  notes: null
+platforms:
+- desktop
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open-source local app builder
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Inference cost depends on configured provider/local model.
+  rollover: not_applicable
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.88
+  sources:
+  - url: https://github.com/dyad-sh/dyad
+    type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - open-source app builder
+    - local/BYOK usage
+    page_sha256: null

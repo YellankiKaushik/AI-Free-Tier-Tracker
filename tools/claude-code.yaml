@@ -1,0 +1,56 @@
+schema_version: 2
+name: Claude Code
+slug: claude-code
+vendor: Anthropic
+category: cli-agent
+product_url: https://www.anthropic.com/claude-code
+pricing_url: https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- cli
+authentication:
+  account_required: 'yes'
+  credit_card_required: unknown
+  notes: null
+free_tier:
+  available: false
+  types: []
+  plan_name: null
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Metering depends on Enterprise seat or API key billing; no standalone recurring free quota recorded.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.9
+  sources:
+  - url: https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code
+    type: official_help
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Enterprise seat usage pool
+    - API key pay-as-you-go
+    - no standalone free quota published
+    page_sha256: null

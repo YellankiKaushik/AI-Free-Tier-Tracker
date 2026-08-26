@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: Cline
 slug: cline
 vendor: Cline
@@ -9,43 +9,58 @@ repo_url: https://github.com/cline/cline
 status:
   availability: active
   notes: null
+platforms:
+- vscode
+- local
+authentication:
+  account_required: not_applicable
+  credit_card_required: not_applicable
+  notes: null
 free_tier:
   available: true
   types:
   - open_source_byok
-  plan_name: Open-source extension
-  credit_card_required: not_applicable
+  plan_name: Open-source client
   quantity_published: false
-  allowances:
-  - name: client_usage
-    amount: unlimited client
-    unit: software usage
-    period: not_applicable
-    cap: null
-    notes: The extension is free; inference cost/quota comes from the selected provider.
-  resets:
-  - period: provider_specific
-    time: null
-    timezone: null
-    notes: Depends on the selected model/provider.
+  quota_pools: []
+  after_exhaustion: Inference cost and limits depend on the selected model provider or local model.
   rollover: not_applicable
-  after_exhaustion: Switch provider/model, use a local model, or pay the inference provider.
-  limits:
-  - No subscription fee for the open-source individual extension.
-  models:
-  - BYOK providers
-  - local/self-hosted options
-  eligibility:
-  - Individual developers; inference provider terms separately apply
-trial: null
+models:
+  available:
+  - BYOK
+  - local models
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
+  confidence_score: 0.92
   sources:
   - url: https://cline.bot/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - open-source extension is free
-    - BYOK
-    - inference is separate
+    - client free
+    - BYOK/provider-dependent inference
+    page_sha256: null
+  - url: https://github.com/cline/cline
+    type: official_repo
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - open-source client
+    page_sha256: null

@@ -1,0 +1,71 @@
+schema_version: 2
+name: Hugging Face Inference Providers
+slug: hugging-face-inference
+vendor: Hugging Face
+category: model-api
+product_url: https://huggingface.co/inference-providers
+pricing_url: https://huggingface.co/docs/inference-providers/en/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- api
+- web
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_monthly
+  plan_name: Free user monthly credits
+  quantity_published: true
+  quota_pools:
+  - id: monthly-credits
+    name: Monthly routed inference credits
+    amount: 0.1
+    unit: USD credits
+    period: month
+    cap: null
+    reset:
+      period: monthly
+      time: null
+      timezone: null
+      notes: null
+    rollover: 'no'
+    notes: null
+  after_exhaustion: After monthly credits, purchase credits/pay-as-you-go or use custom provider keys billed elsewhere.
+  rollover: 'no'
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  confidence_score: 0.95
+  sources:
+  - url: https://huggingface.co/docs/inference-providers/en/pricing
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - Free Users
+    - $0.10 monthly credits
+    - monthly credits automatically apply
+    page_sha256: null

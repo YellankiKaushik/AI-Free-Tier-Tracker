@@ -11,25 +11,18 @@
     "category",
     "product_url",
     "status",
+    "platforms",
+    "authentication",
     "free_tier",
+    "models",
+    "trial",
     "verification"
   ],
   "properties": {
-    "schema_version": {
-      "const": 1
-    },
-    "name": {
-      "type": "string",
-      "minLength": 1
-    },
-    "slug": {
-      "type": "string",
-      "pattern": "^[a-z0-9][a-z0-9-]*$"
-    },
-    "vendor": {
-      "type": "string",
-      "minLength": 1
-    },
+    "schema_version": { "const": 2 },
+    "name": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "vendor": { "type": "string", "minLength": 1 },
     "category": {
       "enum": [
         "coding-assistant",
@@ -42,44 +35,47 @@
         "model-api"
       ]
     },
-    "product_url": {
-      "type": "string",
-      "format": "uri"
-    },
-    "pricing_url": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "uri"
-    },
-    "repo_url": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "uri"
-    },
+    "product_url": { "type": "string", "format": "uri" },
+    "pricing_url": { "type": ["string", "null"], "format": "uri" },
+    "repo_url": { "type": ["string", "null"], "format": "uri" },
     "status": {
       "type": "object",
-      "required": [
-        "availability"
-      ],
+      "required": ["availability"],
       "properties": {
         "availability": {
-          "enum": [
-            "active",
-            "legacy",
-            "discontinued",
-            "restricted-new-signups"
-          ]
+          "enum": ["active", "legacy", "discontinued", "restricted-new-signups"]
         },
-        "notes": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
+        "notes": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "vscode",
+          "jetbrains",
+          "visual-studio",
+          "cli",
+          "web",
+          "desktop",
+          "browser",
+          "api",
+          "github",
+          "self-hosted",
+          "cloud",
+          "local"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "authentication": {
+      "type": "object",
+      "required": ["account_required", "credit_card_required"],
+      "properties": {
+        "account_required": { "$ref": "#/$defs/yesNoUnknown" },
+        "credit_card_required": { "$ref": "#/$defs/yesNoUnknown" },
+        "notes": { "type": ["string", "null"] }
       },
       "additionalProperties": false
     },
@@ -89,14 +85,12 @@
         "available",
         "types",
         "plan_name",
-        "credit_card_required",
-        "allowances",
+        "quantity_published",
+        "quota_pools",
         "after_exhaustion"
       ],
       "properties": {
-        "available": {
-          "type": "boolean"
-        },
+        "available": { "type": "boolean" },
         "types": {
           "type": "array",
           "items": {
@@ -116,48 +110,18 @@
           },
           "uniqueItems": true
         },
-        "plan_name": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "credit_card_required": {
-          "enum": [
-            "yes",
-            "no",
-            "unknown",
-            "not_applicable"
-          ]
-        },
-        "quantity_published": {
-          "type": "boolean"
-        },
-        "allowances": {
+        "plan_name": { "type": ["string", "null"] },
+        "quantity_published": { "type": "boolean" },
+        "quota_pools": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": [
-              "name",
-              "amount",
-              "unit",
-              "period"
-            ],
+            "required": ["id", "name", "amount", "unit", "period", "reset"],
             "properties": {
-              "name": {
-                "type": "string"
-              },
-              "amount": {
-                "type": [
-                  "number",
-                  "integer",
-                  "string",
-                  "null"
-                ]
-              },
-              "unit": {
-                "type": "string"
-              },
+              "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+              "name": { "type": "string", "minLength": 1 },
+              "amount": { "type": ["number", "integer", "string", "null"] },
+              "unit": { "type": "string", "minLength": 1 },
               "period": {
                 "enum": [
                   "day",
@@ -170,173 +134,96 @@
                   "not_applicable"
                 ]
               },
-              "cap": {
-                "type": [
-                  "number",
-                  "integer",
-                  "string",
-                  "null"
-                ]
+              "cap": { "type": ["number", "integer", "string", "null"] },
+              "reset": {
+                "type": "object",
+                "required": ["period"],
+                "properties": {
+                  "period": {
+                    "enum": [
+                      "daily",
+                      "weekly",
+                      "monthly",
+                      "billing_cycle",
+                      "dynamic",
+                      "provider_specific",
+                      "not_applicable",
+                      "undisclosed"
+                    ]
+                  },
+                  "time": { "type": ["string", "null"] },
+                  "timezone": { "type": ["string", "null"] },
+                  "notes": { "type": ["string", "null"] }
+                },
+                "additionalProperties": false
               },
-              "notes": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
+              "rollover": {
+                "enum": ["yes", "no", "partial", "unknown", "not_applicable"]
+              },
+              "notes": { "type": ["string", "null"] }
             },
             "additionalProperties": false
           }
         },
-        "resets": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": [
-              "period"
-            ],
-            "properties": {
-              "period": {
-                "enum": [
-                  "daily",
-                  "weekly",
-                  "monthly",
-                  "billing_cycle",
-                  "dynamic",
-                  "provider_specific",
-                  "not_applicable"
-                ]
-              },
-              "time": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "timezone": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "notes": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            },
-            "additionalProperties": false
-          }
-        },
+        "after_exhaustion": { "type": "string" },
         "rollover": {
-          "enum": [
-            "yes",
-            "no",
-            "partial",
-            "unknown",
-            "not_applicable"
-          ]
-        },
-        "after_exhaustion": {
-          "type": "string"
-        },
-        "limits": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "models": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "eligibility": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "enum": ["yes", "no", "partial", "unknown", "not_applicable"]
         }
       },
       "additionalProperties": false
     },
-    "trial": {
-      "type": [
-        "object",
-        "null"
-      ],
+    "models": {
+      "type": "object",
+      "required": ["available", "restrictions"],
       "properties": {
-        "available": {
-          "type": "boolean"
-        },
-        "duration_days": {
-          "type": [
-            "number",
-            "integer",
-            "null"
-          ]
-        },
-        "allowance": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "recurring": {
-          "type": "boolean"
-        },
-        "notes": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
+        "available": { "type": "array", "items": { "type": "string" } },
+        "restrictions": { "type": "array", "items": { "type": "string" } }
       },
       "additionalProperties": false
     },
-    "notes": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "project_limits": { "type": "array", "items": { "type": "string" } },
+    "deployment": { "type": "array", "items": { "type": "string" } },
+    "runtime_limits": { "type": "array", "items": { "type": "string" } },
+    "storage_limits": { "type": "array", "items": { "type": "string" } },
+    "concurrency_limits": { "type": "array", "items": { "type": "string" } },
+    "eligibility": { "type": "array", "items": { "type": "string" } },
+    "regions": { "type": "array", "items": { "type": "string" } },
+    "trial": {
+      "type": "object",
+      "required": ["available", "recurring"],
+      "properties": {
+        "available": { "type": "boolean" },
+        "duration_days": { "type": ["number", "integer", "null"] },
+        "allowance": { "type": ["string", "null"] },
+        "recurring": { "type": "boolean" },
+        "notes": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
     },
+    "notes": { "type": "array", "items": { "type": "string" } },
     "verification": {
       "type": "object",
-      "required": [
-        "last_verified",
-        "confidence",
-        "sources"
-      ],
+      "required": ["last_verified", "confidence", "confidence_score", "sources"],
       "properties": {
-        "last_verified": {
-          "type": "string",
-          "format": "date"
-        },
+        "last_verified": { "type": "string", "format": "date" },
         "confidence": {
           "enum": [
             "official_exact",
             "official_undisclosed",
             "mixed",
-            "community_only"
+            "community_only",
+            "needs_verification"
           ]
         },
+        "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
         "sources": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [
-              "url",
-              "type",
-              "supports"
-            ],
+            "required": ["url", "type", "supports"],
             "properties": {
-              "url": {
-                "type": "string",
-                "format": "uri"
-              },
+              "url": { "type": "string", "format": "uri" },
               "type": {
                 "enum": [
                   "official_pricing",
@@ -344,17 +231,15 @@
                   "official_help",
                   "official_blog",
                   "official_repo",
+                  "official_changelog",
                   "secondary",
                   "community"
                 ]
               },
-              "supports": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "minItems": 1
-              }
+              "retrieved_at": { "type": ["string", "null"] },
+              "supports_fields": { "type": "array", "items": { "type": "string" } },
+              "supports": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+              "page_sha256": { "type": ["string", "null"] }
             },
             "additionalProperties": false
           }
@@ -363,5 +248,10 @@
       "additionalProperties": false
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {
+    "yesNoUnknown": {
+      "enum": ["yes", "no", "unknown", "not_applicable"]
+    }
+  }
 }

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Free Tier Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>AI Free Tier Tracker</h1>
+    <p>Verified free tiers, trials, resets, and open-source/BYOK options for coding agents and app builders.</p>
+  </header>
+  <main>
+    <section class="filters" aria-label="Filters">
+      <input id="search" type="search" placeholder="Search tools">
+      <select id="category"><option value="">All categories</option></select>
+      <select id="status"><option value="">All statuses</option><option>active</option><option>legacy</option><option>discontinued</option></select>
+      <select id="quota"><option value="">Exact or undisclosed</option><option value="exact">Exact quota</option><option value="undisclosed">Undisclosed quota</option></select>
+      <label><input id="nocard" type="checkbox"> No credit card</label>
+      <label><input id="byok" type="checkbox"> Open-source/BYOK</label>
+      <select id="reset"><option value="">Any reset</option></select>
+    </section>
+    <section id="stats" class="stats"></section>
+    <section id="cards" class="grid"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

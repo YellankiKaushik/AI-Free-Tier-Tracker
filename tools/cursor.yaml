@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 name: Cursor Hobby
 slug: cursor
 vendor: Anysphere
@@ -9,53 +9,76 @@ repo_url: null
 status:
   availability: active
   notes: null
+platforms:
+- desktop
+- vscode
+authentication:
+  account_required: 'yes'
+  credit_card_required: 'no'
+  notes: null
 free_tier:
   available: true
   types:
   - dynamic_rate_limit
   plan_name: Hobby
-  credit_card_required: 'no'
   quantity_published: false
-  allowances:
-  - name: agent_requests
+  quota_pools:
+  - id: agent-requests
+    name: Agent requests
     amount: undisclosed
     unit: requests
     period: dynamic
     cap: null
-    notes: Pricing page says limited Agent requests.
-  - name: tab_completions
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  - id: tab-completions
+    name: Tab completions
     amount: undisclosed
     unit: completions
     period: dynamic
     cap: null
-    notes: Current pricing/Start pages describe limited Tab completions.
-  resets:
-  - period: dynamic
-    time: null
-    timezone: null
-    notes: Exact public reset mechanics and numeric quota are not asserted.
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: Wait for vendor-managed limits to refresh or upgrade.
   rollover: unknown
-  after_exhaustion: Wait for allowance availability or upgrade.
-  limits:
-  - No credit card required.
-  - Composer access included.
-  models:
-  - Vendor-selected/free-plan models
-  eligibility:
-  - Hobby users
-trial: null
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
 notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
+  confidence_score: 0.9
   sources:
   - url: https://cursor.com/en-US/pricing
     type: official_pricing
+    retrieved_at: '2026-08-27'
+    supports_fields: []
     supports:
-    - Hobby Free
-    - no credit card
+    - Hobby plan
     - limited Agent requests
-  - url: https://cursor.com/start
-    type: official_pricing
-    supports:
     - limited Tab completions
+    page_sha256: null

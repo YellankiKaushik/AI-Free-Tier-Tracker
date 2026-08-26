@@ -1,0 +1,28 @@
+name: Incorrect data
+description: Report a suspected incorrect field without a confirmed replacement value
+title: "[Data issue]: "
+labels: ["data-issue"]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool slug
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field path
+      description: Example: free_tier.quota_pools.build-credits.amount
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Why does this look wrong?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Best official source URL, if known

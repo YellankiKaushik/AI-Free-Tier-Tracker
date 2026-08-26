@@ -1,0 +1,71 @@
+schema_version: 2
+name: GitHub Spark
+slug: github-spark
+vendor: GitHub
+category: app-builder
+product_url: https://github.com/features/spark
+pricing_url: https://github.com/features/spark
+repo_url: null
+status:
+  availability: active
+  notes: null
+platforms:
+- web
+- github
+- cloud
+authentication:
+  account_required: 'yes'
+  credit_card_required: unknown
+  notes: null
+free_tier:
+  available: true
+  types:
+  - dynamic_rate_limit
+  plan_name: GitHub account access
+  quantity_published: false
+  quota_pools:
+  - id: usage
+    name: Spark usage
+    amount: undisclosed
+    unit: dynamic
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: null
+    rollover: unknown
+    notes: null
+  after_exhaustion: Usage and plan access follow GitHub product terms.
+  rollover: unknown
+models:
+  available: []
+  restrictions: []
+project_limits: []
+deployment: []
+runtime_limits: []
+storage_limits: []
+concurrency_limits: []
+eligibility: []
+regions: []
+trial:
+  available: false
+  duration_days: null
+  allowance: null
+  recurring: false
+  notes: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  confidence_score: 0.82
+  sources:
+  - url: https://github.com/features/spark
+    type: official_docs
+    retrieved_at: '2026-08-27'
+    supports_fields: []
+    supports:
+    - GitHub Spark product page
+    - free/plan limits not recorded as exact
+    page_sha256: null

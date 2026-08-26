@@ -45,8 +45,14 @@ Do not scrape Google/Bing HTML directly. If you want broad web discovery without
 - Source URL allowlist comes from canonical YAML.
 - Maximum response size and request timeout.
 - HTML scripts/styles removed before LLM ingestion.
-- Changed page hash required before an LLM call, reducing GPU work.
+- Changed or unprocessed page hash required before an LLM call, reducing GPU work.
+- State files use deterministic `sha256(url)[:16]` identifiers.
+- `last_seen_sha256` is updated after fetch; `last_processed_sha256` is updated only after successful extraction, candidate validation, and candidate write.
+- Failed fetches, Ollama outages, malformed JSON, and failed candidate validation leave the page retryable.
+- Prior processed text is used to produce a diff-first prompt instead of blindly sending full pages whenever possible.
 - Model output must be JSON.
+- Model output must validate against `schema/candidate.schema.json`.
+- Model output must keep `_meta.verified` as `false`.
 - Model output is written to `candidates/`, never directly to `tools/`.
 - `verification.last_verified` can only be updated by a human-approved change.
 
