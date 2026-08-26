@@ -1,0 +1,61 @@
+schema_version: 1
+name: GitHub Copilot Free
+slug: github-copilot
+vendor: GitHub
+category: coding-assistant
+product_url: https://github.com/features/copilot
+pricing_url: https://docs.github.com/en/copilot/get-started/plans
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_monthly
+  - dynamic_rate_limit
+  plan_name: Copilot Free
+  credit_card_required: 'no'
+  quantity_published: false
+  allowances:
+  - name: inline_completions
+    amount: 2000
+    unit: completions
+    period: month
+    cap: null
+    notes: Exact published completion limit.
+  - name: chat_and_agent
+    amount: undisclosed
+    unit: GitHub AI Credits / limited usage
+    period: month
+    cap: null
+    notes: GitHub confirms an allowance of AI credits but the Free numeric amount is not fixed in the public plan table.
+  resets:
+  - period: monthly
+    time: null
+    timezone: null
+    notes: Completion allowance is monthly; GitHub UI shows reset date after limits are reached.
+  rollover: unknown
+  after_exhaustion: GitHub prompts the user with reset date and paid upgrade options.
+  limits:
+  - Auto model selection only on Free.
+  - Copilot Free availability excludes some managed/organization scenarios.
+  models:
+  - Auto model selection only
+  eligibility:
+  - Individual developers without an organization-provided Copilot plan, subject to GitHub eligibility rules
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://docs.github.com/en/copilot/get-started/plans
+    type: official_docs
+    supports:
+    - 2000 completions/month
+    - AI-credit allowance is limited and not numerically published for Free
+  - url: https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan
+    type: official_docs
+    supports:
+    - what happens on exhaustion and reset-date prompt
