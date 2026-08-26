@@ -1,0 +1,65 @@
+schema_version: 1
+name: Base44
+slug: base44
+vendor: Base44
+category: app-builder
+product_url: https://base44.com/
+pricing_url: https://base44.com/pricing
+repo_url: null
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - recurring_daily
+  - recurring_monthly
+  plan_name: Free
+  credit_card_required: 'no'
+  quantity_published: true
+  allowances:
+  - name: message_credits
+    amount: 25
+    unit: credits
+    period: month
+    cap: 5/day
+    notes: Free plan has a 5-message-credit daily cap.
+  - name: integration_credits
+    amount: 100
+    unit: credits
+    period: month
+    cap: null
+    notes: Used for integration-backed actions in live apps.
+  resets:
+  - period: daily
+    time: null
+    timezone: null
+    notes: Daily message-credit cap applies.
+  - period: monthly
+    time: null
+    timezone: null
+    notes: Credits refresh each billing cycle and do not stack.
+  rollover: 'no'
+  after_exhaustion: Wait for daily/monthly reset or use an available paid option.
+  limits:
+  - Up to 5 apps on Free according to official Base44 material.
+  - GitHub integration is a paid-plan feature on the current pricing page.
+  models: []
+  eligibility:
+  - Free account
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_exact
+  sources:
+  - url: https://base44.com/pricing
+    type: official_pricing
+    supports:
+    - 25 message credits/month
+    - 100 integration credits/month
+  - url: https://base44.com/blog/best-free-ai-app-builders
+    type: official_blog
+    supports:
+    - 5 message credits/day cap
+    - up to 5 apps
