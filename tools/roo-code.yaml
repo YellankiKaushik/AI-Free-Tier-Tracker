@@ -1,0 +1,48 @@
+schema_version: 1
+name: Roo Code
+slug: roo-code
+vendor: Roo Code
+category: open-source-agent
+product_url: https://roocode.com/
+pricing_url: https://roocode.com/
+repo_url: https://github.com/RooCodeInc/Roo-Code
+status:
+  availability: active
+  notes: null
+free_tier:
+  available: true
+  types:
+  - open_source_byok
+  plan_name: Open source
+  credit_card_required: not_applicable
+  quantity_published: false
+  allowances:
+  - name: client_usage
+    amount: unlimited client
+    unit: software usage
+    period: not_applicable
+    cap: null
+    notes: Extension is open source; inference/provider cost is separate.
+  resets:
+  - period: provider_specific
+    time: null
+    timezone: null
+    notes: Provider-specific.
+  rollover: not_applicable
+  after_exhaustion: Switch provider/model or use local inference.
+  limits:
+  - Provider terms and model limits apply independently.
+  models:
+  - Multiple providers/local models
+  eligibility:
+  - Open-source software
+trial: null
+notes: []
+verification:
+  last_verified: '2026-08-27'
+  confidence: official_undisclosed
+  sources:
+  - url: https://github.com/RooCodeInc/Roo-Code
+    type: official_repo
+    supports:
+    - open-source agent
