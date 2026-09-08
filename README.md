@@ -35,8 +35,8 @@ Canonical records live in [`tools/`](tools/). Generated artifacts are:
 
 - Total tracked tools: **43**
 - Active tools: **41**
-- Recurring/dynamic free access records: **24**
-- Open-source/BYOK clients: **15**
+- Recurring/dynamic free access records: **25**
+- Open-source/BYOK clients: **14**
 - Official exact records: **14**
 - Official undisclosed records: **26**
 
@@ -72,7 +72,7 @@ Canonical records live in [`tools/`](tools/). Generated artifacts are:
 | [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
 | [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
 | [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits / month | monthly | no | official exact | current |
-| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [NVIDIA NIM](https://docs.api.nvidia.com/nim/re/docs/run-anywhere) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
 | [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests / day | daily | no | official exact | current |
 | [Aider](https://aider.chat/docs/) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 | [Cline](https://cline.bot/pricing) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
@@ -127,7 +127,7 @@ Canonical records live in [`tools/`](tools/). Generated artifacts are:
 | [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
 | [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens / dynamic | dynamic | no | official undisclosed | current |
 | [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits / month | monthly | no | official exact | current |
-| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
+| [NVIDIA NIM](https://docs.api.nvidia.com/nim/re/docs/run-anywhere) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
 | [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests / day | daily | no | official exact | current |
 
 ## Trials And Signup Grants
@@ -147,7 +147,6 @@ Canonical records live in [`tools/`](tools/). Generated artifacts are:
 | [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | 300 credits / one time; undisclosed messages / dynamic | daily, not applicable | no | mixed | current |
 | [Dyad](https://github.com/dyad-sh/dyad) | app-builder | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 | [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests / dynamic | dynamic | unknown | official undisclosed | current |
-| [NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html) | model-api | No recurring published quota | not applicable | unknown | official undisclosed | current |
 | [Aider](https://aider.chat/docs/) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 | [Cline](https://cline.bot/pricing) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |
 | [Continue](https://github.com/continuedev/continue) | open-source-agent | No recurring published quota | not applicable | not applicable | official undisclosed | current |

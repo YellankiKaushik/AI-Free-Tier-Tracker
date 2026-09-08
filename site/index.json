@@ -6,9 +6,9 @@
     "active": 41,
     "legacy": 0,
     "discontinued": 2,
-    "recurring": 24,
+    "recurring": 25,
     "trials": 5,
-    "open_source_byok": 15,
+    "open_source_byok": 14,
     "official_exact": 14,
     "official_undisclosed": 26,
     "needs_verification": 0,
@@ -2359,48 +2359,191 @@
       "vendor": "NVIDIA",
       "category": "model-api",
       "status": "active",
-      "status_notes": null,
+      "status_notes": "Free hosted endpoint availability is catalog/model-specific and changes over time.",
       "platforms": [
         "api",
         "self-hosted",
-        "cloud"
+        "cloud",
+        "web"
       ],
       "free_tier_types": [
-        "open_source_byok"
+        "dynamic_rate_limit"
       ],
-      "plan_name": "NIM offering",
-      "account_required": "unknown",
+      "plan_name": "NVIDIA Developer Program NIM access",
+      "account_required": "yes",
       "credit_card_required": "unknown",
       "quantity_published": false,
       "quota_pools": [],
-      "after_exhaustion": "Self-hosting/runtime costs depend on infrastructure or NVIDIA-hosted terms.",
+      "after_exhaustion": "NVIDIA does not publish a universal hosted free quota or reset; free hosted API access is for prototyping and model availability is catalog-specific. Production/commercial deployment requires NVIDIA AI Enterprise or another eligible paid deployment path.",
       "product_url": "https://build.nvidia.com/",
-      "pricing_url": "https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html",
+      "pricing_url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
       "repo_url": null,
       "trial": {
         "available": false,
         "duration_days": null,
         "allowance": null,
         "recurring": false,
-        "notes": null
+        "notes": "NVIDIA AI Enterprise has a separate 90-day evaluation path; this record tracks the normal Developer Program hosted API/self-hosted development access, not that trial."
       },
       "models": {
-        "available": [],
-        "restrictions": []
+        "available": [
+          "deepseek-ai/deepseek-v4-pro-0813",
+          "poolside/laguna-xs-2.1",
+          "nvidia/nemotron-3.5-lightning-30b-a3b"
+        ],
+        "restrictions": [
+          "The build.nvidia.com catalog labels Free Endpoint availability per model; the catalog is dynamic, so these are current verified examples rather than a complete model list."
+        ]
       },
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-09-08",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
+      "confidence_score": 0.94,
       "sources": [
         {
-          "url": "https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/nim-offerings.html",
+          "url": "https://build.nvidia.com/explore",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "product_url",
+            "free_tier.available",
+            "free_tier.types",
+            "deployment"
+          ],
           "supports": [
-            "NIM is available at no charge under applicable license terms",
-            "not covered by NVIDIA Enterprise support"
+            "Get API Key",
+            "Free serverless APIs for development",
+            "Accelerated by DGX Cloud",
+            "Self-Host on your GPU infrastructure"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://build.nvidia.com/models",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "models.restrictions"
+          ],
+          "supports": [
+            "Free Endpoint availability appears as model catalog metadata",
+            "Download Available appears as separate model catalog metadata",
+            "model catalog count is a dated snapshot, not a user quota"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.api.nvidia.com/nim/docs/product",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "authentication.account_required",
+            "eligibility",
+            "deployment",
+            "runtime_limits"
+          ],
+          "supports": [
+            "NVIDIA-hosted endpoints for application prototyping in the NVIDIA API catalog",
+            "Developer Program enrollment to access NIM for development and testing",
+            "Developer Program members have free access to NIM API endpoints for prototyping",
+            "downloadable NIM microservices for research, application development, and experimentation on up to 16 GPUs",
+            "NVIDIA AI Enterprise is required for production"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.api.nvidia.com/nim/docs/api-quickstart",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "authentication.account_required",
+            "deployment"
+          ],
+          "supports": [
+            "NIM API endpoint can be used through browser UI and Python code",
+            "hosted by NVIDIA on NVIDIA DGX Cloud",
+            "Get API Key from a model page",
+            "signing up makes the user a member of the Developer Program"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.available",
+            "deployment",
+            "runtime_limits",
+            "eligibility",
+            "trial.notes"
+          ],
+          "supports": [
+            "Developer Program members have free access to NIM API endpoints for prototyping",
+            "downloadable NIM microservices are free for research, development and testing",
+            "self-hosted Developer Program NIM use is allowed on up to 16 GPUs",
+            "production requires NVIDIA AI Enterprise",
+            "NVIDIA AI Enterprise pricing and evaluation are separate from Developer Program access"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "deployment"
+          ],
+          "supports": [
+            "LLM NIM URL is https://integrate.api.nvidia.com",
+            "chat completions endpoint is POST /v1/chat/completions",
+            "LLM endpoints support code generation among other tasks"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4-pro-0813",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "models.available",
+            "deployment"
+          ],
+          "supports": [
+            "deepseek-ai/deepseek-v4-pro-0813 is a current verified Free Endpoint example",
+            "model page describes coding tasks",
+            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "models.available",
+            "deployment"
+          ],
+          "supports": [
+            "poolside/laguna-xs-2.1 is a current verified Free Endpoint example",
+            "model page describes long-horizon agentic coding and terminal tasks",
+            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
+          "type": "official_docs",
+          "retrieved_at": "2026-09-08",
+          "supports_fields": [
+            "models.available",
+            "deployment"
+          ],
+          "supports": [
+            "nvidia/nemotron-3.5-lightning-30b-a3b is a current verified Free Endpoint example",
+            "model page also marks Download Available",
+            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
           ],
           "page_sha256": null
         }
