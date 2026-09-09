@@ -58,7 +58,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.92
   sources:
   - url: https://console.groq.com/docs/rate-limits
     type: official_docs

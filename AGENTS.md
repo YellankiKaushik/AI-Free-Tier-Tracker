@@ -38,3 +38,4 @@ A Level 4/5 source must never silently override a Level 1–3 numerical value.
 - model restrictions
 - trial duration
 - product discontinuation or replacement
+- Temporary implementation, audit, and Codex reports belong under docs/reports/, not the repository root.

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from agent.candidates import normalize_candidate, validate_candidate
 
-
 SHA = "a" * 64
 
 

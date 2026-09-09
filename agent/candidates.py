@@ -8,7 +8,6 @@ from jsonschema import Draft202012Validator
 
 from .state import utc_now
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATE_SCHEMA = json.loads((ROOT / "schema/candidate.schema.json").read_text(encoding="utf-8"))
 validator = Draft202012Validator(CANDIDATE_SCHEMA)

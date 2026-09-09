@@ -2,7 +2,7 @@
 
 Each `tools/<slug>.yaml` file is canonical and validates against `schema/tool.schema.json`.
 
-The current schema version is `2`.
+The current canonical schema version is `2`.
 
 Important fields:
 
@@ -13,9 +13,14 @@ Important fields:
 - `after_exhaustion`: operational behavior after a limit is reached.
 - `status.availability`: active, legacy, discontinued, or restricted-new-signups.
 - `authentication.credit_card_required`: card requirement if documented.
-- `verification.confidence`: evidence quality, not model certainty.
-- `verification.sources[]`: source URL + exactly what it supports.
+- `verification.confidence`: categorical evidence quality, not model certainty. There is no numeric confidence score in canonical records.
+- `verification.sources[]`: source URL plus what it supports. `supports_fields` should name real canonical fields, and exact numeric quota evidence should support the relevant quota pool or field.
+- `models.available`: known available models only when the set is stable enough to maintain. For dynamic catalogs, keep non-exhaustive examples in `notes` or `models.restrictions` instead of pretending examples are complete.
 
 A vendor can have several independent allowances and clocks. Lovable is a good example: build, Cloud, and in-app AI credits are separate.
 
 Generated files such as `data/index.json`, `data/reset-calendar.json`, README tables, and the static dashboard derive from canonical YAML.
+
+## Public index
+
+`data/index.json` is a generated machine-readable index with `schema_version: 3`. It intentionally includes the fields needed for browsing and downstream querying: status, free-tier types, quota pools, type-aware quota/reset summaries, authentication, model/catalog notes, trial data, freshness, confidence, sources, notes, deployment, runtime limits, and eligibility. It omits internal caches and unverified agent candidates.

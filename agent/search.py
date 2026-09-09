@@ -1,5 +1,9 @@
 from __future__ import annotations
-import argparse, os, requests
+
+import argparse
+import os
+
+import requests
 
 URL=os.getenv('SEARXNG_URL','').rstrip('/')
 

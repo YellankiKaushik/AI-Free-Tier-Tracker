@@ -72,7 +72,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: mixed
-  confidence_score: 0.88
   sources:
   - url: https://ld.replit.com/pricing
     type: official_pricing

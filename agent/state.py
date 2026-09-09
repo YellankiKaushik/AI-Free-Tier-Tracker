@@ -59,6 +59,9 @@ def mark_seen(
     final_url: str,
     status: int,
     page_sha256: str,
+    content_type: str | None = None,
+    content_length: int | None = None,
+    truncated: bool | None = None,
 ) -> dict[str, Any]:
     state = load_json(state_path)
     state.update(
@@ -68,6 +71,9 @@ def mark_seen(
             "status": status,
             "last_seen_sha256": page_sha256,
             "last_seen_at": utc_now(),
+            "content_type": content_type,
+            "content_length": content_length,
+            "truncated": truncated,
         }
     )
     atomic_write_json(state_path, state)

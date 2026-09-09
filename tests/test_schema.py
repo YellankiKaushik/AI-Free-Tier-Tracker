@@ -6,7 +6,6 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 

@@ -59,7 +59,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.82
   sources:
   - url: https://github.com/features/spark
     type: official_docs

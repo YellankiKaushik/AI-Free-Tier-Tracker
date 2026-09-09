@@ -3,13 +3,16 @@ from __future__ import annotations
 import argparse
 import json
 import time
+from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
+import requests
 import yaml
 
 from . import ollama
 from .candidates import normalize_candidate, validate_candidate
-from .crawler import fetch
+from .crawler import FetchError, fetch
 from .prompts import SYSTEM, build_user
 from .state import (
     atomic_write_json,
@@ -33,22 +36,28 @@ def load_tools():
         yield path, yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
-def write_candidate(slug: str, candidate: dict) -> Path:
-    stamp = time.strftime("%Y%m%d-%H%M%S", time.gmtime())
-    dest = CAND / f"{slug}-{stamp}.json"
-    atomic_write_json(dest, candidate)
-    return dest
+def write_candidate(slug: str, candidate: dict[str, Any], *, source_url: str) -> Path:
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S-%f")
+    source_suffix = candidate.get("source", {}).get("page_sha256") or source_url
+    safe_suffix = str(source_suffix).replace("/", "-").replace(":", "-")[:16]
+    for counter in range(1000):
+        suffix = safe_suffix if counter == 0 else f"{safe_suffix}-{counter}"
+        dest = CAND / f"{slug}-{stamp}-{suffix}.json"
+        if not dest.exists():
+            atomic_write_json(dest, candidate)
+            return dest
+    raise RuntimeError(f"could not allocate candidate filename for {slug}")
 
 
-def process_source(path: Path, record: dict, source: dict, *, force: bool) -> dict:
+def process_source(path: Path, record: dict[str, Any], source: dict[str, Any], *, force: bool) -> dict[str, Any]:
     slug = record["slug"]
     url = source["url"]
-    summary = {"tool": slug, "url": url, "status": "skipped", "candidate": None, "error": None}
+    summary: dict[str, Any] = {"tool": slug, "url": url, "status": "skipped", "candidate": None, "error": None}
     print(f"[{slug}] fetching {url}")
     state_path = source_state_path(STATE, slug, url)
     try:
         page = fetch(url)
-    except Exception as exc:
+    except (FetchError, requests.RequestException) as exc:
         summary.update(status="fetch_failed", error=str(exc))
         mark_error(state_path, error=f"fetch_failed: {exc}")
         print("  fetch failed:", exc)
@@ -60,7 +69,11 @@ def process_source(path: Path, record: dict, source: dict, *, force: bool) -> di
         final_url=page.final_url,
         status=page.status,
         page_sha256=page.sha256,
+        content_type=page.content_type,
+        content_length=page.content_length,
+        truncated=page.truncated,
     )
+    summary.update(content_type=page.content_type, truncated=page.truncated)
     if not needs_processing(state, page.sha256, force=force):
         print("  already processed; skipping LLM")
         summary["status"] = "unchanged"
@@ -89,8 +102,8 @@ def process_source(path: Path, record: dict, source: dict, *, force: bool) -> di
         errors = validate_candidate(candidate)
         if errors:
             raise ValueError("; ".join(errors))
-        dest = write_candidate(slug, candidate)
-    except Exception as exc:
+        dest = write_candidate(slug, candidate, source_url=url)
+    except (ValueError, OSError, RuntimeError, ollama.OllamaError) as exc:
         summary.update(status="model_failed", error=str(exc))
         mark_error(state_path, error=f"model_failed: {exc}")
         print("  model failed:", exc)
@@ -105,7 +118,7 @@ def process_source(path: Path, record: dict, source: dict, *, force: bool) -> di
     return summary
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(
         description="Watch official sources and ask a local Ollama model to extract candidate quota changes."
     )

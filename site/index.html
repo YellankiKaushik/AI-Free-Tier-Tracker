@@ -8,21 +8,40 @@
 </head>
 <body>
   <header>
-    <h1>AI Free Tier Tracker</h1>
-    <p>Verified free tiers, trials, resets, and open-source/BYOK options for coding agents and app builders.</p>
+    <div class="header-inner">
+      <p class="eyebrow">Official-source-first quota data</p>
+      <h1>AI Free Tier Tracker</h1>
+      <p>Verified free tiers, trials, reset rules, and open-source/BYOK options for AI coding workflows.</p>
+    </div>
   </header>
   <main>
-    <section class="filters" aria-label="Filters">
-      <input id="search" type="search" placeholder="Search tools">
-      <select id="category"><option value="">All categories</option></select>
-      <select id="status"><option value="">All statuses</option><option>active</option><option>legacy</option><option>discontinued</option></select>
-      <select id="quota"><option value="">Exact or undisclosed</option><option value="exact">Exact quota</option><option value="undisclosed">Undisclosed quota</option></select>
-      <label><input id="nocard" type="checkbox"> No credit card</label>
-      <label><input id="byok" type="checkbox"> Open-source/BYOK</label>
-      <select id="reset"><option value="">Any reset</option></select>
+    <section class="filters" aria-labelledby="filters-heading">
+      <h2 id="filters-heading">Filters</h2>
+      <div class="field">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Search tools, vendors, categories">
+      </div>
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category"><option value="">All categories</option></select>
+      </div>
+      <div class="field">
+        <label for="status">Status</label>
+        <select id="status"><option value="">All statuses</option><option>active</option><option>legacy</option><option>discontinued</option></select>
+      </div>
+      <div class="field">
+        <label for="quota">Quota evidence</label>
+        <select id="quota"><option value="">Exact or undisclosed</option><option value="exact">Exact quota</option><option value="undisclosed">Undisclosed quota</option></select>
+      </div>
+      <div class="field">
+        <label for="reset">Reset</label>
+        <select id="reset"><option value="">Any reset</option></select>
+      </div>
+      <label class="check"><input id="nocard" type="checkbox"> No credit card</label>
+      <label class="check"><input id="byok" type="checkbox"> Open-source/BYOK</label>
     </section>
-    <section id="stats" class="stats"></section>
-    <section id="cards" class="grid"></section>
+    <section id="stats" class="stats" aria-label="Dataset summary"></section>
+    <section id="cards" class="grid" aria-live="polite"></section>
   </main>
   <script src="app.js"></script>
 </body>

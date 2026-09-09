@@ -58,7 +58,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.96
   sources:
   - url: https://kiro.dev/pricing/
     type: official_pricing

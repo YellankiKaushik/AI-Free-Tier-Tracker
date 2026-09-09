@@ -36,7 +36,8 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: Some models require paid billing method.
-  after_exhaustion: Further operations fail above free allocation unless on Workers Paid or prepaid AI Gateway credits.
+  after_exhaustion: Further operations fail above free allocation unless on Workers
+    Paid or prepaid AI Gateway credits.
   rollover: 'no'
 models:
   available: []
@@ -58,7 +59,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.98
   sources:
   - url: https://developers.cloudflare.com/workers-ai/platform/pricing/
     type: official_pricing

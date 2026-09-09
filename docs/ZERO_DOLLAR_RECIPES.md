@@ -46,14 +46,38 @@ This is the most predictable zero-dollar path when local hardware is available. 
 
 ## Free API plus open-source agent
 
-Use this only when the API provider publishes a legitimate free allocation:
+Use this only when the API provider publishes legitimate free access or a free allocation:
 
 ```text
 Open-source agent
   +
-Cloudflare Workers AI / Gemini API / Groq / OpenRouter / Hugging Face
+Cloudflare Workers AI / Gemini API / Groq / OpenRouter / Hugging Face / NVIDIA NIM
   +
 small scoped coding task
 ```
 
 Watch provider-specific rate limits and after-exhaustion behavior. Many API free tiers are dynamic or model-specific.
+
+### NVIDIA NIM developer API example
+
+NVIDIA NIM hosted API access is suitable for development/prototyping when the selected model page is marked `Free Endpoint`. Availability is model-specific and can change, so re-check build.nvidia.com before relying on a model ID.
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://integrate.api.nvidia.com/v1",
+    api_key=os.environ["NVIDIA_API_KEY"],
+)
+
+completion = client.chat.completions.create(
+    model="deepseek-ai/deepseek-v4-pro-0813",
+    messages=[{"role": "user", "content": "Draft a small test plan for this change."}],
+    max_tokens=1024,
+)
+
+print(completion.choices[0].message.content)
+```
+
+Keep NVIDIA Developer Program prototyping access separate from NVIDIA AI Enterprise production/evaluation licensing, and do not assume a universal free quota or reset window.

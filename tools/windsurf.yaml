@@ -58,7 +58,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.85
   sources:
   - url: https://windsurf.com/pricing
     type: official_pricing
