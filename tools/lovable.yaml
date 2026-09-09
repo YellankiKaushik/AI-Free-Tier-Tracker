@@ -85,7 +85,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.98
   sources:
   - url: https://lovable.dev/pricing
     type: official_pricing

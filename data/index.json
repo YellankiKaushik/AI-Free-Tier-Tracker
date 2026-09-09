@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "generated_from": "tools/*.yaml",
   "stats": {
     "total": 43,
@@ -34,6 +34,11 @@
       "plan_name": "Hobby",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -69,6 +74,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Agent requests: undisclosed requests/dynamic; Tab completions: undisclosed completions/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Wait for vendor-managed limits to refresh or upgrade.",
       "product_url": "https://cursor.com/",
       "pricing_url": "https://cursor.com/en-US/pricing",
@@ -84,10 +91,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://cursor.com/en-US/pricing",
@@ -101,7 +111,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "kiro",
@@ -120,6 +131,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -139,6 +155,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "50 credits/billing cycle",
+      "reset_summary": "billing cycle",
       "after_exhaustion": "Wait for billing-cycle reset or upgrade.",
       "product_url": "https://kiro.dev/",
       "pricing_url": "https://kiro.dev/pricing/",
@@ -154,10 +172,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.96,
       "sources": [
         {
           "url": "https://kiro.dev/pricing/",
@@ -170,7 +191,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "qoder",
@@ -191,6 +213,11 @@
       "plan_name": "Community Edition / Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -226,6 +253,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic",
+      "reset_summary": "daily, not applicable",
       "after_exhaustion": "When credits run out, Qoder switches to basic models with daily limits; wait or upgrade/top up.",
       "product_url": "https://qoder.com/",
       "pricing_url": "https://docs.qoder.com/account/pricing",
@@ -241,10 +270,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "mixed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://docs.qoder.com/account/pricing",
@@ -270,7 +302,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "trae",
@@ -288,6 +321,11 @@
       "plan_name": "Free/Basic usage",
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -307,6 +345,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed usage/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "When usage runs out, follow TRAE pricing FAQ/reset behavior.",
       "product_url": "https://www.trae.ai/",
       "pricing_url": "https://www.trae.ai/pricing",
@@ -322,10 +362,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.78,
       "sources": [
         {
           "url": "https://www.trae.ai/pricing",
@@ -340,7 +383,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "windsurf",
@@ -359,6 +403,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -378,6 +427,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed credits/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Use base/free capabilities or upgrade when premium usage is exhausted.",
       "product_url": "https://windsurf.com/",
       "pricing_url": "https://windsurf.com/pricing",
@@ -393,10 +444,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.85,
       "sources": [
         {
           "url": "https://windsurf.com/pricing",
@@ -409,7 +463,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "base44",
@@ -429,6 +484,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -464,6 +524,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Message credits: 25 credits/month (cap 5/day); Integration credits: 100 credits/month",
+      "reset_summary": "daily, monthly",
       "after_exhaustion": "Wait for daily/monthly limits to refresh or upgrade.",
       "product_url": "https://base44.com/",
       "pricing_url": "https://base44.com/pricing",
@@ -479,10 +541,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.97,
       "sources": [
         {
           "url": "https://base44.com/pricing",
@@ -497,7 +562,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "bolt",
@@ -517,6 +583,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -552,6 +623,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Daily tokens: 300000 tokens/day; Monthly tokens: 1000000 tokens/month",
+      "reset_summary": "daily, monthly",
       "after_exhaustion": "Wait for token limits to refresh or upgrade.",
       "product_url": "https://bolt.new/",
       "pricing_url": "https://bolt.new/pricing",
@@ -567,10 +640,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.97,
       "sources": [
         {
           "url": "https://bolt.new/pricing",
@@ -584,7 +660,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "create-xyz",
@@ -603,6 +680,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -622,6 +704,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed credits/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Wait for vendor-managed free usage to refresh or upgrade.",
       "product_url": "https://www.create.xyz/",
       "pricing_url": "https://www.create.xyz/pricing",
@@ -637,10 +721,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.78,
       "sources": [
         {
           "url": "https://www.create.xyz/pricing",
@@ -653,7 +740,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "dyad",
@@ -672,8 +760,15 @@
       "plan_name": "Open-source local app builder",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost depends on configured provider/local model.",
       "product_url": "https://www.dyad.sh/",
       "pricing_url": "https://github.com/dyad-sh/dyad",
@@ -692,10 +787,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://github.com/dyad-sh/dyad",
@@ -708,7 +806,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "emergent",
@@ -727,6 +826,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -746,6 +850,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "10 credits/month",
+      "reset_summary": "monthly",
       "after_exhaustion": "Wait for monthly reset or upgrade.",
       "product_url": "https://emergent.sh/",
       "pricing_url": "https://emergent.sh/pricing",
@@ -761,10 +867,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.95,
       "sources": [
         {
           "url": "https://emergent.sh/pricing",
@@ -777,7 +886,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "github-spark",
@@ -797,6 +907,11 @@
       "plan_name": "GitHub account access",
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -816,6 +931,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed dynamic/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Usage and plan access follow GitHub product terms.",
       "product_url": "https://github.com/features/spark",
       "pricing_url": "https://github.com/features/spark",
@@ -831,10 +948,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.82,
       "sources": [
         {
           "url": "https://github.com/features/spark",
@@ -847,7 +967,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "lovable",
@@ -867,6 +988,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -918,6 +1044,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month",
+      "reset_summary": "daily, monthly",
       "after_exhaustion": "Wait for the daily/monthly grant to refresh or upgrade.",
       "product_url": "https://lovable.dev/",
       "pricing_url": "https://lovable.dev/pricing",
@@ -933,10 +1061,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.98,
       "sources": [
         {
           "url": "https://lovable.dev/pricing",
@@ -962,7 +1093,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "v0",
@@ -982,6 +1114,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1017,6 +1154,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Included credits: 5 USD credits/month; Messages: 7 messages/day",
+      "reset_summary": "daily, monthly",
       "after_exhaustion": "Wait for daily/monthly refresh or upgrade.",
       "product_url": "https://v0.dev/",
       "pricing_url": "https://api2.v0.dev/pricing",
@@ -1032,10 +1171,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.97,
       "sources": [
         {
           "url": "https://api2.v0.dev/pricing",
@@ -1049,7 +1191,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "claude-code",
@@ -1065,8 +1208,15 @@
       "plan_name": null,
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Free access available; exact allowance undisclosed",
+      "reset_summary": "undisclosed",
       "after_exhaustion": "Metering depends on Enterprise seat or API key billing; no standalone recurring free quota recorded.",
       "product_url": "https://www.anthropic.com/claude-code",
       "pricing_url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
@@ -1082,10 +1232,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
@@ -1099,7 +1252,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "replit",
@@ -1119,6 +1273,11 @@
       "plan_name": "Starter",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -1154,6 +1313,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Agent credits: undisclosed credits/day; Published live project: 1 project/provider specific",
+      "reset_summary": "daily, provider specific",
       "after_exhaustion": "Wait for daily Agent credits to refresh or upgrade.",
       "product_url": "https://replit.com/",
       "pricing_url": "https://ld.replit.com/pricing",
@@ -1169,10 +1330,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "mixed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://ld.replit.com/pricing",
@@ -1186,7 +1350,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "atlassian-rovo-dev",
@@ -1205,6 +1370,11 @@
       "plan_name": "Rovo Dev Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1224,6 +1394,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "350 credits/month",
+      "reset_summary": "billing cycle",
       "after_exhaustion": "Rovo Dev stops working until usage resets in the next billing cycle or the user upgrades.",
       "product_url": "https://www.atlassian.com/software/rovo/dev",
       "pricing_url": "https://www.atlassian.com/software/rovo-dev/pricing",
@@ -1239,10 +1411,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.97,
       "sources": [
         {
           "url": "https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/",
@@ -1267,7 +1442,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "openai-codex",
@@ -1287,6 +1463,11 @@
       "plan_name": "Included with eligible ChatGPT plans",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -1306,6 +1487,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed requests/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Usage is governed by ChatGPT plan limits.",
       "product_url": "https://openai.com/codex/",
       "pricing_url": "https://help.openai.com/en/articles/11369540",
@@ -1321,10 +1504,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://help.openai.com/en/articles/11369540",
@@ -1337,7 +1523,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "augment-code",
@@ -1358,6 +1545,11 @@
       "plan_name": "Trial",
       "account_required": "yes",
       "credit_card_required": "yes",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "yes",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1377,6 +1569,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "30000 credits/one time",
+      "reset_summary": "not applicable",
       "after_exhaustion": "Upgrade, top up credits, or move to free plan depending on current terms.",
       "product_url": "https://www.augmentcode.com/",
       "pricing_url": "https://www.augmentcode.com/blog/augment-codes-pricing-is-changing",
@@ -1392,10 +1586,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://www.augmentcode.com/blog/augment-codes-pricing-is-changing",
@@ -1409,7 +1606,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "coderabbit",
@@ -1430,6 +1628,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1497,6 +1700,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "PR reviews: 3 reviews/day; IDE reviews: 1 review/day; CLI reviews: 3 reviews/day; Files per review: 150 files/provider specific",
+      "reset_summary": "daily, provider specific",
       "after_exhaustion": "Use lower Free limits, open-source plan where eligible, or upgrade.",
       "product_url": "https://www.coderabbit.ai/",
       "pricing_url": "https://docs.coderabbit.ai/management/plans",
@@ -1512,10 +1717,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.95,
       "sources": [
         {
           "url": "https://docs.coderabbit.ai/management/plans",
@@ -1544,7 +1752,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "github-copilot",
@@ -1567,6 +1776,11 @@
       "plan_name": "Copilot Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1602,6 +1816,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "Completions: 2000 completions/month; Premium requests: undisclosed requests/month",
+      "reset_summary": "monthly",
       "after_exhaustion": "Wait for monthly refresh or upgrade.",
       "product_url": "https://github.com/features/copilot",
       "pricing_url": "https://docs.github.com/en/copilot/get-started/plans",
@@ -1617,10 +1833,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "mixed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://docs.github.com/en/copilot/get-started/plans",
@@ -1634,7 +1853,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "jetbrains-ai-assistant",
@@ -1654,6 +1874,11 @@
       "plan_name": "AI FREE",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -1673,6 +1898,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed quota/one time",
+      "reset_summary": "not applicable",
       "after_exhaustion": "After trial/free quota, continue with AI FREE limitations or upgrade.",
       "product_url": "https://www.jetbrains.com/ai/",
       "pricing_url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
@@ -1688,10 +1915,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
@@ -1705,7 +1935,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "sourcegraph-cody",
@@ -1726,6 +1957,11 @@
       "plan_name": "Cody Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1745,6 +1981,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "200 messages/month",
+      "reset_summary": "monthly",
       "after_exhaustion": "Free and Pro plans were discontinued; Sourcegraph points users to Amp or Enterprise offerings.",
       "product_url": "https://sourcegraph.com/cody",
       "pricing_url": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
@@ -1760,10 +1998,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.94,
       "sources": [
         {
           "url": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
@@ -1787,7 +2028,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "warp",
@@ -1806,6 +2048,11 @@
       "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -1825,6 +2072,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed requests/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Wait for vendor-managed limits or upgrade.",
       "product_url": "https://www.warp.dev/",
       "pricing_url": "https://www.warp.dev/pricing",
@@ -1840,10 +2089,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.78,
       "sources": [
         {
           "url": "https://www.warp.dev/pricing",
@@ -1856,7 +2108,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "zed-ai",
@@ -1875,6 +2128,11 @@
       "plan_name": "Free/BYOK",
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -1894,6 +2152,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "undisclosed requests/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "Use BYOK/local provider or follow Zed plan limits.",
       "product_url": "https://zed.dev/ai",
       "pricing_url": "https://zed.dev/pricing",
@@ -1909,10 +2169,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.78,
       "sources": [
         {
           "url": "https://zed.dev/pricing",
@@ -1925,7 +2188,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "cerebras-inference",
@@ -1945,6 +2209,11 @@
       "plan_name": "Free Trial",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -1964,6 +2233,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "5 USD credits/one time",
+      "reset_summary": "not applicable",
       "after_exhaustion": "Create a developer account or upgrade to Developer tier when trial credits are exhausted.",
       "product_url": "https://www.cerebras.ai/inference",
       "pricing_url": "https://www.cerebras.ai/pricing",
@@ -1979,10 +2250,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.95,
       "sources": [
         {
           "url": "https://www.cerebras.ai/pricing",
@@ -2006,7 +2280,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "cloudflare-workers-ai",
@@ -2025,6 +2300,11 @@
       "plan_name": "Workers Free",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -2044,6 +2324,8 @@
           "notes": "Some models require paid billing method."
         }
       ],
+      "quota_summary": "10000 neurons/day",
+      "reset_summary": "daily",
       "after_exhaustion": "Further operations fail above free allocation unless on Workers Paid or prepaid AI Gateway credits.",
       "product_url": "https://developers.cloudflare.com/workers-ai/",
       "pricing_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
@@ -2059,10 +2341,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.98,
       "sources": [
         {
           "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
@@ -2086,7 +2371,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "gemini-api",
@@ -2105,6 +2391,11 @@
       "plan_name": "Free usage tier",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -2124,6 +2415,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "published per model requests/tokens/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "429 RESOURCE_EXHAUSTED; wait and retry or upgrade/link billing.",
       "product_url": "https://ai.google.dev/gemini-api",
       "pricing_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
@@ -2139,10 +2432,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
@@ -2156,7 +2452,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "github-models",
@@ -2177,8 +2474,15 @@
       "plan_name": "Retired service",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Legacy/discontinued entry; no current hosted quota",
+      "reset_summary": "undisclosed",
       "after_exhaustion": "Service retired; use Azure AI Foundry or GitHub Copilot where appropriate.",
       "product_url": "https://docs.github.com/en/github-models",
       "pricing_url": "https://docs.github.com/en/github-models",
@@ -2194,10 +2498,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.98,
       "sources": [
         {
           "url": "https://docs.github.com/en/github-models",
@@ -2211,7 +2518,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "groq",
@@ -2230,6 +2538,11 @@
       "plan_name": "Free Plan",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [
         {
@@ -2249,6 +2562,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "published per model requests/tokens/dynamic",
+      "reset_summary": "dynamic",
       "after_exhaustion": "429 Too Many Requests; wait for request/token reset or upgrade.",
       "product_url": "https://groq.com/",
       "pricing_url": "https://console.groq.com/docs/rate-limits",
@@ -2264,10 +2579,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://console.groq.com/docs/rate-limits",
@@ -2281,7 +2599,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "hugging-face-inference",
@@ -2300,6 +2619,11 @@
       "plan_name": "Free user monthly credits",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -2319,6 +2643,8 @@
           "notes": null
         }
       ],
+      "quota_summary": "0.1 USD credits/month",
+      "reset_summary": "monthly",
       "after_exhaustion": "After monthly credits, purchase credits/pay-as-you-go or use custom provider keys billed elsewhere.",
       "product_url": "https://huggingface.co/inference-providers",
       "pricing_url": "https://huggingface.co/docs/inference-providers/en/pricing",
@@ -2334,10 +2660,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.95,
       "sources": [
         {
           "url": "https://huggingface.co/docs/inference-providers/en/pricing",
@@ -2351,7 +2680,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "nvidia-nim",
@@ -2372,9 +2702,16 @@
       "plan_name": "NVIDIA Developer Program NIM access",
       "account_required": "yes",
       "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": "NVIDIA API key creation signs the user into or enrolls the user in the NVIDIA Developer Program; no reviewed official source stated a universal credit-card requirement."
+      },
       "quantity_published": false,
       "quota_pools": [],
-      "after_exhaustion": "NVIDIA does not publish a universal hosted free quota or reset; free hosted API access is for prototyping and model availability is catalog-specific. Production/commercial deployment requires NVIDIA AI Enterprise or another eligible paid deployment path.",
+      "quota_summary": "Free developer/prototyping access; universal quota undisclosed",
+      "reset_summary": "dynamic/undisclosed",
+      "after_exhaustion": "NVIDIA does not publish a universal hosted free quota or reset; free hosted API access is for prototyping and model availability is catalog-specific. Production use requires an NVIDIA AI Enterprise license.",
       "product_url": "https://build.nvidia.com/",
       "pricing_url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
       "repo_url": null,
@@ -2386,24 +2723,36 @@
         "notes": "NVIDIA AI Enterprise has a separate 90-day evaluation path; this record tracks the normal Developer Program hosted API/self-hosted development access, not that trial."
       },
       "models": {
-        "available": [
-          "deepseek-ai/deepseek-v4-pro-0813",
-          "poolside/laguna-xs-2.1",
-          "nvidia/nemotron-3.5-lightning-30b-a3b"
-        ],
+        "available": [],
         "restrictions": [
-          "The build.nvidia.com catalog labels Free Endpoint availability per model; the catalog is dynamic, so these are current verified examples rather than a complete model list."
+          "The build.nvidia.com catalog labels Free Endpoint availability per model and changes over time; do not treat examples or catalog counts as a complete model list or quota."
         ]
       },
-      "last_verified": "2026-09-08",
+      "deployment": [
+        "Hosted NIM API endpoints are available through build.nvidia.com for prototyping and are hosted by NVIDIA on DGX Cloud.",
+        "The main LLM API endpoint is https://integrate.api.nvidia.com with POST /v1/chat/completions; build.nvidia.com examples use https://integrate.api.nvidia.com/v1 as the OpenAI client base URL.",
+        "Eligible NIM microservices can be downloaded and self-hosted on the user's own infrastructure under NVIDIA Developer Program terms."
+      ],
+      "runtime_limits": [
+        "Self-hosted Developer Program NIM use is licensed for research, application development, and experimentation on up to 16 GPUs."
+      ],
+      "eligibility": [
+        "NVIDIA Developer Program membership is required for free hosted endpoint prototyping and Developer Program NIM access.",
+        "NVIDIA AI Enterprise is separate from Developer Program access and is required for production use according to NVIDIA current docs."
+      ],
+      "notes": [
+        "build.nvidia.com describes NIM as free serverless APIs for development and provides per-model Generate API Key/code snippets.",
+        "Do not treat API calls in the last 30 days or catalog model counts as a user quota.",
+        "Current Free Endpoint examples verified on 2026-09-09 include deepseek-ai/deepseek-v4-pro-0813, poolside/laguna-xs-2.1, and nvidia/nemotron-3.5-lightning-30b-a3b; availability is dynamic."
+      ],
+      "last_verified": "2026-09-09",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.94,
       "sources": [
         {
           "url": "https://build.nvidia.com/explore",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "product_url",
             "free_tier.available",
@@ -2421,7 +2770,7 @@
         {
           "url": "https://build.nvidia.com/models",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "models.restrictions"
           ],
@@ -2435,7 +2784,7 @@
         {
           "url": "https://docs.api.nvidia.com/nim/docs/product",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "authentication.account_required",
             "eligibility",
@@ -2454,7 +2803,7 @@
         {
           "url": "https://docs.api.nvidia.com/nim/docs/api-quickstart",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "authentication.account_required",
             "deployment"
@@ -2470,7 +2819,7 @@
         {
           "url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "pricing_url",
             "free_tier.available",
@@ -2491,7 +2840,7 @@
         {
           "url": "https://docs.api.nvidia.com/nim/reference/llm-apis",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
             "deployment"
           ],
@@ -2505,9 +2854,10 @@
         {
           "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4-pro-0813",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
-            "models.available",
+            "models.restrictions",
+            "notes",
             "deployment"
           ],
           "supports": [
@@ -2520,9 +2870,10 @@
         {
           "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
-            "models.available",
+            "models.restrictions",
+            "notes",
             "deployment"
           ],
           "supports": [
@@ -2535,9 +2886,10 @@
         {
           "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
           "type": "official_docs",
-          "retrieved_at": "2026-09-08",
+          "retrieved_at": "2026-09-09",
           "supports_fields": [
-            "models.available",
+            "models.restrictions",
+            "notes",
             "deployment"
           ],
           "supports": [
@@ -2547,7 +2899,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 9
     },
     {
       "slug": "openrouter",
@@ -2567,6 +2920,11 @@
       "plan_name": "Free models",
       "account_required": "yes",
       "credit_card_required": "no",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "no",
+        "notes": null
+      },
       "quantity_published": true,
       "quota_pools": [
         {
@@ -2586,6 +2944,8 @@
           "notes": "If at least 10 credits are purchased, free model limit can be 1000 requests/day."
         }
       ],
+      "quota_summary": "50 requests/day",
+      "reset_summary": "daily",
       "after_exhaustion": "Free models are low-rate-limit; buy credits or use paid models for more capacity.",
       "product_url": "https://openrouter.ai/",
       "pricing_url": "https://openrouter.ai/docs/faq",
@@ -2601,10 +2961,13 @@
         "available": [],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_exact",
-      "confidence_score": 0.95,
       "sources": [
         {
           "url": "https://openrouter.ai/docs/faq",
@@ -2628,7 +2991,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "aider",
@@ -2647,8 +3011,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and rate limits depend on BYOK or local model provider.",
       "product_url": "https://aider.chat/",
       "pricing_url": "https://aider.chat/docs/",
@@ -2667,10 +3038,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://aider.chat/docs/",
@@ -2693,7 +3067,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "cline",
@@ -2712,8 +3087,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on the selected model provider or local model.",
       "product_url": "https://cline.bot/",
       "pricing_url": "https://cline.bot/pricing",
@@ -2732,10 +3114,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.92,
       "sources": [
         {
           "url": "https://cline.bot/pricing",
@@ -2758,7 +3143,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 2
     },
     {
       "slug": "continue",
@@ -2778,8 +3164,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on connected model provider or local model.",
       "product_url": "https://www.continue.dev/",
       "pricing_url": "https://github.com/continuedev/continue",
@@ -2798,10 +3191,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://github.com/continuedev/continue",
@@ -2814,7 +3210,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "goose",
@@ -2834,8 +3231,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on chosen extension/model provider.",
       "product_url": "https://block.github.io/goose/",
       "pricing_url": "https://github.com/block/goose",
@@ -2854,10 +3258,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://github.com/block/goose",
@@ -2870,7 +3277,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "kilo-code",
@@ -2889,8 +3297,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on configured provider.",
       "product_url": "https://kilocode.ai/",
       "pricing_url": "https://github.com/Kilo-Org/kilocode",
@@ -2909,10 +3324,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://github.com/Kilo-Org/kilocode",
@@ -2925,7 +3343,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "opencode",
@@ -2944,8 +3363,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on configured provider.",
       "product_url": "https://opencode.ai/",
       "pricing_url": "https://github.com/sst/opencode",
@@ -2964,10 +3390,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://github.com/sst/opencode",
@@ -2980,7 +3409,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "openhands",
@@ -3000,8 +3430,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on configured LLM provider.",
       "product_url": "https://www.all-hands.dev/",
       "pricing_url": "https://github.com/All-Hands-AI/OpenHands",
@@ -3020,10 +3457,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://github.com/All-Hands-AI/OpenHands",
@@ -3036,7 +3476,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "qwen-code",
@@ -3055,8 +3496,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference/API usage depends on configured provider or local model.",
       "product_url": "https://github.com/QwenLM/qwen-code",
       "pricing_url": "https://github.com/QwenLM/qwen-code",
@@ -3076,10 +3524,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://github.com/QwenLM/qwen-code",
@@ -3092,7 +3543,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "roo-code",
@@ -3111,8 +3563,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and rate limits depend on connected model provider.",
       "product_url": "https://roocode.com/",
       "pricing_url": "https://github.com/RooCodeInc/Roo-Code",
@@ -3131,10 +3590,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://github.com/RooCodeInc/Roo-Code",
@@ -3147,7 +3609,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "swe-agent",
@@ -3166,8 +3629,15 @@
       "plan_name": "Open-source client",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference/API usage depends on configured model provider.",
       "product_url": "https://swe-agent.com/",
       "pricing_url": "https://github.com/SWE-agent/SWE-agent",
@@ -3186,10 +3656,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.88,
       "sources": [
         {
           "url": "https://github.com/SWE-agent/SWE-agent",
@@ -3202,7 +3675,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     },
     {
       "slug": "tabby",
@@ -3223,8 +3697,15 @@
       "plan_name": "Self-hosted open-source server",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
+      "authentication": {
+        "account_required": "not_applicable",
+        "credit_card_required": "not_applicable",
+        "notes": null
+      },
       "quantity_published": false,
       "quota_pools": [],
+      "quota_summary": "Open-source client; inference/provider limits apply",
+      "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Compute and model costs are user-provided for self-hosting.",
       "product_url": "https://tabby.tabbyml.com/",
       "pricing_url": "https://github.com/TabbyML/tabby",
@@ -3242,10 +3723,13 @@
         ],
         "restrictions": []
       },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
       "last_verified": "2026-08-27",
       "freshness": "current",
       "confidence": "official_undisclosed",
-      "confidence_score": 0.9,
       "sources": [
         {
           "url": "https://github.com/TabbyML/tabby",
@@ -3258,7 +3742,8 @@
           ],
           "page_sha256": null
         }
-      ]
+      ],
+      "source_count": 1
     }
   ]
 }

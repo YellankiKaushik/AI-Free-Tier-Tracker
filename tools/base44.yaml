@@ -72,7 +72,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.97
   sources:
   - url: https://base44.com/pricing
     type: official_pricing

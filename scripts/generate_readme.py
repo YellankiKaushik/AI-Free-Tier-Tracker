@@ -1,63 +1,58 @@
 from __future__ import annotations
 
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
+from typing import Any
 
 try:
-    from build_index import load_records, freshness
+    from build_index import freshness, load_records
+    from record_utils import (
+        category_records,
+        has_recurring_or_dynamic_hosted_access,
+        has_trial_or_signup_grant,
+        is_open_source_byok,
+        quota_summary,
+        reset_summary,
+    )
 except ModuleNotFoundError:
-    from scripts.build_index import load_records, freshness
+    from scripts.build_index import freshness, load_records
+    from scripts.record_utils import (
+        category_records,
+        has_recurring_or_dynamic_hosted_access,
+        has_trial_or_signup_grant,
+        is_open_source_byok,
+        quota_summary,
+        reset_summary,
+    )
 
 ROOT = Path(__file__).resolve().parents[1]
 START = "<!-- GENERATED:TOOLS:START -->"
 END = "<!-- GENERATED:TOOLS:END -->"
 
 
-def quota_summary(record: dict) -> str:
-    pools = record["free_tier"]["quota_pools"]
-    if not pools:
-        return "No recurring published quota"
-    parts = []
-    for pool in pools:
-        amount = pool["amount"] if pool["amount"] is not None else "undisclosed"
-        period = pool["period"].replace("_", " ")
-        cap = f", cap {pool['cap']}" if pool.get("cap") else ""
-        parts.append(f"{amount} {pool['unit']} / {period}{cap}")
-    return "; ".join(parts)
-
-
-def yes(value: bool) -> str:
-    return "Yes" if value else "No"
-
-
-def table(records: list[dict]) -> str:
+def table(records: list[dict[str, Any]]) -> str:
     lines = [
         "| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |",
         "|---|---|---|---|---|---|---|",
     ]
     for record in records:
-        resets = sorted({pool["reset"]["period"].replace("_", " ") for pool in record["free_tier"]["quota_pools"]}) or ["not applicable"]
         card = record["authentication"]["credit_card_required"].replace("_", " ")
         evidence = record["verification"]["confidence"].replace("_", " ")
         lines.append(
             f"| [{record['name']}]({record.get('pricing_url') or record['product_url']}) "
-            f"| {record['category']} | {quota_summary(record)} | {', '.join(resets)} "
+            f"| {record['category']} | {quota_summary(record)} | {reset_summary(record)} "
             f"| {card} | {evidence} | {freshness(record['verification']['last_verified'])} |"
         )
     return "\n".join(lines)
 
 
-def stats(records: list[dict]) -> str:
+def stats(records: list[dict[str, Any]]) -> str:
     active = sum(1 for r in records if r["status"]["availability"] == "active")
-    recurring = sum(
-        1
-        for r in records
-        if any(kind.startswith("recurring_") or kind == "dynamic_rate_limit" for kind in r["free_tier"]["types"])
-    )
+    recurring = sum(1 for r in records if has_recurring_or_dynamic_hosted_access(r))
     exact = sum(1 for r in records if r["verification"]["confidence"] == "official_exact")
     undisclosed = sum(1 for r in records if r["verification"]["confidence"] == "official_undisclosed")
-    byok = sum(1 for r in records if "open_source_byok" in r["free_tier"]["types"])
+    byok = sum(1 for r in records if is_open_source_byok(r))
     return (
         f"- Total tracked tools: **{len(records)}**\n"
         f"- Active tools: **{active}**\n"
@@ -68,22 +63,23 @@ def stats(records: list[dict]) -> str:
     )
 
 
-def generated_block(records: list[dict]) -> str:
+def generated_block(records: list[dict[str, Any]]) -> str:
     active = [r for r in records if r["status"]["availability"] == "active"]
-    trials = [r for r in records if r["trial"]["available"] or "time_limited_trial" in r["free_tier"]["types"]]
-    byok = [r for r in records if "open_source_byok" in r["free_tier"]["types"]]
+    recurring = [r for r in active if has_recurring_or_dynamic_hosted_access(r)]
+    trials = [r for r in active if has_trial_or_signup_grant(r)]
+    byok = [r for r in active if is_open_source_byok(r)]
     legacy = [r for r in records if r["status"]["availability"] in {"legacy", "discontinued"}]
-    app_builders = [r for r in active if r["category"] == "app-builder"]
-    assistants = [r for r in active if r["category"] in {"coding-assistant", "agentic-ide", "coding-agent", "cli-agent"}]
-    apis = [r for r in active if r["category"] == "model-api"]
+    app_builders = category_records(active, "app-builder")
+    assistants = category_records(active, "coding-assistant", "agentic-ide", "coding-agent", "cli-agent")
+    apis = category_records(active, "model-api")
     return "\n\n".join(
         [
             "## Dataset Statistics\n\n" + stats(records),
-            "## Active Recurring And Dynamic Free Tiers\n\n" + table(active),
+            "## Active Recurring And Dynamic Hosted Access\n\n" + table(recurring),
             "## App Builders\n\n" + table(app_builders),
             "## Coding Assistants And Agents\n\n" + table(assistants),
             "## Model/API Free Tiers Useful To Agents\n\n" + table(apis),
-            "## Trials And Signup Grants\n\n" + table(trials),
+            "## Trials, Signup Grants, And Promotions\n\n" + table(trials),
             "## Open-Source/BYOK Agents\n\n" + table(byok),
             "## Legacy And Discontinued Entries\n\n" + table(legacy),
         ]

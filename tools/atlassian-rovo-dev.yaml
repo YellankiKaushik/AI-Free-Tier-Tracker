@@ -36,7 +36,8 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: null
-  after_exhaustion: Rovo Dev stops working until usage resets in the next billing cycle or the user upgrades.
+  after_exhaustion: Rovo Dev stops working until usage resets in the next billing
+    cycle or the user upgrades.
   rollover: 'no'
 models:
   available: []
@@ -58,7 +59,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.97
   sources:
   - url: https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/
     type: official_docs

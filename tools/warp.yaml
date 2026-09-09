@@ -58,7 +58,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.78
   sources:
   - url: https://www.warp.dev/pricing
     type: official_pricing

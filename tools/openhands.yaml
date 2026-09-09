@@ -48,7 +48,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.9
   sources:
   - url: https://github.com/All-Hands-AI/OpenHands
     type: official_repo

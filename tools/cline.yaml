@@ -23,7 +23,8 @@ free_tier:
   plan_name: Open-source client
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Inference cost and limits depend on the selected model provider or local model.
+  after_exhaustion: Inference cost and limits depend on the selected model provider
+    or local model.
   rollover: not_applicable
 models:
   available:
@@ -47,7 +48,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.92
   sources:
   - url: https://cline.bot/pricing
     type: official_pricing

@@ -25,7 +25,8 @@ free_tier:
   plan_name: Retired service
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Service retired; use Azure AI Foundry or GitHub Copilot where appropriate.
+  after_exhaustion: Service retired; use Azure AI Foundry or GitHub Copilot where
+    appropriate.
   rollover: not_applicable
 models:
   available: []
@@ -47,7 +48,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.98
   sources:
   - url: https://docs.github.com/en/github-models
     type: official_docs

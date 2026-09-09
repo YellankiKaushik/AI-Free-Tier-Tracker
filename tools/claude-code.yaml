@@ -21,7 +21,8 @@ free_tier:
   plan_name: null
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Metering depends on Enterprise seat or API key billing; no standalone recurring free quota recorded.
+  after_exhaustion: Metering depends on Enterprise seat or API key billing; no standalone
+    recurring free quota recorded.
   rollover: unknown
 models:
   available: []
@@ -43,7 +44,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.9
   sources:
   - url: https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code
     type: official_help

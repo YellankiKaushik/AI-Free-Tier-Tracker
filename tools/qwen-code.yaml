@@ -48,7 +48,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_undisclosed
-  confidence_score: 0.88
   sources:
   - url: https://github.com/QwenLM/qwen-code
     type: official_repo

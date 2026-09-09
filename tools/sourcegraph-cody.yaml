@@ -38,7 +38,8 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: null
-  after_exhaustion: Free and Pro plans were discontinued; Sourcegraph points users to Amp or Enterprise offerings.
+  after_exhaustion: Free and Pro plans were discontinued; Sourcegraph points users
+    to Amp or Enterprise offerings.
   rollover: unknown
 models:
   available: []
@@ -60,7 +61,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.94
   sources:
   - url: https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans
     type: official_blog

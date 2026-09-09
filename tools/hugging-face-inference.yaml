@@ -36,7 +36,8 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: null
-  after_exhaustion: After monthly credits, purchase credits/pay-as-you-go or use custom provider keys billed elsewhere.
+  after_exhaustion: After monthly credits, purchase credits/pay-as-you-go or use custom
+    provider keys billed elsewhere.
   rollover: 'no'
 models:
   available: []
@@ -58,7 +59,6 @@ notes: []
 verification:
   last_verified: '2026-08-27'
   confidence: official_exact
-  confidence_score: 0.95
   sources:
   - url: https://huggingface.co/docs/inference-providers/en/pricing
     type: official_docs

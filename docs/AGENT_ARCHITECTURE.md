@@ -43,13 +43,13 @@ Do not scrape Google/Bing HTML directly. If you want broad web discovery without
 ## Safety controls
 
 - Source URL allowlist comes from canonical YAML.
-- Maximum response size and request timeout.
+- Streaming maximum response size, truncation metadata, textual content-type filtering, conservative retries, and request timeout.
 - HTML scripts/styles removed before LLM ingestion.
 - Changed or unprocessed page hash required before an LLM call, reducing GPU work.
 - State files use deterministic `sha256(url)[:16]` identifiers.
 - `last_seen_sha256` is updated after fetch; `last_processed_sha256` is updated only after successful extraction, candidate validation, and candidate write.
 - Failed fetches, Ollama outages, malformed JSON, and failed candidate validation leave the page retryable.
-- Prior processed text is used to produce a diff-first prompt instead of blindly sending full pages whenever possible.
+- Prior processed text is used to produce a focused diff and bounded prompt instead of sending full pages. `OLLAMA_MAX_PROMPT_CHARS` controls the final prompt budget.
 - Model output must be JSON.
 - Model output must validate against `schema/candidate.schema.json`.
 - Model output must keep `_meta.verified` as `false`.
