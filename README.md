@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/workflows/validate.yml/badge.svg)](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/workflows/validate.yml)
 [![Data](https://img.shields.io/badge/data-official--source%20first-brightgreen)](#verification-methodology)
-[![Python](https://img.shields.io/badge/python-3.12-blue)](pyproject.toml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
 [![Code License](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data License](https://img.shields.io/badge/data-CC0-lightgrey.svg)](DATA_LICENSE)
 
@@ -20,6 +20,8 @@ This project answers practical developer questions:
 - Which claims are exact, and which are officially undisclosed?
 
 It is not an "awesome tools" list. Credits are not summed across vendors because a Lovable build credit, a Kiro credit, a Bolt token, a v0 dollar credit, and a Replit Agent credit are different units.
+
+Supported Python: **3.10+**. CI currently validates on Python **3.12**.
 
 ## Source Of Truth
 
