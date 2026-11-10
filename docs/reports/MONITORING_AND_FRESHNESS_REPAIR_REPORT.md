@@ -30,9 +30,10 @@ Repair branch: `codex/monitoring-data-repair`
 - `python -m compileall -q agent scripts tests`: passed.
 - All generators ran twice. The README, index, reset calendar, and four dashboard files produced the same hashes on both passes.
 - `python scripts/check_stale_entries.py --warn-after 30 --fail-after 60`: still reports all 43 records stale. This is expected until each record is actually reverified; the dates were not changed to make the check pass.
+- GitHub Actions `validate` run [42803186236](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/actions/runs/42803186236) passed on repair commit `c4ad7fe71f474bb609857f2164783dd2a5e1ac53`, including Ruff, schema validation, all 53 tests, all generators, and generated-artifact consistency.
 
 ## Remaining Work
 
-The dataset still needs a genuine source review for all 43 records. The full 60-URL source-health sweep was not run during this repair; the reported NVIDIA URL failure was verified directly and its replacement official page was checked. The repair PR is [#2](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/pull/2); its final GitHub Actions result will be recorded after the follow-up review fixes complete.
+The dataset still needs a genuine source review for all 43 records. The full 60-URL source-health sweep was not run during this repair; the reported NVIDIA URL failure was verified directly and its replacement official page was checked. The repair PR is [#2](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/pull/2). The latest reviewed commit has a passing required `validate` check; the report-only update will trigger the same required check on the final PR head.
 
 No repository setting change is currently indicated: the `Protect main` ruleset is active and the latest inspected Pages manual deployment succeeded. If Pages configuration fails in a future run, confirm **Settings → Pages → Build and deployment → Source** remains **GitHub Actions**.
