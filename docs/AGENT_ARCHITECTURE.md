@@ -56,10 +56,8 @@ Do not scrape Google/Bing HTML directly. If you want broad web discovery without
 - Model output is written to `candidates/`, never directly to `tools/`.
 - `verification.last_verified` can only be updated by a human-approved change.
 
-## Suggested schedule
+## Optional local checks
 
-- Daily: high-volatility pricing URLs.
-- Weekly: full official-source sweep.
-- Monthly: manual deep verification of every active tool.
+GitHub does not schedule the staleness or source-health workflows. Run them manually from the repository Actions tab when you want a current check. Local checks can be run at a cadence you choose; only a human review can update trusted records.
 
-On a laptop, use Task Scheduler/systemd/cron to run `python -m agent.run --all` when the machine is on. A hosted GitHub runner cannot access your local GPU, so the repository CI only validates data; it does not run the local LLM.
+On a laptop, you may use Task Scheduler/systemd/cron to run `python -m agent.run --all` when the machine is on. A hosted GitHub runner cannot access your local GPU, so repository CI validates data but does not run the local LLM.

@@ -36,7 +36,7 @@ Credits, requests, tokens, messages, completions, dollar-denominated credits, an
 - 31-60 days: needs recheck
 - >60 days: stale
 
-The agent may prioritize high-volatility vendors for more frequent checks, but freshness is a verification timestamp, not an LLM confidence score.
+Freshness is calculated from `verification.last_verified` when displayed or when a stale check runs. Generated JSON and README tables keep the date itself instead of a build-date-derived label, so artifact generation stays deterministic while stale records remain visible. A source retrieval date alone does not refresh the whole record; update `last_verified` only after reviewing the record's claims.
 
 ## Confidence
 

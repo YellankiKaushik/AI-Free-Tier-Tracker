@@ -23,4 +23,4 @@ Generated files such as `data/index.json`, `data/reset-calendar.json`, README ta
 
 ## Public index
 
-`data/index.json` is a generated machine-readable index with `schema_version: 3`. It intentionally includes the fields needed for browsing and downstream querying: status, free-tier types, quota pools, type-aware quota/reset summaries, authentication, model/catalog notes, trial data, freshness, confidence, sources, notes, deployment, runtime limits, and eligibility. It omits internal caches and unverified agent candidates.
+`data/index.json` is a generated machine-readable index with `schema_version: 4`. It includes the fields needed for browsing and downstream querying: status, free-tier types, quota pools, type-aware quota/reset summaries, authentication, model/catalog notes, trial data, `last_verified`, confidence, sources, notes, deployment, runtime limits, and eligibility. It omits internal caches, unverified agent candidates, and date-dependent freshness labels so identical canonical data produces identical artifacts. Consumers can calculate freshness from `last_verified`; the dashboard does this when it loads.

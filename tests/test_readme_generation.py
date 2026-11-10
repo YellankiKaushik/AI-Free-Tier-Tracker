@@ -15,6 +15,8 @@ def test_generated_readme_sections_are_deterministic():
     second = generated_block(records)
     assert first == second
     assert "## Dataset Statistics" in first
+    assert "| Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |" in first
+    assert "| Freshness |" not in first
 
 
 def test_readme_contains_generation_markers():

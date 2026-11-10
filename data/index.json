@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "generated_from": "tools/*.yaml",
   "stats": {
     "total": 43,
@@ -11,10 +11,7 @@
     "open_source_byok": 14,
     "official_exact": 14,
     "official_undisclosed": 26,
-    "needs_verification": 0,
-    "current": 43,
-    "needs_recheck": 0,
-    "stale": 0
+    "needs_verification": 0
   },
   "tools": [
     {
@@ -96,7 +93,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -177,7 +173,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -275,7 +270,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "mixed",
       "sources": [
         {
@@ -367,7 +361,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -449,7 +442,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -546,7 +538,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -645,7 +636,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -726,7 +716,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -792,7 +781,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -872,7 +860,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -953,7 +940,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -1066,7 +1052,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -1176,7 +1161,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -1237,7 +1221,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -1335,7 +1318,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "mixed",
       "sources": [
         {
@@ -1416,7 +1398,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -1509,7 +1490,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -1591,7 +1571,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -1722,7 +1701,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -1838,7 +1816,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "mixed",
       "sources": [
         {
@@ -1920,7 +1897,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2003,7 +1979,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -2094,7 +2069,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2174,7 +2148,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2255,7 +2228,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -2346,7 +2318,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -2437,7 +2408,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2503,7 +2473,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2584,7 +2553,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2665,7 +2633,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -2713,7 +2680,7 @@
       "reset_summary": "dynamic/undisclosed",
       "after_exhaustion": "NVIDIA does not publish a universal hosted free quota or reset; free hosted API access is for prototyping and model availability is catalog-specific. Production use requires an NVIDIA AI Enterprise license.",
       "product_url": "https://build.nvidia.com/",
-      "pricing_url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
+      "pricing_url": "https://docs.api.nvidia.com/nim/docs/product",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -2746,7 +2713,6 @@
         "Current Free Endpoint examples verified on 2026-09-09 include deepseek-ai/deepseek-v4-pro-0813, poolside/laguna-xs-2.1, and nvidia/nemotron-3.5-lightning-30b-a3b; availability is dynamic."
       ],
       "last_verified": "2026-09-09",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -2784,19 +2750,24 @@
         {
           "url": "https://docs.api.nvidia.com/nim/docs/product",
           "type": "official_docs",
-          "retrieved_at": "2026-09-09",
+          "retrieved_at": "2026-11-10",
           "supports_fields": [
+            "pricing_url",
+            "free_tier.available",
+            "free_tier.types",
             "authentication.account_required",
             "eligibility",
             "deployment",
-            "runtime_limits"
+            "runtime_limits",
+            "trial.notes"
           ],
           "supports": [
             "NVIDIA-hosted endpoints for application prototyping in the NVIDIA API catalog",
             "Developer Program enrollment to access NIM for development and testing",
             "Developer Program members have free access to NIM API endpoints for prototyping",
             "downloadable NIM microservices for research, application development, and experimentation on up to 16 GPUs",
-            "NVIDIA AI Enterprise is required for production"
+            "production use requires an NVIDIA AI Enterprise license",
+            "NVIDIA AI Enterprise has a separate 90-day evaluation path"
           ],
           "page_sha256": null
         },
@@ -2813,27 +2784,6 @@
             "hosted by NVIDIA on NVIDIA DGX Cloud",
             "Get API Key from a model page",
             "signing up makes the user a member of the Developer Program"
-          ],
-          "page_sha256": null
-        },
-        {
-          "url": "https://docs.api.nvidia.com/nim/re/docs/run-anywhere",
-          "type": "official_docs",
-          "retrieved_at": "2026-09-09",
-          "supports_fields": [
-            "pricing_url",
-            "free_tier.available",
-            "deployment",
-            "runtime_limits",
-            "eligibility",
-            "trial.notes"
-          ],
-          "supports": [
-            "Developer Program members have free access to NIM API endpoints for prototyping",
-            "downloadable NIM microservices are free for research, development and testing",
-            "self-hosted Developer Program NIM use is allowed on up to 16 GPUs",
-            "production requires NVIDIA AI Enterprise",
-            "NVIDIA AI Enterprise pricing and evaluation are separate from Developer Program access"
           ],
           "page_sha256": null
         },
@@ -2900,7 +2850,7 @@
           "page_sha256": null
         }
       ],
-      "source_count": 9
+      "source_count": 8
     },
     {
       "slug": "openrouter",
@@ -2966,7 +2916,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_exact",
       "sources": [
         {
@@ -3043,7 +2992,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3119,7 +3067,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3196,7 +3143,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3263,7 +3209,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3329,7 +3274,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3395,7 +3339,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3462,7 +3405,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3529,7 +3471,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3595,7 +3536,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3661,7 +3601,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {
@@ -3728,7 +3667,6 @@
       "eligibility": [],
       "notes": [],
       "last_verified": "2026-08-27",
-      "freshness": "current",
       "confidence": "official_undisclosed",
       "sources": [
         {

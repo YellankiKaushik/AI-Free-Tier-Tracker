@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -25,7 +24,7 @@ except ModuleNotFoundError:
     )
 
 ROOT = Path(__file__).resolve().parents[1]
-INDEX_SCHEMA_VERSION = 3
+INDEX_SCHEMA_VERSION = 4
 
 
 def load_records() -> list[dict[str, Any]]:
@@ -34,15 +33,6 @@ def load_records() -> list[dict[str, Any]]:
         rows.append(yaml.safe_load(path.read_text(encoding="utf-8")))
     rows.sort(key=lambda r: (r["category"], r["name"].lower()))
     return rows
-
-
-def freshness(last_verified: str) -> str:
-    age = (datetime.now(UTC).date() - date.fromisoformat(last_verified)).days
-    if age <= 30:
-        return "current"
-    if age <= 60:
-        return "needs_recheck"
-    return "stale"
 
 
 def public_tool_record(data: dict[str, Any]) -> dict[str, Any]:
@@ -77,7 +67,6 @@ def public_tool_record(data: dict[str, Any]) -> dict[str, Any]:
         "eligibility": data.get("eligibility", []),
         "notes": data.get("notes", []),
         "last_verified": verification["last_verified"],
-        "freshness": freshness(verification["last_verified"]),
         "confidence": verification["confidence"],
         "sources": verification["sources"],
         "source_count": len(verification["sources"]),
@@ -96,9 +85,6 @@ def stats_for(tools: list[dict[str, Any]], records: list[dict[str, Any]]) -> dic
         "official_exact": sum(1 for t in tools if t["confidence"] == "official_exact"),
         "official_undisclosed": sum(1 for t in tools if t["confidence"] == "official_undisclosed"),
         "needs_verification": sum(1 for t in tools if t["confidence"] == "needs_verification"),
-        "current": sum(1 for t in tools if t["freshness"] == "current"),
-        "needs_recheck": sum(1 for t in tools if t["freshness"] == "needs_recheck"),
-        "stale": sum(1 for t in tools if t["freshness"] == "stale"),
     }
 
 
