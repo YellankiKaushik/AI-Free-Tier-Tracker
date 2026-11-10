@@ -45,21 +45,28 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://aider.chat/docs/
+  - url: https://aider.chat/docs/llms
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - models.available
     supports:
-    - open-source coding assistant
-    - BYOK/local usage
+    - Aider connects to free or paid API providers and local models
+    - Provider usage and rate limits are determined by the provider
     page_sha256: null
   - url: https://github.com/Aider-AI/aider
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - free_tier.types
     supports:
-    - open-source repository
+    - Aider is a public Apache-2.0 terminal coding assistant
     page_sha256: null

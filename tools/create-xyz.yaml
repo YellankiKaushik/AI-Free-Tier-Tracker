@@ -1,14 +1,14 @@
 schema_version: 2
-name: Create.xyz
+name: Anything
 slug: create-xyz
-vendor: Create
+vendor: Anything
 category: app-builder
-product_url: https://www.create.xyz/
-pricing_url: https://www.create.xyz/pricing
+product_url: https://www.anything.com/
+pricing_url: https://www.anything.com/pricing
 repo_url: null
 status:
   availability: active
-  notes: null
+  notes: Anything is the current product name for Create.xyz.
 platforms:
 - web
 - cloud
@@ -18,25 +18,12 @@ authentication:
   notes: null
 free_tier:
   available: true
-  types:
-  - dynamic_rate_limit
+  types: []
   plan_name: Free
   quantity_published: false
-  quota_pools:
-  - id: usage
-    name: Free usage
-    amount: undisclosed
-    unit: credits
-    period: dynamic
-    cap: null
-    reset:
-      period: dynamic
-      time: null
-      timezone: null
-      notes: null
-    rollover: unknown
-    notes: null
-  after_exhaustion: Wait for vendor-managed free usage to refresh or upgrade.
+  quota_pools: []
+  after_exhaustion: Public pricing confirms a Free plan but does not publish a numeric allowance,
+    reset, rollover, or exhaustion behavior.
   rollover: unknown
 models:
   available: []
@@ -54,16 +41,34 @@ trial:
   allowance: null
   recurring: false
   notes: null
-notes: []
+notes:
+- Formerly Create.xyz; the current official product is Anything.
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://www.create.xyz/pricing
-    type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://www.anything.com/blog/anything-launch
+    type: official_blog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - name
+    - vendor
+    - product_url
+    - status.notes
+    - notes
     supports:
-    - Free plan
-    - exact tracked quota needs recheck
+    - Create.xyz relaunched as Anything
+    page_sha256: null
+  - url: https://www.anything.com/pricing
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.available
+    - free_tier.quantity_published
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - The public page describes a Free plan
+    - No exact Free allowance, reset cadence, or exhaustion behavior is published
     page_sha256: null

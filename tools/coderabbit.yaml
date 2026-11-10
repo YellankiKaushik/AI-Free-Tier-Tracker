@@ -20,50 +20,50 @@ authentication:
 free_tier:
   available: true
   types:
-  - recurring_daily
+  - dynamic_rate_limit
   - time_limited_trial
   plan_name: Free
   quantity_published: true
   quota_pools:
   - id: pr-reviews
     name: PR reviews
-    amount: 3
-    unit: reviews
-    period: day
-    cap: null
-    reset:
-      period: daily
-      time: null
-      timezone: null
-      notes: null
-    rollover: unknown
-    notes: null
-  - id: ide-reviews
-    name: IDE reviews
     amount: 1
     unit: reviews
-    period: day
+    period: dynamic
     cap: null
     reset:
-      period: daily
+      period: dynamic
       time: null
       timezone: null
-      notes: null
+      notes: 1 reviews per developer per rolling hour.
     rollover: unknown
-    notes: null
+    notes: 1 reviews per developer per rolling hour.
+  - id: ide-reviews
+    name: IDE reviews
+    amount: 3
+    unit: reviews
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: 3 reviews per developer per rolling hour.
+    rollover: unknown
+    notes: 3 reviews per developer per rolling hour.
   - id: cli-reviews
     name: CLI reviews
     amount: 3
     unit: reviews
-    period: day
+    period: dynamic
     cap: null
     reset:
-      period: daily
+      period: dynamic
       time: null
       timezone: null
-      notes: null
+      notes: 3 reviews per developer per rolling hour.
     rollover: unknown
-    notes: null
+    notes: 3 reviews per developer per rolling hour.
   - id: files-per-review
     name: Files per review
     amount: 150
@@ -76,8 +76,9 @@ free_tier:
       timezone: null
       notes: null
     rollover: not_applicable
-    notes: null
-  after_exhaustion: Use lower Free limits, open-source plan where eligible, or upgrade.
+    notes: Maximum files included in one review; applies after path filters.
+  after_exhaustion: Free-plan reviews are rate limited per developer. New organizations receive a 14-day
+    Advanced trial; organizations that do not subscribe revert to Free.
   rollover: unknown
 models:
   available: []
@@ -92,32 +93,44 @@ regions: []
 trial:
   available: true
   duration_days: 14
-  allowance: Pro+ trial with full Pro+ access
+  allowance: Advanced plan trial for new organizations
   recurring: false
-  notes: null
-notes: []
+  notes: After the trial, organizations that do not subscribe revert to Free; Free includes PR summarization,
+    with code reviews through the IDE extension and CLI.
+notes:
+- Free plan includes unlimited public and private repositories without a credit card. PR summarization
+  is available; code reviews are available through the VS Code extension and CLI. New organizations begin
+  a 14-day Advanced trial.
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://docs.coderabbit.ai/management/plans
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.plan_name
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial
+    - authentication.credit_card_required
+    - notes
     supports:
-    - Free plan
-    - no credit card required
-    - 14-day Pro+ trial
-    - Free 3 PR reviews
-    - 1 IDE review
-    - 3 CLI reviews
-    - 150 files/review
+    - 'Free plan: unlimited public and private repositories; no credit card required'
+    - Free plan is PR summarization only; code reviews are available through IDE and CLI
+    - Free includes 1 PR, 3 IDE, and 3 CLI reviews per developer per rolling hour
+    - Free plan reviews allow up to 150 files per review
+    - New organizations start a 14-day Advanced trial and revert to Free if they do not subscribe
     page_sha256: null
   - url: https://www.coderabbit.ai/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.plan_name
+    - trial
+    - authentication.credit_card_required
     supports:
-    - 14-day free trial
-    - no credit card required
+    - Free plan and paid plans
+    - 14-day Advanced trial
     page_sha256: null

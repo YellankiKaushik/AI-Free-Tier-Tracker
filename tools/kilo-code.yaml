@@ -4,7 +4,7 @@ slug: kilo-code
 vendor: Kilo Code
 category: open-source-agent
 product_url: https://kilocode.ai/
-pricing_url: https://github.com/Kilo-Org/kilocode
+pricing_url: https://kilo.ai/pricing/
 repo_url: https://github.com/Kilo-Org/kilocode
 status:
   availability: active
@@ -13,17 +13,33 @@ platforms:
 - vscode
 - local
 authentication:
-  account_required: not_applicable
-  credit_card_required: not_applicable
-  notes: null
+  account_required: unknown
+  credit_card_required: unknown
+  notes: The open-source client supports local/BYOK use; the pricing page does not state account or payment
+    requirements for Auto Free.
 free_tier:
   available: true
   types:
   - open_source_byok
-  plan_name: Open-source client
-  quantity_published: false
-  quota_pools: []
-  after_exhaustion: Inference cost and limits depend on configured provider.
+  - dynamic_rate_limit
+  plan_name: Free & Open Source
+  quantity_published: true
+  quota_pools:
+  - id: free-model-requests
+    name: Auto Free model requests
+    amount: 200
+    unit: requests
+    period: dynamic
+    cap: null
+    reset:
+      period: dynamic
+      time: null
+      timezone: null
+      notes: Rolling/hourly rate is per IP.
+    rollover: not_applicable
+    notes: Auto Free routes to provider free models; no hosted Kilo credit is required.
+  after_exhaustion: Auto Free model requests are limited to 200 per hour per IP. Use BYOK or local models,
+    or wait for capacity to return.
   rollover: not_applicable
 models:
   available:
@@ -45,14 +61,33 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  last_verified: '2026-11-10'
+  confidence: official_exact
   sources:
-  - url: https://github.com/Kilo-Org/kilocode
-    type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://kilo.ai/pricing/
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.plan_name
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.account_required
+    - authentication.credit_card_required
     supports:
-    - open-source coding agent
-    - BYOK/provider-dependent inference
+    - Kilo Code Free is open-source and works with any model
+    - Auto Free routes to provider free models without hosted credit
+    - Free models have 200 requests per hour per IP
+    - The pricing page does not state account or payment requirements for Auto Free
+    page_sha256: null
+  - url: https://kilo.ai/docs/getting-started/rate-limits-and-costs
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - Free models kilo-auto/free are limited to 200 requests per hour per IP
+    - Auto Free requests cost $0 on Kilo; BYOK is billed by the provider
     page_sha256: null

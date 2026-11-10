@@ -211,6 +211,7 @@
                   "month",
                   "billing_cycle",
                   "dynamic",
+                  "undisclosed",
                   "one_time",
                   "provider_specific",
                   "not_applicable"

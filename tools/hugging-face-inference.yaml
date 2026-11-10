@@ -14,31 +14,18 @@ platforms:
 - web
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current documentation states Free users must purchase credits or upgrade for routed inference;
+    it does not specify a universal payment-method requirement.
 free_tier:
-  available: true
-  types:
-  - recurring_monthly
-  plan_name: Free user monthly credits
-  quantity_published: true
-  quota_pools:
-  - id: monthly-credits
-    name: Monthly routed inference credits
-    amount: 0.1
-    unit: USD credits
-    period: month
-    cap: null
-    reset:
-      period: monthly
-      time: null
-      timezone: null
-      notes: null
-    rollover: 'no'
-    notes: null
-  after_exhaustion: After monthly credits, purchase credits/pay-as-you-go or use custom
-    provider keys billed elsewhere.
-  rollover: 'no'
+  available: false
+  types: []
+  plan_name: null
+  quantity_published: false
+  quota_pools: []
+  after_exhaustion: Free users must purchase credits or upgrade to use Inference Providers. Custom provider
+    keys are billed by the provider.
+  rollover: not_applicable
 models:
   available: []
   restrictions: []
@@ -55,17 +42,25 @@ trial:
   allowance: null
   recurring: false
   notes: null
-notes: []
+notes:
+- The previously recorded $0.10 monthly free-user credit is no longer included. The current official pricing
+  page says Free users can use Inference Providers by purchasing credits or upgrading; custom provider
+  keys are billed directly by their providers.
 verification:
-  last_verified: '2026-08-27'
-  confidence: official_exact
+  last_verified: '2026-11-10'
+  confidence: official_undisclosed
   sources:
   - url: https://huggingface.co/docs/inference-providers/en/pricing
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
+    - notes
     supports:
-    - Free Users
-    - $0.10 monthly credits
-    - monthly credits automatically apply
+    - Free users receive no included monthly Inference Providers credits
+    - Free users must purchase credits or upgrade
+    - Custom provider keys are billed directly by providers
     page_sha256: null

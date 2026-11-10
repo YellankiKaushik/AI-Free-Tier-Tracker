@@ -14,29 +14,17 @@ platforms:
 - cli
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: A Warp account is required for agent usage. The Free plan does not state a card requirement.
 free_tier:
   available: true
-  types:
-  - dynamic_rate_limit
+  types: []
   plan_name: Free
   quantity_published: false
-  quota_pools:
-  - id: agent-usage
-    name: Agent/AI usage
-    amount: undisclosed
-    unit: requests
-    period: dynamic
-    cap: null
-    reset:
-      period: dynamic
-      time: null
-      timezone: null
-      notes: null
-    rollover: unknown
-    notes: null
-  after_exhaustion: Wait for vendor-managed limits or upgrade.
+  quota_pools: []
+  after_exhaustion: Current official pricing and billing documentation say the Free plan has no bundled
+    AI usage, while Warp's FAQ says it includes 150 free AI requests per month. The conflict is unresolved;
+    users can bring their own inference or buy credits.
   rollover: unknown
 models:
   available: []
@@ -54,16 +42,41 @@ trial:
   allowance: null
   recurring: false
   notes: null
-notes: []
+notes:
+- Warp pricing and its updated billing FAQ say Free has no bundled AI usage, but the official product FAQ
+  still advertises 150 free AI requests per month. The numeric allowance is not recorded until the
+  conflict is resolved.
 verification:
   last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  confidence: mixed
   sources:
   - url: https://www.warp.dev/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
     supports:
-    - Free plan
-    - AI usage limits require recheck before exact quota
+    - Free plan includes Warp Agent CLI access and limited cloud agents
+    - Free has additional agent usage at pay-as-you-go rates and supports user-provided inference
+    - Current pricing page does not list included monthly AI usage
+    page_sha256: null
+  - url: https://docs.warp.dev/support-and-community/plans-and-billing/pricing-faqs
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - Updated billing FAQ states Free has no bundled AI usage; users can buy credits or bring their own inference
+    - Free users may purchase add-on credits
+    page_sha256: null
+  - url: https://www.warp.dev/faq
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    supports:
+    - Official FAQ still says the Free plan includes 150 free AI requests per month
     page_sha256: null

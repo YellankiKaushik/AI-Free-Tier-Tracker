@@ -46,14 +46,27 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
+  - url: https://tabby.tabbyml.com/docs/welcome/
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - deployment
+    - models.available
+    supports:
+    - Tabby is a free, open-source, self-hosted AI coding assistant
+    - Users choose compatible coding models and provide their own model infrastructure
+    page_sha256: null
   - url: https://github.com/TabbyML/tabby
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
     supports:
-    - self-hosted AI coding assistant
-    - open-source repository
+    - Tabby is an active open-source repository
     page_sha256: null

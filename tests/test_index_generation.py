@@ -51,7 +51,7 @@ def test_nvidia_dynamic_examples_are_not_in_available_model_list():
     assert any("examples" in note.lower() for note in record["notes"])
 
 
-def test_nvidia_source_repair_preserves_undisclosed_quota_and_verification_date():
+def test_nvidia_current_source_preserves_undisclosed_quota():
     record = yaml.safe_load((ROOT / "tools" / "nvidia-nim.yaml").read_text(encoding="utf-8"))
     sources = record["verification"]["sources"]
     source_urls = [source["url"] for source in sources]
@@ -61,4 +61,17 @@ def test_nvidia_source_repair_preserves_undisclosed_quota_and_verification_date(
     assert len(source_urls) == len(set(source_urls))
     assert record["free_tier"]["quantity_published"] is False
     assert record["free_tier"]["quota_pools"] == []
-    assert record["verification"]["last_verified"] == "2026-09-09"
+    assert record["verification"]["last_verified"] == "2026-11-10"
+    assert any(
+        source["url"] == "https://docs.api.nvidia.com/nim/docs/product"
+        and source["retrieved_at"] == "2026-11-10"
+        for source in sources
+    )
+
+
+def test_generated_index_preserves_stale_verification_dates():
+    record = yaml.safe_load((ROOT / "tools" / "emergent.yaml").read_text(encoding="utf-8"))
+    indexed = next(tool for tool in build_index()["tools"] if tool["slug"] == "emergent")
+    assert record["verification"]["last_verified"] == "2026-08-27"
+    assert indexed["last_verified"] == record["verification"]["last_verified"]
+    assert "freshness" not in indexed

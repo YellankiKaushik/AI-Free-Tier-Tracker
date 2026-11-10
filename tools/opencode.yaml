@@ -3,9 +3,9 @@ name: OpenCode
 slug: opencode
 vendor: SST
 category: open-source-agent
-product_url: https://opencode.ai/
-pricing_url: https://github.com/sst/opencode
-repo_url: https://github.com/sst/opencode
+product_url: https://github.com/anomalyco/opencode
+pricing_url: https://github.com/anomalyco/opencode
+repo_url: https://github.com/anomalyco/opencode
 status:
   availability: active
   notes: null
@@ -45,14 +45,18 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://github.com/sst/opencode
+  - url: https://github.com/anomalyco/opencode
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - product_url
+    - repo_url
+    - free_tier.available
+    - free_tier.types
     supports:
-    - open-source terminal coding agent
-    - provider-dependent inference
+    - Current canonical public repository for the open-source agent
+    - Repository license and About section identify the tool as an open-source coding/development agent
     page_sha256: null

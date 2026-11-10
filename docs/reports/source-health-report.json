@@ -1,0 +1,496 @@
+{
+  "summary": {
+    "total": 60,
+    "healthy": 53,
+    "redirect": 7,
+    "rate_limited": 0,
+    "forbidden_bot": 0,
+    "not_found": 0,
+    "server_error": 0,
+    "network_error": 0
+  },
+  "expected_total": 60,
+  "complete": true,
+  "results": [
+    {
+      "tool": "aider",
+      "url": "https://aider.chat/docs/",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://aider.chat/docs/",
+      "error": null
+    },
+    {
+      "tool": "aider",
+      "url": "https://github.com/Aider-AI/aider",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/Aider-AI/aider",
+      "error": null
+    },
+    {
+      "tool": "atlassian-rovo-dev",
+      "url": "https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/",
+      "error": null
+    },
+    {
+      "tool": "atlassian-rovo-dev",
+      "url": "https://www.atlassian.com/software/rovo-dev/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.atlassian.com/software/rovo-dev/pricing",
+      "error": null
+    },
+    {
+      "tool": "augment-code",
+      "url": "https://www.augmentcode.com/blog/augment-codes-pricing-is-changing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.augmentcode.com/blog/augment-codes-pricing-is-changing",
+      "error": null
+    },
+    {
+      "tool": "base44",
+      "url": "https://base44.com/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://base44.com/pricing",
+      "error": null
+    },
+    {
+      "tool": "bolt",
+      "url": "https://bolt.new/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://bolt.new/pricing",
+      "error": null
+    },
+    {
+      "tool": "cerebras-inference",
+      "url": "https://www.cerebras.ai/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.cerebras.ai/pricing",
+      "error": null
+    },
+    {
+      "tool": "cerebras-inference",
+      "url": "https://inference-docs.cerebras.ai/quickstart",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://inference-docs.cerebras.ai/quickstart",
+      "error": null
+    },
+    {
+      "tool": "claude-code",
+      "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
+      "error": null
+    },
+    {
+      "tool": "cline",
+      "url": "https://cline.bot/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://cline.bot/pricing",
+      "error": null
+    },
+    {
+      "tool": "cline",
+      "url": "https://github.com/cline/cline",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/cline/cline",
+      "error": null
+    },
+    {
+      "tool": "cloudflare-workers-ai",
+      "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "error": null
+    },
+    {
+      "tool": "cloudflare-workers-ai",
+      "url": "https://developers.cloudflare.com/workers-ai/",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://developers.cloudflare.com/workers-ai/",
+      "error": null
+    },
+    {
+      "tool": "coderabbit",
+      "url": "https://docs.coderabbit.ai/management/plans",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.coderabbit.ai/management/plans",
+      "error": null
+    },
+    {
+      "tool": "coderabbit",
+      "url": "https://www.coderabbit.ai/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.coderabbit.ai/pricing",
+      "error": null
+    },
+    {
+      "tool": "continue",
+      "url": "https://github.com/continuedev/continue",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/continuedev/continue",
+      "error": null
+    },
+    {
+      "tool": "create-xyz",
+      "url": "https://www.create.xyz/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.create.xyz/pricing",
+      "error": null
+    },
+    {
+      "tool": "cursor",
+      "url": "https://cursor.com/en-US/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://cursor.com/en-US/pricing",
+      "error": null
+    },
+    {
+      "tool": "dyad",
+      "url": "https://github.com/dyad-sh/dyad",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/dyad-sh/dyad",
+      "error": null
+    },
+    {
+      "tool": "emergent",
+      "url": "https://emergent.sh/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://emergent.sh/pricing",
+      "error": null
+    },
+    {
+      "tool": "gemini-api",
+      "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://aistudio.google.com/docs/rate-limits",
+      "error": null
+    },
+    {
+      "tool": "github-copilot",
+      "url": "https://docs.github.com/en/copilot/get-started/plans",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.github.com/en/copilot/get-started/plans",
+      "error": null
+    },
+    {
+      "tool": "github-models",
+      "url": "https://docs.github.com/en/github-models",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.github.com/en/github-models",
+      "error": null
+    },
+    {
+      "tool": "github-spark",
+      "url": "https://github.com/features/spark",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://github.com/features/copilot",
+      "error": null
+    },
+    {
+      "tool": "goose",
+      "url": "https://github.com/block/goose",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://github.com/aaif-goose/goose",
+      "error": null
+    },
+    {
+      "tool": "groq",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://console.groq.com/docs/rate-limits",
+      "error": null
+    },
+    {
+      "tool": "hugging-face-inference",
+      "url": "https://huggingface.co/docs/inference-providers/en/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://huggingface.co/docs/inference-providers/en/pricing",
+      "error": null
+    },
+    {
+      "tool": "jetbrains-ai-assistant",
+      "url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
+      "error": null
+    },
+    {
+      "tool": "kilo-code",
+      "url": "https://github.com/Kilo-Org/kilocode",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/Kilo-Org/kilocode",
+      "error": null
+    },
+    {
+      "tool": "kiro",
+      "url": "https://kiro.dev/pricing/",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://kiro.dev/pricing/",
+      "error": null
+    },
+    {
+      "tool": "lovable",
+      "url": "https://lovable.dev/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://lovable.dev/pricing",
+      "error": null
+    },
+    {
+      "tool": "lovable",
+      "url": "https://lovable.dev/blog/simplifying-billing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://lovable.dev/blog/simplifying-billing",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://build.nvidia.com/explore",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://build.nvidia.com/explore",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://build.nvidia.com/models",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://build.nvidia.com/models",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://docs.api.nvidia.com/nim/docs/product",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.api.nvidia.com/nim/docs/product",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://docs.api.nvidia.com/nim/docs/api-quickstart",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.api.nvidia.com/nim/docs/api-quickstart",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4-pro-0813",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://build.nvidia.com/deepseek-ai/deepseek-v4-pro-0813",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
+      "error": null
+    },
+    {
+      "tool": "nvidia-nim",
+      "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
+      "error": null
+    },
+    {
+      "tool": "openai-codex",
+      "url": "https://help.openai.com/en/articles/11369540",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+      "error": null
+    },
+    {
+      "tool": "opencode",
+      "url": "https://github.com/sst/opencode",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://github.com/anomalyco/opencode",
+      "error": null
+    },
+    {
+      "tool": "openhands",
+      "url": "https://github.com/All-Hands-AI/OpenHands",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://github.com/OpenHands/OpenHands",
+      "error": null
+    },
+    {
+      "tool": "openrouter",
+      "url": "https://openrouter.ai/docs/faq",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://openrouter.ai/docs/faq",
+      "error": null
+    },
+    {
+      "tool": "openrouter",
+      "url": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+      "error": null
+    },
+    {
+      "tool": "qoder",
+      "url": "https://docs.qoder.com/account/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://docs.qoder.com/account/pricing",
+      "error": null
+    },
+    {
+      "tool": "qoder",
+      "url": "https://qoder.com/blog/qoder-community",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://qoder.com/blog/qoder-community",
+      "error": null
+    },
+    {
+      "tool": "qwen-code",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/QwenLM/qwen-code",
+      "error": null
+    },
+    {
+      "tool": "replit",
+      "url": "https://ld.replit.com/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://ld.replit.com/pricing",
+      "error": null
+    },
+    {
+      "tool": "roo-code",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/RooCodeInc/Roo-Code",
+      "error": null
+    },
+    {
+      "tool": "sourcegraph-cody",
+      "url": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
+      "error": null
+    },
+    {
+      "tool": "sourcegraph-cody",
+      "url": "https://6.2.sourcegraph.com/pricing/plans/free",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://6.2.sourcegraph.com/pricing/plans/free",
+      "error": null
+    },
+    {
+      "tool": "swe-agent",
+      "url": "https://github.com/SWE-agent/SWE-agent",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/SWE-agent/SWE-agent",
+      "error": null
+    },
+    {
+      "tool": "tabby",
+      "url": "https://github.com/TabbyML/tabby",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://github.com/TabbyML/tabby",
+      "error": null
+    },
+    {
+      "tool": "trae",
+      "url": "https://www.trae.ai/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.trae.ai/pricing",
+      "error": null
+    },
+    {
+      "tool": "v0",
+      "url": "https://api2.v0.dev/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://api2.v0.dev/pricing",
+      "error": null
+    },
+    {
+      "tool": "warp",
+      "url": "https://www.warp.dev/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://www.warp.dev/pricing",
+      "error": null
+    },
+    {
+      "tool": "windsurf",
+      "url": "https://windsurf.com/pricing",
+      "status": 200,
+      "classification": "redirect",
+      "final_url": "https://devin.ai/pricing",
+      "error": null
+    },
+    {
+      "tool": "zed-ai",
+      "url": "https://zed.dev/pricing",
+      "status": 200,
+      "classification": "healthy",
+      "final_url": "https://zed.dev/pricing",
+      "error": null
+    }
+  ]
+}

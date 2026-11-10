@@ -14,12 +14,14 @@ platforms:
 - cli
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current pricing page says a valid card is required to upgrade to a paid subscription; it
+    does not state a card is required for the Free tier.
 free_tier:
   available: true
   types:
   - recurring_monthly
+  - time_limited_trial
   plan_name: Free
   quantity_published: true
   quota_pools:
@@ -27,20 +29,24 @@ free_tier:
     name: Credits
     amount: 50
     unit: credits
-    period: billing_cycle
+    period: month
     cap: null
     reset:
-      period: billing_cycle
+      period: monthly
       time: null
       timezone: null
-      notes: null
+      notes: Free individual limits reset at the start of each monthly billing cycle.
     rollover: 'no'
     notes: null
-  after_exhaustion: Wait for billing-cycle reset or upgrade.
+  after_exhaustion: Free individual usage resets at the start of each monthly billing cycle; users may
+    upgrade to a paid tier.
   rollover: 'no'
 models:
-  available: []
-  restrictions: []
+  available:
+  - Open weight models
+  - Claude Sonnet 4.5
+  restrictions:
+  - The Free tier limits access to open weight models and Claude Sonnet 4.5; paid tiers add premium models.
 project_limits: []
 deployment: []
 runtime_limits: []
@@ -49,21 +55,30 @@ concurrency_limits: []
 eligibility: []
 regions: []
 trial:
-  available: false
+  available: true
   duration_days: null
-  allowance: null
+  allowance: On the first upgrade from Free to Pro, the remainder of that month is free plus 500 trial
+    credits usable within 12 months.
   recurring: false
-  notes: null
+  notes: A valid credit card is required for the paid upgrade. Trial credits are used after plan credits;
+    if the user returns to Free, unused trial credits carry over but are usable only on free-tier models.
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://kiro.dev/pricing/
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - models
+    - trial
+    - authentication.credit_card_required
     supports:
-    - Free plan
-    - 50 credits/month
+    - Kiro Free is $0 and includes 50 credits per month
+    - Free includes open weight models and Claude Sonnet 4.5 with limits
+    - First upgrade to Pro provides the rest of the month free plus 500 credits usable within 12 months
+    - Paid upgrade requires a valid credit card
+    - Individual limits reset at the start of each billing month; unused monthly credits do not roll over
     page_sha256: null

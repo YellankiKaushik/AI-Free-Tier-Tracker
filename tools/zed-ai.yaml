@@ -13,30 +13,32 @@ platforms:
 - desktop
 authentication:
   account_required: 'yes'
-  credit_card_required: unknown
-  notes: null
+  credit_card_required: 'no'
+  notes: Zed-hosted Edit Predictions and the Pro trial require sign-in; BYOK and external agents can be
+    used without Zed authentication. The trial requires no credit card.
 free_tier:
   available: true
   types:
-  - dynamic_rate_limit
-  - open_source_byok
-  plan_name: Free/BYOK
-  quantity_published: false
+  - time_limited_trial
+  plan_name: Personal
+  quantity_published: true
   quota_pools:
-  - id: usage
-    name: AI usage
-    amount: undisclosed
-    unit: requests
-    period: dynamic
+  - id: edit-predictions
+    name: Accepted edit predictions
+    amount: 2000
+    unit: accepted edit predictions
+    period: undisclosed
     cap: null
     reset:
-      period: dynamic
+      period: undisclosed
       time: null
       timezone: null
-      notes: null
+      notes: The official pricing page publishes 2,000 accepted edit predictions but no reset cadence.
     rollover: unknown
-    notes: null
-  after_exhaustion: Use BYOK/local provider or follow Zed plan limits.
+    notes: The official pricing page does not specify whether this is a monthly, daily, or lifetime allowance.
+  after_exhaustion: The official pricing page publishes 2,000 accepted edit predictions but does not state
+    what happens after they are used. Personal plan still supports BYOK and external agents; hosted models
+    require Pro.
   rollover: unknown
 models:
   available: []
@@ -49,21 +51,46 @@ concurrency_limits: []
 eligibility: []
 regions: []
 trial:
-  available: false
-  duration_days: null
-  allowance: null
+  available: true
+  duration_days: 14
+  allowance: Pro trial includes $5 of GPT-5.6 Luna usage.
   recurring: false
-  notes: null
-notes: []
+  notes: Trial ends after 14 days or when the $5 usage is consumed; no credit card required. The $5 balance
+    is shared across Zed and Delta.
+notes:
+- Personal is $0 forever; it has a published limit of 2,000 accepted edit predictions, with no reset period
+  stated, and supports unlimited usage with the user's own API keys or external agents.
+- Hosted Pro trial usage is a separate offer.
 verification:
-  last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  last_verified: '2026-11-10'
+  confidence: official_exact
   sources:
   - url: https://zed.dev/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial
+    - authentication.credit_card_required
+    - notes
     supports:
-    - pricing page
-    - free/BYOK usage requires recheck before exact quota
+    - Personal is $0 forever
+    - Personal includes 2,000 accepted edit predictions with no reset period stated
+    - Unlimited use with user API keys or external agents
+    - Pro trial lasts 14 days and includes $5 of GPT-5.6 Luna usage shared across Zed and Delta
+    - No credit card required for the trial
+    page_sha256: null
+  - url: https://zed.dev/docs/account/plans-and-pricing
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.account_required
+    - free_tier.after_exhaustion
+    supports:
+    - No authentication is required for the editor itself
+    - Sign-in is required for LLM-powered features using Zed as the model provider
+    - Free supports user API keys and external agents; Zed-hosted models require Pro
     page_sha256: null

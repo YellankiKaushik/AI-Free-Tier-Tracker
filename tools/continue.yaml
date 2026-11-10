@@ -24,8 +24,7 @@ free_tier:
   plan_name: Open-source client
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Inference cost and limits depend on connected model provider or
-    local model.
+  after_exhaustion: Inference cost and limits depend on connected model provider or local model.
   rollover: not_applicable
 models:
   available:
@@ -47,14 +46,27 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
   - url: https://github.com/continuedev/continue
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - models.available
     supports:
-    - open-source coding assistant
-    - BYOK/local model support
+    - Continue is an active open-source coding agent
+    page_sha256: null
+  - url: https://docs.continue.dev/customize/models
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.after_exhaustion
+    - models.available
+    supports:
+    - Continue supports provider API keys and local models; inference usage depends on the selected provider
     page_sha256: null

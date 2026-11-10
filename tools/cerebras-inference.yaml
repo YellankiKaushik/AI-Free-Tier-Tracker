@@ -14,18 +14,19 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: 'yes'
+  notes: A valid payment method is required to receive the one-time promotional credit; the pricing page
+    says the user is not charged or automatically enrolled in paid use.
 free_tier:
   available: true
   types:
   - one_time_signup
-  - time_limited_trial
-  plan_name: Free Trial
+  - promotional
+  plan_name: Developer Tier promotional credit
   quantity_published: true
   quota_pools:
   - id: trial-credits
-    name: Free trial credits
+    name: One-time promotional credit
     amount: 5
     unit: USD credits
     period: one_time
@@ -36,9 +37,9 @@ free_tier:
       timezone: null
       notes: null
     rollover: 'no'
-    notes: null
-  after_exhaustion: Create a developer account or upgrade to Developer tier when trial
-    credits are exhausted.
+    notes: Valid payment method required; expires 30 days after activation.
+  after_exhaustion: API and Playground access pause when the credit expires or is exhausted unless PayGo
+    credits are separately purchased; users are not charged or automatically enrolled in paid use.
   rollover: unknown
 models:
   available: []
@@ -51,29 +52,38 @@ concurrency_limits: []
 eligibility: []
 regions: []
 trial:
-  available: true
+  available: false
   duration_days: null
-  allowance: $5 in free credits after making an account
+  allowance: null
   recurring: false
-  notes: null
+  notes: The $5 offer is a promotional credit, not a paid-plan trial; it expires after 30 days and does
+    not auto-enroll the user.
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://www.cerebras.ai/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial
     supports:
-    - Free Trial
-    - $5 in free credits after making an account
-    - Developer tier has 10x higher rate limits
+    - Developer Tier offers a one-time $5 promotional credit
+    - A valid payment method is required
+    - Credit expires 30 days after activation
+    - No charge or automatic paid enrollment
+    - API and Playground access pause after expiry or exhaustion unless PayGo credits are purchased
     page_sha256: null
   - url: https://inference-docs.cerebras.ai/quickstart
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.account_required
     supports:
-    - free API key quickstart
+    - Users sign up or log in to create an API key
     page_sha256: null

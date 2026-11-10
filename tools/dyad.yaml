@@ -45,14 +45,30 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://github.com/dyad-sh/dyad
-    type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://www.dyad.sh/
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - authentication.account_required
+    - authentication.credit_card_required
     supports:
-    - open-source app builder
-    - local/BYOK usage
+    - Dyad Free is a local open-source app builder
+    - Dyad Free requires no sign-up and supports BYOK/local models
+    - Dyad Pro is a separate paid plan
+    page_sha256: null
+  - url: https://www.dyad.sh/docs/faq
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.after_exhaustion
+    - models.available
+    supports:
+    - Dyad code stays local and users provide API keys or local models
     page_sha256: null

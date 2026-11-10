@@ -36,9 +36,11 @@ free_tier:
       timezone: null
       notes: null
     rollover: 'no'
-    notes: If at least 10 credits are purchased, free model limit can be 1000 requests/day.
-  after_exhaustion: Free models are low-rate-limit; buy credits or use paid models
-    for more capacity.
+    notes: Free model variants are capped at 20 requests per minute and 50 per day; failed attempts count.
+      The daily limit increases to 1,000 after at least $10 of credits has been purchased.
+  after_exhaustion: Wait for the daily reset. Free variants are capped at 20 requests per minute and 50
+    per day; after the account has purchased at least $10 of credits, the daily cap rises to 1,000. Failed
+    attempts count toward the daily cap; only models with a :free variant use this quota.
   rollover: unknown
 models:
   available: []
@@ -58,22 +60,39 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://openrouter.ai/docs/faq
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
     supports:
-    - free models
-    - 50 free model API requests per day
-    - 1000 requests per day if at least 10 credits purchased
+    - Free variants have rate limits distinct from paid provider limits
+    - Free variants do not require a credit purchase
     page_sha256: null
   - url: https://openrouter.ai/docs/guides/routing/model-variants/free
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.types
+    - models.restrictions
     supports:
-    - :free model variant
+    - Only catalog models with a :free variant can be used through that variant
+    - Free variants may have different rate limits and availability than paid versions
+    - Paid fallback models are billable
+    page_sha256: null
+  - url: https://openrouter.ai/collections/free-models/
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - Free variants are capped at 20 requests per minute and 50 per day
+    - The daily cap rises to 1,000 after at least $10 of credits are purchased
+    - Failed requests count toward the daily cap
+    - Free variants do not require a credit purchase
     page_sha256: null

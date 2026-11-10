@@ -3,9 +3,9 @@ name: OpenHands
 slug: openhands
 vendor: All Hands AI
 category: open-source-agent
-product_url: https://www.all-hands.dev/
-pricing_url: https://github.com/All-Hands-AI/OpenHands
-repo_url: https://github.com/All-Hands-AI/OpenHands
+product_url: https://github.com/OpenHands/OpenHands
+pricing_url: https://github.com/OpenHands/OpenHands
+repo_url: https://github.com/OpenHands/OpenHands
 status:
   availability: active
   notes: null
@@ -46,14 +46,18 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://github.com/All-Hands-AI/OpenHands
+  - url: https://github.com/OpenHands/OpenHands
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - product_url
+    - repo_url
+    - free_tier.available
+    - free_tier.types
     supports:
-    - open-source coding agent
-    - provider-dependent inference
+    - Current canonical public repository for the open-source agent
+    - Repository license and About section identify the tool as an open-source coding/development agent
     page_sha256: null

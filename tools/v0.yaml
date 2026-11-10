@@ -14,29 +14,30 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The pricing page confirms the Free plan but does not state whether a payment method is required.
 free_tier:
   available: true
   types:
   - recurring_daily
-  - recurring_monthly
+  - one_time_signup
   plan_name: Free
   quantity_published: true
   quota_pools:
   - id: included-credits
-    name: Included credits
+    name: New-user credits
     amount: 5
     unit: USD credits
-    period: month
+    period: one_time
     cap: null
     reset:
-      period: monthly
+      period: not_applicable
       time: null
       timezone: null
-      notes: null
-    rollover: 'no'
-    notes: null
+      notes: One-time credit grant for new users; no public reset cadence.
+    rollover: unknown
+    notes: Official pricing page footer describes $5 in one-time credits for new users; it does not state
+      expiration.
   - id: messages
     name: Messages
     amount: 7
@@ -50,8 +51,9 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: null
-  after_exhaustion: Wait for daily/monthly refresh or upgrade.
-  rollover: 'no'
+  after_exhaustion: Free includes 7 messages per day. The $5 credit grant is one time for new users; the
+    official page does not state its expiration or the exact behavior after it is exhausted.
+  rollover: unknown
 models:
   available: []
   restrictions: []
@@ -70,15 +72,19 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://api2.v0.dev/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
     supports:
-    - Free plan
-    - $5 included credits/month
-    - 7 messages/day
+    - Free plan includes 7 messages per day
+    - The page footer offers $5 in one-time credits for new users
+    - The page does not state credit expiration or card requirement
     page_sha256: null

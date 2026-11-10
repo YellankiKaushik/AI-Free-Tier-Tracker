@@ -4,7 +4,7 @@ slug: gemini-api
 vendor: Google
 category: model-api
 product_url: https://ai.google.dev/gemini-api
-pricing_url: https://ai.google.dev/gemini-api/docs/rate-limits
+pricing_url: https://ai.google.dev/gemini-api/docs/pricing
 repo_url: null
 status:
   availability: active
@@ -35,8 +35,10 @@ free_tier:
       timezone: null
       notes: null
     rollover: unknown
-    notes: null
-  after_exhaustion: 429 RESOURCE_EXHAUSTED; wait and retry or upgrade/link billing.
+    notes: RPM, input TPM, and RPD vary by model and project tier; active limits are shown in Google AI
+      Studio. RPD resets at midnight Pacific time.
+  after_exhaustion: Requests beyond the active per-model or project limits return 429 RESOURCE_EXHAUSTED;
+    wait or change usage tier.
   rollover: unknown
 models:
   available: []
@@ -56,15 +58,49 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://ai.google.dev/gemini-api/docs/rate-limits
-    type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://ai.google.dev/gemini-api/docs/pricing
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.available
+    - free_tier.types
+    - models.restrictions
     supports:
-    - Free usage tier
-    - model-specific RPM/TPM/TPD rate limits
-    - billing tier cap Free N/A
+    - Gemini API offers a Free tier with free input and output tokens for certain models
+    - Access and rate limits vary by model and tier
+    page_sha256: null
+  - url: https://aistudio.google.com/docs/rate-limits
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - Limits include RPM, input TPM, and RPD and vary by model and tier
+    - Limits are applied per project
+    - RPD quotas reset at midnight Pacific time
+    - Exceeded rate limits return 429 RESOURCE_EXHAUSTED
+    page_sha256: null
+  - url: https://ai.google.dev/gemini-api/docs/billing
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.available
+    supports:
+    - New accounts begin on the Free tier
+    - Free tier has no billing tier cap
+    page_sha256: null
+  - url: https://ai.google.dev/gemini-api/docs/api-key
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.account_required
+    supports:
+    - API keys are associated with Google Cloud projects; new users accept the Terms of Service to create
+      a project and API key
     page_sha256: null

@@ -10,6 +10,7 @@ Important fields:
 - `free_tier.quantity_published`: whether the vendor currently publishes a usable number.
 - `free_tier.quota_pools[]`: independent quota pools; never collapse them into a single credit field.
 - `free_tier.quota_pools[].reset`: reset cadence/time/timezone where officially published.
+- Quota pool period and reset period may use `undisclosed` when an official page publishes a quota amount but does not state its period or reset. Do not infer a daily, monthly, or lifetime allowance.
 - `after_exhaustion`: operational behavior after a limit is reached.
 - `status.availability`: active, legacy, discontinued, or restricted-new-signups.
 - `authentication.credit_card_required`: card requirement if documented.

@@ -42,6 +42,8 @@ def test_monitoring_workflows_run_only_when_manually_dispatched():
 def test_validation_and_pages_triggers_are_preserved():
     validate = workflow("validate.yml")
     assert set(validate["on"]) == {"push", "pull_request"}
+    assert validate["on"]["push"]["branches"] == ["main"]
+    assert validate["on"]["pull_request"]["branches"] == ["main"]
     assert validate["jobs"]["validate"]["permissions"] == {"contents": "read"}
 
     pages = workflow("pages.yml")
@@ -70,5 +72,7 @@ def test_external_actions_use_full_commit_sha_refs():
                 action = step.get("uses", "")
                 if action.startswith("actions/"):
                     assert re.fullmatch(r"[0-9a-f]{40}", action.rsplit("@", 1)[1])
+                if action.startswith("actions/setup-python@"):
+                    assert action.endswith("6d4fd22b20465ccc0f7354476588e8df7c9ca0e0")
                 if action.startswith("actions/checkout@"):
                     assert step["with"]["persist-credentials"] == "false"

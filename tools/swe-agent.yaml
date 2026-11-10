@@ -45,14 +45,30 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
   - url: https://github.com/SWE-agent/SWE-agent
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - free_tier.available
+    - free_tier.types
+    - free_tier.after_exhaustion
+    - models.available
     supports:
-    - open-source software engineering agent
-    - provider-dependent inference
+    - Repository remains active and identifies SWE-agent as an open-source agent
+    - Inference uses the language model configured by the user
+    - Local models are supported through OpenAI-compatible endpoints
+    - MIT license is published in the project metadata
+    page_sha256: null
+  - url: https://github.com/SWE-agent/SWE-agent/blob/main/docs/installation/keys.md
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - models.available
+    - free_tier.after_exhaustion
+    supports:
+    - Users provide model provider API keys or configure a local inference endpoint
     page_sha256: null

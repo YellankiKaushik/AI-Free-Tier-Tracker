@@ -70,15 +70,19 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://bolt.new/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
     supports:
-    - Free plan
-    - 300K tokens/day
-    - 1M tokens/month
+    - Free plan is free forever and does not require a credit card
+    - Free plan includes 300,000 tokens per day and 1,000,000 tokens per month
+    - Free token allowances do not roll over
     page_sha256: null

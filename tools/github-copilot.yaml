@@ -17,13 +17,12 @@ platforms:
 - cli
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The official Copilot plan comparison does not state whether a payment card is required for Copilot Free.
 free_tier:
   available: true
   types:
   - recurring_monthly
-  - dynamic_rate_limit
   plan_name: Copilot Free
   quantity_published: true
   quota_pools:
@@ -40,20 +39,22 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: null
-  - id: premium-requests
-    name: Premium requests
+  - id: ai-credits
+    name: GitHub AI Credits
     amount: undisclosed
-    unit: requests
+    unit: AI credits
     period: month
     cap: null
     reset:
       period: monthly
       time: null
       timezone: null
-      notes: null
-    rollover: 'no'
-    notes: null
-  after_exhaustion: Wait for monthly refresh or upgrade.
+      notes: Monthly allowance; exact Copilot Free amount is not published in the plan comparison.
+    rollover: unknown
+    notes: Copilot Free includes an allowance of GitHub AI Credits, but the official plan comparison does
+      not publish its amount.
+  after_exhaustion: The completion allowance resets monthly; the Free AI Credits amount is unpublished
+    and access to agents/models is limited.
   rollover: 'no'
 models:
   available: []
@@ -73,15 +74,19 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: mixed
   sources:
   - url: https://docs.github.com/en/copilot/get-started/plans
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
     supports:
-    - Copilot Free
-    - 2,000 completions/month
-    - limited chat/agent AI credits
+    - Copilot Free includes up to 2,000 code completions per month
+    - Copilot Free has an allowance of GitHub AI Credits; the exact Free amount is not published
+    - Free has limited agent access and Auto model selection only
+    - The plan page does not state whether a payment card is required
     page_sha256: null

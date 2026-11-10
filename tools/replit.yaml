@@ -4,7 +4,7 @@ slug: replit
 vendor: Replit
 category: cloud-ide
 product_url: https://replit.com/
-pricing_url: https://ld.replit.com/pricing
+pricing_url: https://replit.com/pricing
 repo_url: null
 status:
   availability: active
@@ -24,21 +24,21 @@ free_tier:
   plan_name: Starter
   quantity_published: false
   quota_pools:
-  - id: agent-credits
-    name: Agent credits
+  - id: free-daily-usage
+    name: Free daily usage
     amount: undisclosed
-    unit: credits
+    unit: usage
     period: day
     cap: null
     reset:
       period: daily
       time: null
       timezone: null
-      notes: null
+      notes: Pricing says daily usage but publishes no reset time.
     rollover: unknown
-    notes: null
+    notes: Exact free-agent usage quantity is unpublished.
   - id: published-apps
-    name: Published live project
+    name: Published live projects
     amount: 1
     unit: project
     period: provider_specific
@@ -49,8 +49,9 @@ free_tier:
       timezone: null
       notes: null
     rollover: not_applicable
-    notes: null
-  after_exhaustion: Wait for daily Agent credits to refresh or upgrade.
+    notes: Starter allows one live published project.
+  after_exhaustion: Starter offers daily Free Mode usage, but the exact amount and refresh time are unpublished.
+    Starter allows one live published project.
   rollover: unknown
 models:
   available: []
@@ -70,15 +71,32 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
-  confidence: mixed
+  last_verified: '2026-11-10'
+  confidence: official_undisclosed
   sources:
-  - url: https://ld.replit.com/pricing
+  - url: https://replit.com/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - name
+    - pricing_url
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
     supports:
-    - Starter plan
-    - free daily Agent credits
-    - 1 published live project
+    - Starter is $0 and includes free daily usage
+    - Starter allows 1 live published project
+    - The exact Starter AI-usage amount and reset time are not published
+    - Replit says users can start for free with no credit card
+    page_sha256: null
+  - url: https://replit.com/blog/replit-introduces-free-mode
+    type: official_blog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    supports:
+    - Free Mode tasks do not consume usage credits
+    - The 5-hour Free Mode reset applies to Core and Pro usage limits, not the Starter daily allowance
     page_sha256: null

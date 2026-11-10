@@ -4,7 +4,7 @@ slug: openai-codex
 vendor: OpenAI
 category: coding-agent
 product_url: https://openai.com/codex/
-pricing_url: https://help.openai.com/en/articles/11369540
+pricing_url: https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
 repo_url: null
 status:
   availability: active
@@ -15,8 +15,8 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The Codex plan article does not specify whether a payment card is needed for the Free plan.
 free_tier:
   available: true
   types:
@@ -37,11 +37,13 @@ free_tier:
       notes: null
     rollover: unknown
     notes: null
-  after_exhaustion: Usage is governed by ChatGPT plan limits.
+  after_exhaustion: Usage limits vary by ChatGPT plan; the exact Free allowance is not published. Codex
+    Cloud requires an eligible paid plan.
   rollover: unknown
 models:
   available: []
-  restrictions: []
+  restrictions:
+  - Codex Cloud is not included on the ChatGPT Free plan.
 project_limits: []
 deployment: []
 runtime_limits: []
@@ -57,14 +59,21 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://help.openai.com/en/articles/11369540
+  - url: https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
     type: official_help
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - models.restrictions
+    - authentication.credit_card_required
     supports:
-    - Codex included across ChatGPT plans including Free
-    - exact Free quantity undisclosed
+    - Codex is included across ChatGPT plans, including Free
+    - The exact Free usage allowance is not published as a fixed number
+    - Codex Cloud is not included on ChatGPT Free
+    - The article does not specify a payment-card requirement
     page_sha256: null

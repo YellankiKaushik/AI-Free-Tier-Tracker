@@ -8,7 +8,8 @@ pricing_url: https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterpris
 repo_url: null
 status:
   availability: discontinued
-  notes: Cody Free and Pro were discontinued for impacted users on July 23, 2025.
+  notes: Cody Free and Pro were discontinued for new users in June 2025 and for existing users on July 23,
+    2025. Sourcegraph has announced Cody end of life on January 31, 2027.
 platforms:
 - vscode
 - jetbrains
@@ -59,22 +60,34 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans
     type: official_blog
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - status.notes
+    - free_tier.available
+    - free_tier.after_exhaustion
     supports:
     - Cody Free discontinued July 23, 2025
     - new signups unavailable June 25, 2025
     page_sha256: null
-  - url: https://6.2.sourcegraph.com/pricing/plans/free
-    type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://sourcegraph.com/blog/making-cody-free-10x-better
+    type: official_blog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
     supports:
-    - Free plan
-    - 200 chat messages and prompts per month
+    - Cody Free had 200 chats and commands per month before the plan was discontinued
+    page_sha256: null
+  - url: https://sourcegraph.com/blog/sunsetting-cody-future-of-code-intelligence
+    type: official_blog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.notes
+    supports:
+    - Sourcegraph announced Cody end of life on January 31, 2027
     page_sha256: null

@@ -15,7 +15,7 @@ platforms:
 authentication:
   account_required: 'yes'
   credit_card_required: 'no'
-  notes: null
+  notes: The current pricing page says no credit card is needed.
 free_tier:
   available: true
   types:
@@ -36,7 +36,7 @@ free_tier:
       timezone: null
       notes: null
     rollover: 'no'
-    notes: null
+    notes: Unused daily build credits expire at the end of each day.
   - id: cloud-credits
     name: Cloud credits
     amount: 20
@@ -48,8 +48,9 @@ free_tier:
       time: null
       timezone: null
       notes: null
-    rollover: 'no'
-    notes: null
+    rollover: unknown
+    notes: The pricing FAQ says unused monthly plan credits expire two months after issue, but does not
+      explicitly clarify whether this Free grant follows that rule.
   - id: ai-credits
     name: AI credits
     amount: 4
@@ -61,10 +62,11 @@ free_tier:
       time: null
       timezone: null
       notes: null
-    rollover: 'no'
-    notes: null
-  after_exhaustion: Wait for the daily/monthly grant to refresh or upgrade.
-  rollover: 'no'
+    rollover: unknown
+    notes: Expiration of this Free grant is not specified.
+  after_exhaustion: Daily build credits expire at the end of each day; monthly Cloud and AI credits are
+    granted separately. The pricing page does not specify exhaustion behavior for each pool.
+  rollover: unknown
 models:
   available: []
   restrictions: []
@@ -83,24 +85,36 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://lovable.dev/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.quota_pools.build-credits.amount
+    - free_tier.quota_pools.build-credits.cap
+    - free_tier.quota_pools.build-credits.reset.period
+    - free_tier.quota_pools.cloud-credits.amount
+    - free_tier.quota_pools.cloud-credits.reset.period
+    - free_tier.quota_pools.ai-credits.amount
+    - free_tier.quota_pools.ai-credits.reset.period
+    - free_tier.after_exhaustion
     supports:
-    - free plan
-    - 5 build credits/day
-    - 30/month cap
-    - 20 Cloud credits/month
-    - 4 AI credits/month
+    - Free plan requires no credit card
+    - Free plan receives 5 build credits daily, up to 30 per month; the daily grant expires at the end of the day
+    - The monthly cap for daily build credits is 30/month
+    - Free plan receives 20 Cloud credits per month and 4 credits per month for AI features in published apps
+    - Unused monthly plan credits expire two months after issue; whether the free Cloud grant follows this rule is not explicit
     page_sha256: null
   - url: https://lovable.dev/blog/simplifying-billing
     type: official_blog
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
     supports:
-    - credit system and monthly grants
+    - Confirms the 20 monthly Cloud credits and 4 monthly AI-feature credits
     page_sha256: null

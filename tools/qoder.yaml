@@ -14,15 +14,16 @@ platforms:
 - cli
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current pricing and onboarding docs do not state whether a payment method is needed for Free
+    or the trial.
 free_tier:
   available: true
   types:
   - dynamic_rate_limit
   - time_limited_trial
-  - open_source_byok
-  plan_name: Community Edition / Free
+  - one_time_signup
+  plan_name: Free
   quantity_published: true
   quota_pools:
   - id: trial-credits
@@ -37,7 +38,7 @@ free_tier:
       timezone: null
       notes: null
     rollover: 'no'
-    notes: null
+    notes: A 300-credit pool is included with the 14-day Pro trial.
   - id: basic-models
     name: Basic models
     amount: undisclosed
@@ -45,18 +46,19 @@ free_tier:
     period: dynamic
     cap: null
     reset:
-      period: daily
+      period: dynamic
       time: null
       timezone: null
-      notes: null
+      notes: No exact refresh period is published for limited basic-model messages.
     rollover: unknown
-    notes: null
-  after_exhaustion: When credits run out, Qoder switches to basic models with daily
-    limits; wait or upgrade/top up.
+    notes: Basic-model user-message allowance is limited, but the exact amount and reset are not published.
+  after_exhaustion: The 14-day Pro trial includes 300 credits; Free switches to basic models with limited
+    messages. The basic-model quantity and reset are unpublished.
   rollover: unknown
 models:
   available: []
-  restrictions: []
+  restrictions:
+  - Free includes limited basic-model messages and BYOK; the exact message limit is not published.
 project_limits: []
 deployment: []
 runtime_limits: []
@@ -67,29 +69,45 @@ regions: []
 trial:
   available: true
   duration_days: 14
-  allowance: 300 credits with Pro trial
+  allowance: 300 credits, unlimited completions and next edits, Chat/Agent, and Pro features.
   recurring: false
-  notes: null
-notes: []
+  notes: Available to new users at first sign-in in the latest Qoder Client; virtual machines are excluded.
+    Payment-method requirement is not stated.
+notes:
+- Free includes BYOK and limited basic-model messages. The exact basic-model message amount and reset
+  period are unpublished.
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: mixed
   sources:
   - url: https://docs.qoder.com/account/pricing
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial
     supports:
-    - Free plan
-    - 2-week Pro trial
-    - 300 credits
-    - basic models for limited user messages
+    - Free includes a two-week Pro trial with 300 credits
+    - Free basic models allow limited user messages; no exact number or daily reset is stated
     page_sha256: null
-  - url: https://qoder.com/blog/qoder-community
-    type: official_blog
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://docs.qoder.com/plugins/introduction
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.types
+    - free_tier.quota_pools
+    - authentication.account_required
     supports:
-    - Community Edition
-    - BYOK free for everyone
+    - New users receive 300 credits upon successful registration
+    - Qoder provides BYOK
+    page_sha256: null
+  - url: https://docs.qoder.com/release-notes/lite-launch-announcement
+    type: official_changelog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - trial
+    supports:
+    - Free includes a two-week Pro trial with 300 credits
     page_sha256: null
