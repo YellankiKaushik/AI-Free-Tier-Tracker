@@ -13,17 +13,18 @@ Repair branch: `codex/monitoring-data-repair`
 
 ## Repairs
 
-- Removed cron triggers from both monitoring workflows. Each retains `workflow_dispatch`; validation still runs on pushes and pull requests, and Pages still deploys on pushes to `main` or a manual dispatch on `main`.
+- Removed cron triggers from both monitoring workflows. Each retains `workflow_dispatch`; validation still runs on pushes and pull requests, and Pages still deploys on pushes to `main` or a manual dispatch on `main`. Pages uses a separate concurrency key for main deployments and unique keys for non-main manual builds, so a manual branch build cannot displace a queued main deployment.
 - Replaced the dead NVIDIA pricing/evidence reference with the verified official FAQ. The source's `retrieved_at` is November 10 because that page was checked then. The record's `last_verified` remains September 9 because the full record was not reverified. `quantity_published` remains false, quota pools remain empty, and the undisclosed-quota wording is preserved.
 - Removed date-derived freshness labels and counters from generated JSON and README tables. The public index is schema version 4 and retains `last_verified`; README tables display that date. The dashboard computes freshness from the verification date when it loads, preserving stale warnings without changing generated files as days pass.
 - Limited each workflow to the permissions its jobs need. Pages build has `contents: read` and `pages: read`; deploy has only `pages: write` and `id-token: write`. Checkout no longer persists its token. All actions are pinned to full commit SHAs.
-- Set job timeouts, retained the source-health artifact for 14 days, and added workflow, NVIDIA-data, index, README, and dashboard regression tests.
+- Bounded source-health requests to 10 seconds with one retry that ignores unbounded `Retry-After` values. The scan stops after 40 minutes, atomically writes progress after each URL, marks partial reports with `complete: false`, and preserves the artifact before the 50-minute job timeout. The source-health artifact is retained for 14 days.
+- Set job timeouts and added workflow, source-health, NVIDIA-data, index, README, and dashboard regression tests. The freshness regression exercises real JavaScript outcomes at the 30- and 60-day boundaries; the index test compares the committed artifact with the generator output.
 - Added [`docs/OPERATIONS.md`](../OPERATIONS.md) and updated the README, data model, methodology, and local-agent guidance with automatic/manual behavior, troubleshooting, notification controls, and action maintenance.
 
 ## Validation
 
 - `ruff check .`: passed.
-- `python -m pytest -q`: 51 passed.
+- `python -m pytest -q`: 53 passed.
 - `python scripts/validate_data.py`: 43 records passed schema and data checks.
 - `python scripts/audit_data.py`: no manual review findings.
 - `python -m compileall -q agent scripts tests`: passed.
@@ -32,6 +33,6 @@ Repair branch: `codex/monitoring-data-repair`
 
 ## Remaining Work
 
-The dataset still needs a genuine source review for all 43 records. The full 60-URL source-health sweep was not run during this repair; the reported NVIDIA URL failure was verified directly and its replacement official page was checked. The repair PR's GitHub Actions validation result will be recorded after the branch is published.
+The dataset still needs a genuine source review for all 43 records. The full 60-URL source-health sweep was not run during this repair; the reported NVIDIA URL failure was verified directly and its replacement official page was checked. The repair PR is [#2](https://github.com/YellankiKaushik/AI-Free-Tier-Tracker/pull/2); its final GitHub Actions result will be recorded after the follow-up review fixes complete.
 
 No repository setting change is currently indicated: the `Protect main` ruleset is active and the latest inspected Pages manual deployment succeeded. If Pages configuration fails in a future run, confirm **Settings → Pages → Build and deployment → Source** remains **GitHub Actions**.

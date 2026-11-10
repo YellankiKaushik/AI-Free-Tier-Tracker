@@ -38,13 +38,13 @@ def make_session() -> requests.Session:
     session = requests.Session()
     session.headers["User-Agent"] = UA
     retry = Retry(
-        total=2,
-        connect=2,
-        read=2,
-        backoff_factor=0.5,
+        total=1,
+        connect=1,
+        read=1,
+        backoff_factor=0.25,
         status_forcelist=RETRY_STATUSES,
         allowed_methods=frozenset({"GET", "HEAD"}),
-        respect_retry_after_header=True,
+        respect_retry_after_header=False,
         raise_on_status=False,
     )
     adapter = HTTPAdapter(max_retries=retry)
@@ -76,19 +76,9 @@ def check_url(session: requests.Session, tool: str, url: str, timeout: int) -> d
     return row
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Check official source URL health.")
-    parser.add_argument("--timeout", type=int, default=15)
-    parser.add_argument("--sleep", type=float, default=0.5)
-    parser.add_argument("--json", type=Path)
-    parser.add_argument("--fail-on-warning", action="store_true")
-    args = parser.parse_args()
-
-    session = make_session()
+def collect_sources() -> list[tuple[str, str]]:
     seen: set[str] = set()
-    report: list[dict[str, Any]] = []
-    failures: list[dict[str, Any]] = []
-    warnings: list[dict[str, Any]] = []
+    sources: list[tuple[str, str]] = []
     for path in sorted((ROOT / "tools").glob("*.yaml")):
         data = yaml.safe_load(path.read_text(encoding="utf-8"))
         for source in data["verification"]["sources"]:
@@ -96,16 +86,12 @@ def main() -> None:
             if url in seen:
                 continue
             seen.add(url)
-            row = check_url(session, data["slug"], url, args.timeout)
-            report.append(row)
-            print(row["classification"], row["status"], url)
-            if row["classification"] in FAILURE_CLASSES:
-                failures.append(row)
-            if row["classification"] in WARNING_CLASSES:
-                warnings.append(row)
-            time.sleep(args.sleep)
+            sources.append((data["slug"], url))
+    return sources
 
-    summary = {
+
+def summarize(report: list[dict[str, Any]]) -> dict[str, int]:
+    return {
         "total": len(report),
         "healthy": sum(1 for row in report if row["classification"] == "healthy"),
         "redirect": sum(1 for row in report if row["classification"] == "redirect"),
@@ -115,10 +101,73 @@ def main() -> None:
         "server_error": sum(1 for row in report if row["classification"] == "server_error"),
         "network_error": sum(1 for row in report if row["classification"] == "network_error"),
     }
+
+
+def write_report(
+    path: Path,
+    report: list[dict[str, Any]],
+    expected_total: int,
+    complete: bool,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "summary": summarize(report),
+        "expected_total": expected_total,
+        "complete": complete,
+        "results": report,
+    }
+    temporary_path = path.with_name(f".{path.name}.tmp")
+    temporary_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    temporary_path.replace(path)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Check official source URL health.")
+    parser.add_argument("--timeout", type=int, default=10)
+    parser.add_argument("--sleep", type=float, default=0.5)
+    parser.add_argument("--max-runtime", type=float, default=2400)
+    parser.add_argument("--json", type=Path)
+    parser.add_argument("--fail-on-warning", action="store_true")
+    args = parser.parse_args()
+
+    if args.timeout <= 0:
+        parser.error("--timeout must be positive")
+    if args.sleep < 0:
+        parser.error("--sleep cannot be negative")
+    if args.max_runtime <= 0:
+        parser.error("--max-runtime must be positive")
+
+    sources = collect_sources()
+    report: list[dict[str, Any]] = []
+    failures: list[dict[str, Any]] = []
+    warnings: list[dict[str, Any]] = []
     if args.json:
-        args.json.parent.mkdir(parents=True, exist_ok=True)
-        args.json.write_text(json.dumps({"summary": summary, "results": report}, indent=2) + "\n", encoding="utf-8")
-    if failures or (args.fail_on_warning and warnings):
+        write_report(args.json, report, len(sources), complete=False)
+
+    session = make_session()
+    deadline = time.monotonic() + args.max_runtime
+    incomplete = False
+    for index, (tool, url) in enumerate(sources):
+        if time.monotonic() >= deadline:
+            print("Reached the source-health scan time limit; preserving the partial report.")
+            incomplete = True
+            break
+        row = check_url(session, tool, url, args.timeout)
+        report.append(row)
+        print(row["classification"], row["status"], url)
+        if row["classification"] in FAILURE_CLASSES:
+            failures.append(row)
+        if row["classification"] in WARNING_CLASSES:
+            warnings.append(row)
+        if args.json:
+            write_report(args.json, report, len(sources), complete=False)
+        if index + 1 < len(sources) and args.sleep:
+            time.sleep(min(args.sleep, max(0, deadline - time.monotonic())))
+
+    complete = not incomplete and len(report) == len(sources)
+    if args.json:
+        write_report(args.json, report, len(sources), complete=complete)
+    if incomplete or failures or (args.fail_on_warning and warnings):
         raise SystemExit(1)
 
 

@@ -13,12 +13,12 @@
 3. Select **Run workflow** and choose the branch to inspect.
 4. Open the run summary and download the `source-health-report` artifact when available.
 
-The stale check warns after 30 days and fails after 60 days. A failure means the record is genuinely overdue; it is not a reason to change `last_verified` without reviewing the official sources and the record's claims. Source health checks unique evidence URLs. A 404 or server error is a failure; rate limits and access denials are reported as warnings unless `--fail-on-warning` is explicitly used.
+The stale check warns after 30 days and fails after 60 days. A failure means the record is genuinely overdue; it is not a reason to change `last_verified` without reviewing the official sources and the record's claims. Source health checks unique evidence URLs with a 10-second request timeout, one bounded retry, and a 40-minute scan limit. The JSON report is updated after each URL. If the run reaches its limit, it exits as failed and uploads the partial report with `complete: false` and the expected URL count. A complete sweep has `complete: true`. A 404 or server error is a failure; rate limits and access denials are reported as warnings unless `--fail-on-warning` is explicitly used.
 
 ## Troubleshoot
 
 - **Stale check fails:** use the reported slug and age to review that record's official sources. Update evidence and `last_verified` only after rechecking the whole record; otherwise preserve the warning.
-- **Source health fails:** inspect the artifact for the failed URL, status, and final redirect target. Replace a broken URL only with a verified official source, then update its field support and regenerate artifacts.
+- **Source health fails:** inspect the artifact for the failed URL, status, final redirect target, and `complete` flag. If `complete` is false, the run timed out with a partial scan; rerun it manually. Replace a broken URL only with a verified official source, then update its field support and regenerate artifacts. If the artifact is missing, inspect setup and dependency-install steps before the scan.
 - **Validation or generated-artifact check fails:** run `ruff check .`, `python scripts/validate_data.py`, `python -m pytest -q`, then `python scripts/build_index.py`, `python scripts/generate_readme.py`, `python scripts/build_reset_calendar.py`, and `python scripts/build_dashboard.py`. Review `git diff` for unintended data or generated changes.
 - **Pages deployment fails:** confirm repository **Settings → Pages → Build and deployment → Source** is **GitHub Actions**. Check the build artifact first, then the `github-pages` environment and deployment job permissions.
 

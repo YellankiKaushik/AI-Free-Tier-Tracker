@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +19,7 @@ def test_generated_index_is_deterministic():
     subprocess.run([sys.executable, "scripts/build_index.py"], cwd=ROOT, check=True)
     after = hashlib.sha256(index.read_bytes()).hexdigest()
     assert before == after
+    assert json.loads(index.read_text(encoding="utf-8")) == build_index()
 
 
 def test_public_index_includes_query_fields_and_omits_confidence_score():
