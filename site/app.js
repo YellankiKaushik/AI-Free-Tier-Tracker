@@ -14,6 +14,16 @@ function resetPeriods(tool) {
   return [...new Set((tool.quota_pools || []).map(p => p.reset?.period).filter(Boolean))].sort();
 }
 
+function freshnessFromDate(lastVerified, today = new Date()) {
+  const verified = Date.parse(`${lastVerified}T00:00:00Z`);
+  const todayUtc = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+  const age = Math.floor((todayUtc - verified) / 86400000);
+  if (!Number.isFinite(age) || age < 0) return 'unknown';
+  if (age <= 30) return 'current';
+  if (age <= 60) return 'needs_recheck';
+  return 'stale';
+}
+
 function appendOption(select, value, label = value) {
   const option = document.createElement('option');
   option.value = value;
@@ -56,7 +66,7 @@ function renderStats(tools) {
     `Active ${tools.filter(t => t.status === 'active').length}`,
     `Exact ${tools.filter(t => t.quantity_published).length}`,
     `No card ${tools.filter(t => t.credit_card_required === 'no').length}`,
-    `Current ${tools.filter(t => t.freshness === 'current').length}`,
+    `Current ${tools.filter(t => freshnessFromDate(t.last_verified) === 'current').length}`,
   ];
   stats.replaceChildren(...items.map(item => textNode('span', 'pill', item)));
 }
@@ -81,7 +91,7 @@ function renderCard(tool) {
   const article = document.createElement('article');
   article.className = 'card';
   article.append(textNode('h2', '', tool.name || 'Unnamed tool'));
-  article.append(textNode('div', 'meta', `${tool.category || 'unknown'} · ${tool.status || 'unknown'} · ${tool.freshness || 'unknown'}`));
+  article.append(textNode('div', 'meta', `${tool.category || 'unknown'} · ${tool.status || 'unknown'} · ${freshnessFromDate(tool.last_verified)}`));
   article.append(textNode('div', 'quota', tool.quota_summary || 'Free access details unavailable'));
   article.append(textNode('div', 'meta', `Reset: ${tool.reset_summary || 'undisclosed'} · Card: ${tool.credit_card_required || 'unknown'}`));
   renderSources(tool, article);

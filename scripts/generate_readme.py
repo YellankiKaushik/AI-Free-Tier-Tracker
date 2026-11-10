@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from build_index import freshness, load_records
+    from build_index import load_records
     from record_utils import (
         category_records,
         has_recurring_or_dynamic_hosted_access,
@@ -16,7 +16,7 @@ try:
         reset_summary,
     )
 except ModuleNotFoundError:
-    from scripts.build_index import freshness, load_records
+    from scripts.build_index import load_records
     from scripts.record_utils import (
         category_records,
         has_recurring_or_dynamic_hosted_access,
@@ -33,7 +33,7 @@ END = "<!-- GENERATED:TOOLS:END -->"
 
 def table(records: list[dict[str, Any]]) -> str:
     lines = [
-        "| Tool | Category | Free allowance | Reset | Card | Evidence | Freshness |",
+        "| Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |",
         "|---|---|---|---|---|---|---|",
     ]
     for record in records:
@@ -42,7 +42,7 @@ def table(records: list[dict[str, Any]]) -> str:
         lines.append(
             f"| [{record['name']}]({record.get('pricing_url') or record['product_url']}) "
             f"| {record['category']} | {quota_summary(record)} | {reset_summary(record)} "
-            f"| {card} | {evidence} | {freshness(record['verification']['last_verified'])} |"
+            f"| {card} | {evidence} | {record['verification']['last_verified']} |"
         )
     return "\n".join(lines)
 

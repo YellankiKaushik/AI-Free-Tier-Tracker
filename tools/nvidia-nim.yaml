@@ -4,7 +4,7 @@ slug: nvidia-nim
 vendor: NVIDIA
 category: model-api
 product_url: https://build.nvidia.com/
-pricing_url: https://docs.api.nvidia.com/nim/re/docs/run-anywhere
+pricing_url: https://docs.api.nvidia.com/nim/docs/product
 repo_url: null
 status:
   availability: active
@@ -103,19 +103,24 @@ verification:
     page_sha256: null
   - url: https://docs.api.nvidia.com/nim/docs/product
     type: official_docs
-    retrieved_at: '2026-09-09'
+    retrieved_at: '2026-11-10'
     supports_fields:
+    - pricing_url
+    - free_tier.available
+    - free_tier.types
     - authentication.account_required
     - eligibility
     - deployment
     - runtime_limits
+    - trial.notes
     supports:
     - NVIDIA-hosted endpoints for application prototyping in the NVIDIA API catalog
     - Developer Program enrollment to access NIM for development and testing
     - Developer Program members have free access to NIM API endpoints for prototyping
     - downloadable NIM microservices for research, application development, and experimentation
       on up to 16 GPUs
-    - NVIDIA AI Enterprise is required for production
+    - production use requires an NVIDIA AI Enterprise license
+    - NVIDIA AI Enterprise has a separate 90-day evaluation path
     page_sha256: null
   - url: https://docs.api.nvidia.com/nim/docs/api-quickstart
     type: official_docs
@@ -128,24 +133,6 @@ verification:
     - hosted by NVIDIA on NVIDIA DGX Cloud
     - Get API Key from a model page
     - signing up makes the user a member of the Developer Program
-    page_sha256: null
-  - url: https://docs.api.nvidia.com/nim/re/docs/run-anywhere
-    type: official_docs
-    retrieved_at: '2026-09-09'
-    supports_fields:
-    - pricing_url
-    - free_tier.available
-    - deployment
-    - runtime_limits
-    - eligibility
-    - trial.notes
-    supports:
-    - Developer Program members have free access to NIM API endpoints for prototyping
-    - downloadable NIM microservices are free for research, development and testing
-    - self-hosted Developer Program NIM use is allowed on up to 16 GPUs
-    - production requires NVIDIA AI Enterprise
-    - NVIDIA AI Enterprise pricing and evaluation are separate from Developer Program
-      access
     page_sha256: null
   - url: https://docs.api.nvidia.com/nim/reference/llm-apis
     type: official_docs

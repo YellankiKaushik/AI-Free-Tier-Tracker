@@ -17,3 +17,11 @@ def test_dashboard_controls_have_labels():
     html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
     for control in ("search", "category", "status", "quota", "reset"):
         assert f'for="{control}"' in html
+
+
+def test_dashboard_computes_freshness_from_verification_date_at_runtime():
+    js = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+    assert "function freshnessFromDate(lastVerified, today = new Date())" in js
+    assert "freshnessFromDate(t.last_verified)" in js
+    assert "freshnessFromDate(tool.last_verified)" in js
+    assert "tool.freshness" not in js
