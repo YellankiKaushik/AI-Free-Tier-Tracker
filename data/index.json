@@ -3,20 +3,20 @@
   "generated_from": "tools/*.yaml",
   "stats": {
     "total": 43,
-    "active": 41,
+    "active": 39,
     "legacy": 0,
-    "discontinued": 2,
-    "recurring": 25,
-    "trials": 5,
-    "open_source_byok": 14,
-    "official_exact": 14,
-    "official_undisclosed": 26,
+    "discontinued": 4,
+    "recurring": 20,
+    "trials": 9,
+    "open_source_byok": 11,
+    "official_exact": 15,
+    "official_undisclosed": 23,
     "needs_verification": 0
   },
   "tools": [
     {
       "slug": "cursor",
-      "name": "Cursor Hobby",
+      "name": "Cursor Free",
       "vendor": "Anysphere",
       "category": "agentic-ide",
       "status": "active",
@@ -28,21 +28,21 @@
       "free_tier_types": [
         "dynamic_rate_limit"
       ],
-      "plan_name": "Hobby",
+      "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current pricing page does not state whether a payment method is required."
       },
       "quantity_published": false,
       "quota_pools": [
         {
           "id": "agent-requests",
-          "name": "Agent requests",
+          "name": "AI usage",
           "amount": "undisclosed",
-          "unit": "requests",
+          "unit": "usage",
           "period": "dynamic",
           "cap": null,
           "reset": {
@@ -52,30 +52,14 @@
             "notes": null
           },
           "rollover": "unknown",
-          "notes": null
-        },
-        {
-          "id": "tab-completions",
-          "name": "Tab completions",
-          "amount": "undisclosed",
-          "unit": "completions",
-          "period": "dynamic",
-          "cap": null,
-          "reset": {
-            "period": "dynamic",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "unknown",
-          "notes": null
+          "notes": "Current pricing describes limited AI/agent usage without publishing a quantity or reset."
         }
       ],
-      "quota_summary": "Agent requests: undisclosed requests/dynamic; Tab completions: undisclosed completions/dynamic",
+      "quota_summary": "undisclosed usage/dynamic",
       "reset_summary": "dynamic",
-      "after_exhaustion": "Wait for vendor-managed limits to refresh or upgrade.",
+      "after_exhaustion": "Exact Free AI usage and reset limits are not published; upgrade for higher limits.",
       "product_url": "https://cursor.com/",
-      "pricing_url": "https://cursor.com/en-US/pricing",
+      "pricing_url": "https://cursor.com/pricing",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -92,23 +76,137 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://cursor.com/en-US/pricing",
+          "url": "https://cursor.com/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "name",
+            "pricing_url",
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Hobby plan",
-            "limited Agent requests",
-            "limited Tab completions"
+            "Cursor Free costs $0 per month",
+            "Free includes limited AI usage and limited Agent and Chat requests",
+            "Exact Free quantities and reset periods are not published",
+            "The pricing page does not state whether payment details are required"
           ],
           "page_sha256": null
         }
       ],
       "source_count": 1
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "vendor": "Cognition",
+      "category": "agentic-ide",
+      "status": "active",
+      "status_notes": "Devin Desktop is the new name for Windsurf. The official page says the IDE and existing plans/pricing carry over; the Free plan provides a light, unpublished agent quota plus unlimited inline edits and Tab completions.",
+      "platforms": [
+        "desktop",
+        "vscode"
+      ],
+      "free_tier_types": [
+        "dynamic_rate_limit"
+      ],
+      "plan_name": "Free",
+      "account_required": "yes",
+      "credit_card_required": "unknown",
+      "authentication": {
+        "account_required": "yes",
+        "credit_card_required": "unknown",
+        "notes": "Current Devin pricing does not state whether a payment card is required for the Free plan."
+      },
+      "quantity_published": false,
+      "quota_pools": [
+        {
+          "id": "agent-usage",
+          "name": "Agent usage",
+          "amount": "undisclosed",
+          "unit": "usage",
+          "period": "dynamic",
+          "cap": null,
+          "reset": {
+            "period": "dynamic",
+            "time": null,
+            "timezone": null,
+            "notes": null
+          },
+          "rollover": "unknown",
+          "notes": "The official pricing page describes a light agent quota but publishes no exact quantity, unit, or reset period."
+        }
+      ],
+      "quota_summary": "undisclosed usage/dynamic",
+      "reset_summary": "dynamic",
+      "after_exhaustion": "The exact Free agent quota and reset are unpublished. The Free plan includes unlimited inline edits and Tab completions; paid tiers include increased agent quotas.",
+      "product_url": "https://devin.ai/desktop",
+      "pricing_url": "https://devin.ai/pricing",
+      "repo_url": null,
+      "trial": {
+        "available": false,
+        "duration_days": null,
+        "allowance": null,
+        "recurring": false,
+        "notes": null
+      },
+      "models": {
+        "available": [],
+        "restrictions": []
+      },
+      "deployment": [],
+      "runtime_limits": [],
+      "eligibility": [],
+      "notes": [],
+      "last_verified": "2026-11-10",
+      "confidence": "official_undisclosed",
+      "sources": [
+        {
+          "url": "https://devin.ai/desktop",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "name",
+            "vendor",
+            "product_url",
+            "status.notes",
+            "platforms"
+          ],
+          "supports": [
+            "Devin Desktop is the new name for Windsurf",
+            "Windsurf IDE experience and existing plans carry over",
+            "The page describes the current desktop product"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://devin.ai/pricing",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required"
+          ],
+          "supports": [
+            "Free plan is $0",
+            "Free plan has a light quota to code with agents; exact amount is unpublished",
+            "Free includes unlimited inline edits and Tab completions",
+            "Paid plans have increased quotas",
+            "The pricing page does not state a payment-card requirement"
+          ],
+          "page_sha256": null
+        }
+      ],
+      "source_count": 2
     },
     {
       "slug": "kiro",
@@ -122,15 +220,16 @@
         "cli"
       ],
       "free_tier_types": [
-        "recurring_monthly"
+        "recurring_monthly",
+        "time_limited_trial"
       ],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current pricing page says a valid card is required to upgrade to a paid subscription; it does not state a card is required for the Free tier."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -139,50 +238,63 @@
           "name": "Credits",
           "amount": 50,
           "unit": "credits",
-          "period": "billing_cycle",
+          "period": "month",
           "cap": null,
           "reset": {
-            "period": "billing_cycle",
+            "period": "monthly",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Free individual limits reset at the start of each monthly billing cycle."
           },
           "rollover": "no",
           "notes": null
         }
       ],
-      "quota_summary": "50 credits/billing cycle",
-      "reset_summary": "billing cycle",
-      "after_exhaustion": "Wait for billing-cycle reset or upgrade.",
+      "quota_summary": "50 credits/month",
+      "reset_summary": "monthly",
+      "after_exhaustion": "Free individual usage resets at the start of each monthly billing cycle; users may upgrade to a paid tier.",
       "product_url": "https://kiro.dev/",
       "pricing_url": "https://kiro.dev/pricing/",
       "repo_url": null,
       "trial": {
-        "available": false,
+        "available": true,
         "duration_days": null,
-        "allowance": null,
+        "allowance": "On the first upgrade from Free to Pro, the remainder of that month is free plus 500 trial credits usable within 12 months.",
         "recurring": false,
-        "notes": null
+        "notes": "A valid credit card is required for the paid upgrade. Trial credits are used after plan credits; if the user returns to Free, unused trial credits carry over but are usable only on free-tier models."
       },
       "models": {
-        "available": [],
-        "restrictions": []
+        "available": [
+          "Open weight models",
+          "Claude Sonnet 4.5"
+        ],
+        "restrictions": [
+          "The Free tier limits access to open weight models and Claude Sonnet 4.5; paid tiers add premium models."
+        ]
       },
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://kiro.dev/pricing/",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "models",
+            "trial",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Free plan",
-            "50 credits/month"
+            "Kiro Free is $0 and includes 50 credits per month",
+            "Free includes open weight models and Claude Sonnet 4.5 with limits",
+            "First upgrade to Pro provides the rest of the month free plus 500 credits usable within 12 months",
+            "Paid upgrade requires a valid credit card",
+            "Individual limits reset at the start of each billing month; unused monthly credits do not roll over"
           ],
           "page_sha256": null
         }
@@ -203,15 +315,15 @@
       "free_tier_types": [
         "dynamic_rate_limit",
         "time_limited_trial",
-        "open_source_byok"
+        "one_time_signup"
       ],
-      "plan_name": "Community Edition / Free",
+      "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current pricing and onboarding docs do not state whether a payment method is needed for Free or the trial."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -229,7 +341,7 @@
             "notes": null
           },
           "rollover": "no",
-          "notes": null
+          "notes": "A 300-credit pool is included with the 14-day Pro trial."
         },
         {
           "id": "basic-models",
@@ -239,65 +351,88 @@
           "period": "dynamic",
           "cap": null,
           "reset": {
-            "period": "daily",
+            "period": "dynamic",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "No exact refresh period is published for limited basic-model messages."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "Basic-model user-message allowance is limited, but the exact amount and reset are not published."
         }
       ],
       "quota_summary": "Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic",
-      "reset_summary": "daily, not applicable",
-      "after_exhaustion": "When credits run out, Qoder switches to basic models with daily limits; wait or upgrade/top up.",
+      "reset_summary": "dynamic, not applicable",
+      "after_exhaustion": "The 14-day Pro trial includes 300 credits; Free switches to basic models with limited messages. The basic-model quantity and reset are unpublished.",
       "product_url": "https://qoder.com/",
       "pricing_url": "https://docs.qoder.com/account/pricing",
       "repo_url": null,
       "trial": {
         "available": true,
         "duration_days": 14,
-        "allowance": "300 credits with Pro trial",
+        "allowance": "300 credits, unlimited completions and next edits, Chat/Agent, and Pro features.",
         "recurring": false,
-        "notes": null
+        "notes": "Available to new users at first sign-in in the latest Qoder Client; virtual machines are excluded. Payment-method requirement is not stated."
       },
       "models": {
         "available": [],
-        "restrictions": []
+        "restrictions": [
+          "Free includes limited basic-model messages and BYOK; the exact message limit is not published."
+        ]
       },
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
+      "notes": [
+        "Free includes BYOK and limited basic-model messages. The exact basic-model message amount and reset period are unpublished."
+      ],
+      "last_verified": "2026-11-10",
       "confidence": "mixed",
       "sources": [
         {
           "url": "https://docs.qoder.com/account/pricing",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial"
+          ],
           "supports": [
-            "Free plan",
-            "2-week Pro trial",
-            "300 credits",
-            "basic models for limited user messages"
+            "Free includes a two-week Pro trial with 300 credits",
+            "Free basic models allow limited user messages; no exact number or daily reset is stated"
           ],
           "page_sha256": null
         },
         {
-          "url": "https://qoder.com/blog/qoder-community",
-          "type": "official_blog",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://docs.qoder.com/plugins/introduction",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "authentication.account_required"
+          ],
           "supports": [
-            "Community Edition",
-            "BYOK free for everyone"
+            "New users receive 300 credits upon successful registration",
+            "Qoder provides BYOK"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.qoder.com/release-notes/lite-launch-announcement",
+          "type": "official_changelog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "trial"
+          ],
+          "supports": [
+            "Free includes a two-week Pro trial with 300 credits"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 2
+      "source_count": 3
     },
     {
       "slug": "trae",
@@ -310,9 +445,10 @@
         "desktop"
       ],
       "free_tier_types": [
-        "dynamic_rate_limit"
+        "one_time_signup",
+        "time_limited_trial"
       ],
-      "plan_name": "Free/Basic usage",
+      "plan_name": "Free",
       "account_required": "yes",
       "credit_card_required": "unknown",
       "authentication": {
@@ -324,33 +460,33 @@
       "quota_pools": [
         {
           "id": "basic-usage",
-          "name": "Basic usage",
+          "name": "Free usage",
           "amount": "undisclosed",
           "unit": "usage",
-          "period": "dynamic",
+          "period": "one_time",
           "cap": null,
           "reset": {
-            "period": "dynamic",
+            "period": "not_applicable",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "The official pricing page describes the Free allowance as one-time, without a published amount."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "The plan page does not publish a numeric allowance."
         }
       ],
-      "quota_summary": "undisclosed usage/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "When usage runs out, follow TRAE pricing FAQ/reset behavior.",
+      "quota_summary": "undisclosed usage/one time",
+      "reset_summary": "not applicable",
+      "after_exhaustion": "The current pricing page does not state what happens after the one-time Free allowance is exhausted.",
       "product_url": "https://www.trae.ai/",
       "pricing_url": "https://www.trae.ai/pricing",
       "repo_url": null,
       "trial": {
-        "available": false,
-        "duration_days": null,
-        "allowance": null,
+        "available": true,
+        "duration_days": 14,
+        "allowance": "All Pro features during the trial; the exact trial usage amount is not published.",
         "recurring": false,
-        "notes": null
+        "notes": "New users must add a payment method within 48 hours after signup. At the end of the trial, users can choose a membership plan or remove the payment method and switch to Free."
       },
       "models": {
         "available": [],
@@ -359,72 +495,79 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
+      "notes": [
+        "Current official pricing responses expose inconsistent plan tables. One official pricing variant describes Free usage as a one-time allowance, while another displays only the paid Lite, Pro, Pro+, and Ultra tiers. The exact Free allowance and current plan presentation remain unresolved."
+      ],
       "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
+      "confidence": "mixed",
       "sources": [
         {
           "url": "https://www.trae.ai/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.plan_name",
+            "free_tier.quantity_published",
+            "free_tier.quota_pools",
+            "trial.available"
+          ],
           "supports": [
-            "Pricing FAQ",
-            "Basic Usage",
-            "Bonus Usage",
-            "what happens when usage runs out"
+            "One official pricing variant lists Free with limited usage, a one-time free allowance, and limited Autocomplete",
+            "A different pricing response lists paid Lite, Pro, Pro+, and Ultra tiers without a Free row",
+            "Exact Free usage amount and exhaustion behavior are not published in either response"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://www.trae.ai/blog/trae_membership_0213",
+          "type": "official_blog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "trial.available",
+            "trial.duration_days",
+            "trial.allowance",
+            "trial.notes"
+          ],
+          "supports": [
+            "New users can receive a 14-day Pro trial",
+            "Trial requires adding a payment method within 48 hours after signup",
+            "Trial includes Pro features; the article does not state an exact usage amount",
+            "After the trial users can choose a plan or remove the payment method and switch to Free"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
-      "slug": "windsurf",
-      "name": "Windsurf",
-      "vendor": "Windsurf",
-      "category": "agentic-ide",
+      "slug": "create-xyz",
+      "name": "Anything",
+      "vendor": "Anything",
+      "category": "app-builder",
       "status": "active",
-      "status_notes": null,
+      "status_notes": "Anything is the current product name for Create.xyz.",
       "platforms": [
-        "desktop",
-        "vscode"
+        "web",
+        "cloud"
       ],
-      "free_tier_types": [
-        "dynamic_rate_limit"
-      ],
+      "free_tier_types": [],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
+        "credit_card_required": "unknown",
         "notes": null
       },
       "quantity_published": false,
-      "quota_pools": [
-        {
-          "id": "free-usage",
-          "name": "Free usage",
-          "amount": "undisclosed",
-          "unit": "credits",
-          "period": "dynamic",
-          "cap": null,
-          "reset": {
-            "period": "dynamic",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "unknown",
-          "notes": null
-        }
-      ],
-      "quota_summary": "undisclosed credits/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "Use base/free capabilities or upgrade when premium usage is exhausted.",
-      "product_url": "https://windsurf.com/",
-      "pricing_url": "https://windsurf.com/pricing",
+      "quota_pools": [],
+      "quota_summary": "Free access available; exact allowance undisclosed",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "Public pricing confirms a Free plan but does not publish a numeric allowance, reset, rollover, or exhaustion behavior.",
+      "product_url": "https://www.anything.com/",
+      "pricing_url": "https://www.anything.com/pricing",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -440,23 +583,47 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
+      "notes": [
+        "Formerly Create.xyz; the current official product is Anything."
+      ],
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://windsurf.com/pricing",
-          "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://www.anything.com/blog/anything-launch",
+          "type": "official_blog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "name",
+            "vendor",
+            "product_url",
+            "status.notes",
+            "notes"
+          ],
           "supports": [
-            "Free plan",
-            "usage limits not normalized in tracker"
+            "Create.xyz relaunched as Anything"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://www.anything.com/pricing",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.available",
+            "free_tier.quantity_published",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "The public page describes a Free plan",
+            "No exact Free allowance, reset cadence, or exhaustion behavior is published"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "base44",
@@ -470,16 +637,15 @@
         "cloud"
       ],
       "free_tier_types": [
-        "recurring_daily",
         "recurring_monthly"
       ],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current pricing page does not state whether a payment method is required."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -489,15 +655,15 @@
           "amount": 25,
           "unit": "credits",
           "period": "month",
-          "cap": "5/day",
+          "cap": null,
           "reset": {
-            "period": "daily",
+            "period": "monthly",
             "time": null,
             "timezone": null,
             "notes": null
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "Current pricing publishes 25 message credits monthly; a separate daily cap and rollover rule are not shown."
         },
         {
           "id": "integration-credits",
@@ -512,13 +678,13 @@
             "timezone": null,
             "notes": null
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "Official pricing publishes the monthly quantity; it does not publish the previously recorded 5-per-day cap or a rollover rule."
         }
       ],
-      "quota_summary": "Message credits: 25 credits/month (cap 5/day); Integration credits: 100 credits/month",
-      "reset_summary": "daily, monthly",
-      "after_exhaustion": "Wait for daily/monthly limits to refresh or upgrade.",
+      "quota_summary": "Message credits: 25 credits/month; Integration credits: 100 credits/month",
+      "reset_summary": "monthly",
+      "after_exhaustion": "Wait for monthly credits to refresh or upgrade; the current pricing page does not specify rollover.",
       "product_url": "https://base44.com/",
       "pricing_url": "https://base44.com/pricing",
       "repo_url": null,
@@ -537,19 +703,25 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://base44.com/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required",
+            "project_limits"
+          ],
           "supports": [
-            "Free plan",
-            "25 message credits/month",
-            "5/day",
-            "100 integration credits/month"
+            "Free plan includes 25 message credits per month and 100 integration credits per month",
+            "Free plan allows up to 5 apps",
+            "Current pricing page does not publish a separate 5-per-day message cap, rollover rule, or payment-method requirement"
           ],
           "page_sha256": null
         }
@@ -635,97 +807,23 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://bolt.new/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
-          "supports": [
-            "Free plan",
-            "300K tokens/day",
-            "1M tokens/month"
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
           ],
-          "page_sha256": null
-        }
-      ],
-      "source_count": 1
-    },
-    {
-      "slug": "create-xyz",
-      "name": "Create.xyz",
-      "vendor": "Create",
-      "category": "app-builder",
-      "status": "active",
-      "status_notes": null,
-      "platforms": [
-        "web",
-        "cloud"
-      ],
-      "free_tier_types": [
-        "dynamic_rate_limit"
-      ],
-      "plan_name": "Free",
-      "account_required": "yes",
-      "credit_card_required": "unknown",
-      "authentication": {
-        "account_required": "yes",
-        "credit_card_required": "unknown",
-        "notes": null
-      },
-      "quantity_published": false,
-      "quota_pools": [
-        {
-          "id": "usage",
-          "name": "Free usage",
-          "amount": "undisclosed",
-          "unit": "credits",
-          "period": "dynamic",
-          "cap": null,
-          "reset": {
-            "period": "dynamic",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "unknown",
-          "notes": null
-        }
-      ],
-      "quota_summary": "undisclosed credits/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "Wait for vendor-managed free usage to refresh or upgrade.",
-      "product_url": "https://www.create.xyz/",
-      "pricing_url": "https://www.create.xyz/pricing",
-      "repo_url": null,
-      "trial": {
-        "available": false,
-        "duration_days": null,
-        "allowance": null,
-        "recurring": false,
-        "notes": null
-      },
-      "models": {
-        "available": [],
-        "restrictions": []
-      },
-      "deployment": [],
-      "runtime_limits": [],
-      "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
-      "sources": [
-        {
-          "url": "https://www.create.xyz/pricing",
-          "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
           "supports": [
-            "Free plan",
-            "exact tracked quota needs recheck"
+            "Free plan is free forever and does not require a credit card",
+            "Free plan includes 300,000 tokens per day and 1,000,000 tokens per month",
+            "Free token allowances do not roll over"
           ],
           "page_sha256": null
         }
@@ -780,22 +878,43 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://github.com/dyad-sh/dyad",
-          "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://www.dyad.sh/",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "authentication.account_required",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "open-source app builder",
-            "local/BYOK usage"
+            "Dyad Free is a local open-source app builder",
+            "Dyad Free requires no sign-up and supports BYOK/local models",
+            "Dyad Pro is a separate paid plan"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://www.dyad.sh/docs/faq",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.after_exhaustion",
+            "models.available"
+          ],
+          "supports": [
+            "Dyad code stays local and users provide API keys or local models"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "emergent",
@@ -808,15 +927,13 @@
         "web",
         "cloud"
       ],
-      "free_tier_types": [
-        "recurring_monthly"
-      ],
+      "free_tier_types": [],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
+        "credit_card_required": "unknown",
         "notes": null
       },
       "quantity_published": true,
@@ -826,21 +943,21 @@
           "name": "Credits",
           "amount": 10,
           "unit": "credits",
-          "period": "month",
+          "period": "undisclosed",
           "cap": null,
           "reset": {
-            "period": "monthly",
+            "period": "undisclosed",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Official pricing says monthly; official help says the free grant is on the first day. Cadence is unresolved."
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "The current official pricing page says 10 free monthly credits, while official help says 10 credits on the first day."
         }
       ],
-      "quota_summary": "10 credits/month",
-      "reset_summary": "monthly",
-      "after_exhaustion": "Wait for monthly reset or upgrade.",
+      "quota_summary": "10 credits/undisclosed",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "Free-credit refresh cadence is unclear because current official pricing and help pages describe the 10-credit grant differently.",
       "product_url": "https://emergent.sh/",
       "pricing_url": "https://emergent.sh/pricing",
       "repo_url": null,
@@ -858,40 +975,62 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
+      "notes": [
+        "Official pricing describes 10 free monthly credits; official help says 10 credits on the first day. Confirm whether the Free grant recurs before recording a reset cadence."
+      ],
       "last_verified": "2026-08-27",
-      "confidence": "official_exact",
+      "confidence": "mixed",
       "sources": [
         {
           "url": "https://emergent.sh/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.plan_name",
+            "free_tier.quota_pools"
+          ],
           "supports": [
-            "Free plan",
-            "10 credits/month"
+            "Free plan is $0 per month and includes 10 free monthly credits",
+            "The pricing page does not make the Free grant's reset date or card requirement clear"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://help.emergent.sh/plans-the-free-tier",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "notes"
+          ],
+          "supports": [
+            "Free tier gives 10 credits on the first day",
+            "Official help describes the 10-credit amount as a first-day grant and says subscription credits recharge monthly",
+            "The help page does not explicitly say that the Free grant repeats monthly"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "github-spark",
       "name": "GitHub Spark",
       "vendor": "GitHub",
       "category": "app-builder",
-      "status": "active",
-      "status_notes": null,
+      "status": "discontinued",
+      "status_notes": "GitHub retired the Spark experience on August 31, 2026. Apps deployed before retirement continue running; editing/export access ended with retirement. GitHub Models-backed llm() calls stopped on July 30, 2026.",
       "platforms": [
         "web",
         "github",
         "cloud"
       ],
       "free_tier_types": [
-        "dynamic_rate_limit"
+        "discontinued",
+        "legacy"
       ],
-      "plan_name": "GitHub account access",
+      "plan_name": "GitHub Spark (retired)",
       "account_required": "yes",
       "credit_card_required": "unknown",
       "authentication": {
@@ -900,29 +1039,12 @@
         "notes": null
       },
       "quantity_published": false,
-      "quota_pools": [
-        {
-          "id": "usage",
-          "name": "Spark usage",
-          "amount": "undisclosed",
-          "unit": "dynamic",
-          "period": "dynamic",
-          "cap": null,
-          "reset": {
-            "period": "dynamic",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "unknown",
-          "notes": null
-        }
-      ],
-      "quota_summary": "undisclosed dynamic/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "Usage and plan access follow GitHub product terms.",
-      "product_url": "https://github.com/features/spark",
-      "pricing_url": "https://github.com/features/spark",
+      "quota_pools": [],
+      "quota_summary": "Legacy/discontinued entry; no current hosted quota",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "The Spark service was retired on August 31, 2026. Previously deployed apps continue to run; Spark editing ended, and llm() calls stopped when GitHub Models retired on July 30, 2026.",
+      "product_url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/",
+      "pricing_url": null,
       "repo_url": null,
       "trial": {
         "available": false,
@@ -938,18 +1060,28 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
+      "notes": [
+        "Retirement applies to the GitHub Spark experience on github.com; existing deployed apps continue running after the editing service retired. Apps using llm() require another inference provider."
+      ],
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://github.com/features/spark",
-          "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/",
+          "type": "official_changelog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "status.notes",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "GitHub Spark product page",
-            "free/plan limits not recorded as exact"
+            "New users and app creation stopped August 4, 2026",
+            "Spark service retired August 31, 2026",
+            "Previously deployed apps continue running after retirement",
+            "GitHub Models-backed llm() calls stopped July 30, 2026"
           ],
           "page_sha256": null
         }
@@ -977,7 +1109,7 @@
       "authentication": {
         "account_required": "yes",
         "credit_card_required": "no",
-        "notes": null
+        "notes": "The current pricing page says no credit card is needed."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -995,7 +1127,7 @@
             "notes": null
           },
           "rollover": "no",
-          "notes": null
+          "notes": "Unused daily build credits expire at the end of each day."
         },
         {
           "id": "cloud-credits",
@@ -1010,8 +1142,8 @@
             "timezone": null,
             "notes": null
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "The pricing FAQ says unused monthly plan credits expire two months after issue, but does not explicitly clarify whether this Free grant follows that rule."
         },
         {
           "id": "ai-credits",
@@ -1026,13 +1158,13 @@
             "timezone": null,
             "notes": null
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "Expiration of this Free grant is not specified."
         }
       ],
       "quota_summary": "Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month",
       "reset_summary": "daily, monthly",
-      "after_exhaustion": "Wait for the daily/monthly grant to refresh or upgrade.",
+      "after_exhaustion": "Daily build credits expire at the end of each day; monthly Cloud and AI credits are granted separately. The pricing page does not specify exhaustion behavior for each pool.",
       "product_url": "https://lovable.dev/",
       "pricing_url": "https://lovable.dev/pricing",
       "repo_url": null,
@@ -1051,30 +1183,44 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://lovable.dev/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.quota_pools.build-credits.amount",
+            "free_tier.quota_pools.build-credits.cap",
+            "free_tier.quota_pools.build-credits.reset.period",
+            "free_tier.quota_pools.cloud-credits.amount",
+            "free_tier.quota_pools.cloud-credits.reset.period",
+            "free_tier.quota_pools.ai-credits.amount",
+            "free_tier.quota_pools.ai-credits.reset.period",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "free plan",
-            "5 build credits/day",
-            "30/month cap",
-            "20 Cloud credits/month",
-            "4 AI credits/month"
+            "Free plan requires no credit card",
+            "Free plan receives 5 build credits daily, up to 30 per month; the daily grant expires at the end of the day",
+            "The monthly cap for daily build credits is 30/month",
+            "Free plan receives 20 Cloud credits per month and 4 credits per month for AI features in published apps",
+            "Unused monthly plan credits expire two months after issue; whether the free Cloud grant follows this rule is not explicit"
           ],
           "page_sha256": null
         },
         {
           "url": "https://lovable.dev/blog/simplifying-billing",
           "type": "official_blog",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools"
+          ],
           "supports": [
-            "credit system and monthly grants"
+            "Confirms the 20 monthly Cloud credits and 4 monthly AI-feature credits"
           ],
           "page_sha256": null
         }
@@ -1094,33 +1240,33 @@
       ],
       "free_tier_types": [
         "recurring_daily",
-        "recurring_monthly"
+        "one_time_signup"
       ],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The pricing page confirms the Free plan but does not state whether a payment method is required."
       },
       "quantity_published": true,
       "quota_pools": [
         {
           "id": "included-credits",
-          "name": "Included credits",
+          "name": "New-user credits",
           "amount": 5,
           "unit": "USD credits",
-          "period": "month",
+          "period": "one_time",
           "cap": null,
           "reset": {
-            "period": "monthly",
+            "period": "not_applicable",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "One-time credit grant for new users; no public reset cadence."
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "Official pricing page footer describes $5 in one-time credits for new users; it does not state expiration."
         },
         {
           "id": "messages",
@@ -1139,9 +1285,9 @@
           "notes": null
         }
       ],
-      "quota_summary": "Included credits: 5 USD credits/month; Messages: 7 messages/day",
-      "reset_summary": "daily, monthly",
-      "after_exhaustion": "Wait for daily/monthly refresh or upgrade.",
+      "quota_summary": "New-user credits: 5 USD credits/one time; Messages: 7 messages/day",
+      "reset_summary": "daily, not applicable",
+      "after_exhaustion": "Free includes 7 messages per day. The $5 credit grant is one time for new users; the official page does not state its expiration or the exact behavior after it is exhausted.",
       "product_url": "https://v0.dev/",
       "pricing_url": "https://api2.v0.dev/pricing",
       "repo_url": null,
@@ -1160,18 +1306,23 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://api2.v0.dev/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Free plan",
-            "$5 included credits/month",
-            "7 messages/day"
+            "Free plan includes 7 messages per day",
+            "The page footer offers $5 in one-time credits for new users",
+            "The page does not state credit expiration or card requirement"
           ],
           "page_sha256": null
         }
@@ -1220,23 +1371,39 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
+          "url": "https://claude.com/pricing",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "authentication.credit_card_required"
+          ],
+          "supports": [
+            "Claude Code is not included in the Claude Free plan; it is included in paid plans",
+            "Pricing does not state whether a payment card is required for API usage"
+          ],
+          "page_sha256": null
+        },
+        {
           "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
           "type": "official_help",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "Enterprise seat usage pool",
-            "API key pay-as-you-go",
-            "no standalone free quota published"
+            "Enterprise access uses a seat usage pool",
+            "API key access is billed per token through the API",
+            "No standalone free Claude Code quota is published"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "replit",
@@ -1264,24 +1431,24 @@
       "quantity_published": false,
       "quota_pools": [
         {
-          "id": "agent-credits",
-          "name": "Agent credits",
+          "id": "free-daily-usage",
+          "name": "Free daily usage",
           "amount": "undisclosed",
-          "unit": "credits",
+          "unit": "usage",
           "period": "day",
           "cap": null,
           "reset": {
             "period": "daily",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Pricing says daily usage but publishes no reset time."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "Exact free-agent usage quantity is unpublished."
         },
         {
           "id": "published-apps",
-          "name": "Published live project",
+          "name": "Published live projects",
           "amount": 1,
           "unit": "project",
           "period": "provider_specific",
@@ -1293,14 +1460,14 @@
             "notes": null
           },
           "rollover": "not_applicable",
-          "notes": null
+          "notes": "Starter allows one live published project."
         }
       ],
-      "quota_summary": "Agent credits: undisclosed credits/day; Published live project: 1 project/provider specific",
+      "quota_summary": "Free daily usage: undisclosed usage/day; Published live projects: 1 project/provider specific",
       "reset_summary": "daily, provider specific",
-      "after_exhaustion": "Wait for daily Agent credits to refresh or upgrade.",
+      "after_exhaustion": "Starter offers daily Free Mode usage, but the exact amount and refresh time are unpublished. Starter allows one live published project.",
       "product_url": "https://replit.com/",
-      "pricing_url": "https://ld.replit.com/pricing",
+      "pricing_url": "https://replit.com/pricing",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -1317,23 +1484,45 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "mixed",
+      "last_verified": "2026-11-10",
+      "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://ld.replit.com/pricing",
+          "url": "https://replit.com/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "name",
+            "pricing_url",
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Starter plan",
-            "free daily Agent credits",
-            "1 published live project"
+            "Starter is $0 and includes free daily usage",
+            "Starter allows 1 live published project",
+            "The exact Starter AI-usage amount and reset time are not published",
+            "Replit says users can start for free with no credit card"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://replit.com/blog/replit-introduces-free-mode",
+          "type": "official_blog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Free Mode tasks do not consume usage credits",
+            "The 5-hour Free Mode reset applies to Core and Pro usage limits, not the Starter daily allowance"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "atlassian-rovo-dev",
@@ -1341,7 +1530,7 @@
       "vendor": "Atlassian",
       "category": "coding-agent",
       "status": "active",
-      "status_notes": null,
+      "status_notes": "Atlassian announced that standalone Rovo Dev is reaching end of life and its capabilities are moving into eligible Jira and Teamwork Collection subscriptions; the official pricing page does not give a final standalone end date as of 2026-11-10.",
       "platforms": [
         "cli",
         "cloud"
@@ -1364,21 +1553,21 @@
           "name": "Rovo Dev credits",
           "amount": 350,
           "unit": "credits",
-          "period": "month",
+          "period": "billing_cycle",
           "cap": null,
           "reset": {
             "period": "billing_cycle",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Usage stops until the next billing cycle when the free allowance is exhausted."
           },
           "rollover": "no",
           "notes": null
         }
       ],
-      "quota_summary": "350 credits/month",
+      "quota_summary": "350 credits/billing cycle",
       "reset_summary": "billing cycle",
-      "after_exhaustion": "Rovo Dev stops working until usage resets in the next billing cycle or the user upgrades.",
+      "after_exhaustion": "Rovo Dev Free stops working until the next billing cycle; an organization can upgrade users to Standard, which has a separate 2,000-credit monthly allowance and may incur charges for extra use.",
       "product_url": "https://www.atlassian.com/software/rovo/dev",
       "pricing_url": "https://www.atlassian.com/software/rovo-dev/pricing",
       "repo_url": null,
@@ -1397,29 +1586,38 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
-          "url": "https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/",
+          "url": "https://support.atlassian.com/rovo/docs/rovo-dev-rollout/",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "Rovo Dev Free",
-            "350 credits per user per month",
-            "stops working until next billing cycle"
+            "Rovo Dev Free grants 350 credits per user, per month, per site",
+            "Unused free usage stops at exhaustion until the next billing cycle",
+            "Rovo Dev Standard has a separate paid allowance"
           ],
           "page_sha256": null
         },
         {
           "url": "https://www.atlassian.com/software/rovo-dev/pricing",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.notes",
+            "free_tier.plan_name",
+            "free_tier.quota_pools"
+          ],
           "supports": [
-            "Standard includes 2,000 Rovo Dev credits per developer per month",
-            "extra usage is $0.01 per credit"
+            "Standalone Rovo Dev is reaching end of life; capabilities are moving into eligible Jira and Teamwork Collection subscriptions",
+            "Standard is priced at $20 per developer per month and includes 2,000 credits",
+            "The page links to transition FAQ; it does not state a final end date"
           ],
           "page_sha256": null
         }
@@ -1443,11 +1641,11 @@
       ],
       "plan_name": "Included with eligible ChatGPT plans",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The Codex plan article does not specify whether a payment card is needed for the Free plan."
       },
       "quantity_published": false,
       "quota_pools": [
@@ -1470,9 +1668,9 @@
       ],
       "quota_summary": "undisclosed requests/dynamic",
       "reset_summary": "dynamic",
-      "after_exhaustion": "Usage is governed by ChatGPT plan limits.",
+      "after_exhaustion": "Usage limits vary by ChatGPT plan; the exact Free allowance is not published. Codex Cloud requires an eligible paid plan.",
       "product_url": "https://openai.com/codex/",
-      "pricing_url": "https://help.openai.com/en/articles/11369540",
+      "pricing_url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -1483,23 +1681,33 @@
       },
       "models": {
         "available": [],
-        "restrictions": []
+        "restrictions": [
+          "Codex Cloud is not included on the ChatGPT Free plan."
+        ]
       },
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://help.openai.com/en/articles/11369540",
+          "url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
           "type": "official_help",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "models.restrictions",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Codex included across ChatGPT plans including Free",
-            "exact Free quantity undisclosed"
+            "Codex is included across ChatGPT plans, including Free",
+            "The exact Free usage allowance is not published as a fixed number",
+            "Codex Cloud is not included on ChatGPT Free",
+            "The article does not specify a payment-card requirement"
           ],
           "page_sha256": null
         }
@@ -1570,18 +1778,26 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://www.augmentcode.com/blog/augment-codes-pricing-is-changing",
           "type": "official_blog",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial.available",
+            "trial.allowance"
+          ],
           "supports": [
             "Trial users",
-            "30,000 credit pool",
-            "valid credit card"
+            "Trial users receive a one-time pool of 30,000 credits after signup with a valid credit card",
+            "After using the trial pool, users can choose a paid plan or move to the Free plan",
+            "No recurring free credit grant is stated"
           ],
           "page_sha256": null
         }
@@ -1601,7 +1817,7 @@
         "cli"
       ],
       "free_tier_types": [
-        "recurring_daily",
+        "dynamic_rate_limit",
         "time_limited_trial"
       ],
       "plan_name": "Free",
@@ -1617,50 +1833,50 @@
         {
           "id": "pr-reviews",
           "name": "PR reviews",
-          "amount": 3,
+          "amount": 1,
           "unit": "reviews",
-          "period": "day",
+          "period": "dynamic",
           "cap": null,
           "reset": {
-            "period": "daily",
+            "period": "dynamic",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "1 reviews per developer per rolling hour."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "1 reviews per developer per rolling hour."
         },
         {
           "id": "ide-reviews",
           "name": "IDE reviews",
-          "amount": 1,
+          "amount": 3,
           "unit": "reviews",
-          "period": "day",
+          "period": "dynamic",
           "cap": null,
           "reset": {
-            "period": "daily",
+            "period": "dynamic",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "3 reviews per developer per rolling hour."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "3 reviews per developer per rolling hour."
         },
         {
           "id": "cli-reviews",
           "name": "CLI reviews",
           "amount": 3,
           "unit": "reviews",
-          "period": "day",
+          "period": "dynamic",
           "cap": null,
           "reset": {
-            "period": "daily",
+            "period": "dynamic",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "3 reviews per developer per rolling hour."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "3 reviews per developer per rolling hour."
         },
         {
           "id": "files-per-review",
@@ -1676,21 +1892,21 @@
             "notes": null
           },
           "rollover": "not_applicable",
-          "notes": null
+          "notes": "Maximum files included in one review; applies after path filters."
         }
       ],
-      "quota_summary": "PR reviews: 3 reviews/day; IDE reviews: 1 review/day; CLI reviews: 3 reviews/day; Files per review: 150 files/provider specific",
-      "reset_summary": "daily, provider specific",
-      "after_exhaustion": "Use lower Free limits, open-source plan where eligible, or upgrade.",
+      "quota_summary": "PR reviews: 1 review/dynamic; IDE reviews: 3 reviews/dynamic; CLI reviews: 3 reviews/dynamic; Files per review: 150 files/provider specific",
+      "reset_summary": "dynamic, provider specific",
+      "after_exhaustion": "Free-plan reviews are rate limited per developer. New organizations receive a 14-day Advanced trial; organizations that do not subscribe revert to Free.",
       "product_url": "https://www.coderabbit.ai/",
       "pricing_url": "https://docs.coderabbit.ai/management/plans",
       "repo_url": null,
       "trial": {
         "available": true,
         "duration_days": 14,
-        "allowance": "Pro+ trial with full Pro+ access",
+        "allowance": "Advanced plan trial for new organizations",
         "recurring": false,
-        "notes": null
+        "notes": "After the trial, organizations that do not subscribe revert to Free; Free includes PR summarization, with code reviews through the IDE extension and CLI."
       },
       "models": {
         "available": [],
@@ -1699,34 +1915,46 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
+      "notes": [
+        "Free plan includes unlimited public and private repositories without a credit card. PR summarization is available; code reviews are available through the VS Code extension and CLI. New organizations begin a 14-day Advanced trial."
+      ],
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://docs.coderabbit.ai/management/plans",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.plan_name",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial",
+            "authentication.credit_card_required",
+            "notes"
+          ],
           "supports": [
-            "Free plan",
-            "no credit card required",
-            "14-day Pro+ trial",
-            "Free 3 PR reviews",
-            "1 IDE review",
-            "3 CLI reviews",
-            "150 files/review"
+            "Free plan: unlimited public and private repositories; no credit card required",
+            "Free plan is PR summarization only; code reviews are available through IDE and CLI",
+            "Free includes 1 PR, 3 IDE, and 3 CLI reviews per developer per rolling hour",
+            "Free plan reviews allow up to 150 files per review",
+            "New organizations start a 14-day Advanced trial and revert to Free if they do not subscribe"
           ],
           "page_sha256": null
         },
         {
           "url": "https://www.coderabbit.ai/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.plan_name",
+            "trial",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "14-day free trial",
-            "no credit card required"
+            "Free plan and paid plans",
+            "14-day Advanced trial"
           ],
           "page_sha256": null
         }
@@ -1748,16 +1976,15 @@
         "cli"
       ],
       "free_tier_types": [
-        "recurring_monthly",
-        "dynamic_rate_limit"
+        "recurring_monthly"
       ],
       "plan_name": "Copilot Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The official Copilot plan comparison does not state whether a payment card is required for Copilot Free."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -1778,25 +2005,25 @@
           "notes": null
         },
         {
-          "id": "premium-requests",
-          "name": "Premium requests",
+          "id": "ai-credits",
+          "name": "GitHub AI Credits",
           "amount": "undisclosed",
-          "unit": "requests",
+          "unit": "AI credits",
           "period": "month",
           "cap": null,
           "reset": {
             "period": "monthly",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Monthly allowance; exact Copilot Free amount is not published in the plan comparison."
           },
-          "rollover": "no",
-          "notes": null
+          "rollover": "unknown",
+          "notes": "Copilot Free includes an allowance of GitHub AI Credits, but the official plan comparison does not publish its amount."
         }
       ],
-      "quota_summary": "Completions: 2000 completions/month; Premium requests: undisclosed requests/month",
+      "quota_summary": "Completions: 2000 completions/month; GitHub AI Credits: undisclosed AI credits/month",
       "reset_summary": "monthly",
-      "after_exhaustion": "Wait for monthly refresh or upgrade.",
+      "after_exhaustion": "The completion allowance resets monthly; the Free AI Credits amount is unpublished and access to agents/models is limited.",
       "product_url": "https://github.com/features/copilot",
       "pricing_url": "https://docs.github.com/en/copilot/get-started/plans",
       "repo_url": null,
@@ -1815,18 +2042,23 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "mixed",
       "sources": [
         {
           "url": "https://docs.github.com/en/copilot/get-started/plans",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "Copilot Free",
-            "2,000 completions/month",
-            "limited chat/agent AI credits"
+            "Copilot Free includes up to 2,000 code completions per month",
+            "Copilot Free has an allowance of GitHub AI Credits; the exact Free amount is not published",
+            "Free has limited agent access and Auto model selection only",
+            "The plan page does not state whether a payment card is required"
           ],
           "page_sha256": null
         }
@@ -1845,48 +2077,48 @@
         "desktop"
       ],
       "free_tier_types": [
-        "one_time_signup",
+        "recurring_monthly",
         "time_limited_trial"
       ],
-      "plan_name": "AI FREE",
+      "plan_name": "AI Free",
       "account_required": "yes",
       "credit_card_required": "no",
       "authentication": {
         "account_required": "yes",
         "credit_card_required": "no",
-        "notes": null
+        "notes": "AI Free is free. Activating the separate 30-day AI Pro trial requires linking a payment card."
       },
-      "quantity_published": false,
+      "quantity_published": true,
       "quota_pools": [
         {
-          "id": "cloud-llm",
-          "name": "Cloud LLM usage",
-          "amount": "undisclosed",
-          "unit": "quota",
-          "period": "one_time",
+          "id": "cloud-ai-credits",
+          "name": "AI Free cloud credits",
+          "amount": 3,
+          "unit": "AI credits",
+          "period": "month",
           "cap": null,
           "reset": {
-            "period": "not_applicable",
+            "period": "monthly",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "Renews every 30 days from the date the AI license was activated."
           },
           "rollover": "no",
-          "notes": null
+          "notes": "Individual AI Free allowance; unused credits do not roll over."
         }
       ],
-      "quota_summary": "undisclosed quota/one time",
-      "reset_summary": "not applicable",
-      "after_exhaustion": "After trial/free quota, continue with AI FREE limitations or upgrade.",
+      "quota_summary": "3 AI credits/month",
+      "reset_summary": "monthly",
+      "after_exhaustion": "AI Free credits renew every 30 days; use external or local models, or upgrade for more cloud AI usage.",
       "product_url": "https://www.jetbrains.com/ai/",
-      "pricing_url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
+      "pricing_url": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
       "repo_url": null,
       "trial": {
         "available": true,
         "duration_days": 30,
-        "allowance": "AI Pro trial with limited time and usage volume",
+        "allowance": "AI Pro trial with 10 AI Credits for individual users.",
         "recurring": false,
-        "notes": "Available to new users with paid or complimentary JetBrains IDE licenses."
+        "notes": "Available to new users with paid or complimentary JetBrains IDE licenses. Starting the trial requires linking a payment card; after the trial, users can continue on AI Free."
       },
       "models": {
         "available": [],
@@ -1894,25 +2126,70 @@
       },
       "deployment": [],
       "runtime_limits": [],
-      "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
+      "eligibility": [
+        "AI Free requires an active JetBrains IDE license and IDE version 2025.1 or later.",
+        "AI Free is unavailable in IntelliJ IDEA Community Edition, PyCharm Community Edition, and Android Studio.",
+        "JetBrains AI is unavailable in China; external or local models remain available."
+      ],
+      "notes": [
+        "Current 2026.2 plan documentation publishes 3 AI Free credits every 30 days; an older AI service licensing page still describes a one-time limited quota.",
+        "The separate AI Pro trial lasts 30 days and includes 10 AI Credits for individual users; a payment card is required to start the trial."
+      ],
+      "last_verified": "2026-11-10",
+      "confidence": "official_exact",
       "sources": [
+        {
+          "url": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.plan_name",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial",
+            "eligibility",
+            "authentication.credit_card_required",
+            "notes"
+          ],
+          "supports": [
+            "AI Free includes 3 AI Credits per month, renewed every 30 days for individual users",
+            "AI Free quota renews every 30 days and unused credits do not roll over",
+            "AI Pro trial is 30 days and includes 10 AI Credits for individuals",
+            "AI Trial activation requires linking a payment card",
+            "AI Free is unavailable in IntelliJ IDEA Community Edition, PyCharm Community Edition, and Android Studio"
+          ],
+          "page_sha256": null
+        },
         {
           "url": "https://www.jetbrains.com/help/ai/ai-service-license.html",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "eligibility",
+            "notes"
+          ],
           "supports": [
-            "AI FREE plan",
-            "one-time non-renewable limited quota",
-            "AI TRIAL lasts 30 days"
+            "Older AI service licensing page describes a one-time, non-renewable limited quota"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://www.jetbrains.com/help/ai-assistant/jetbrains-ai-subscription.html",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "trial",
+            "eligibility"
+          ],
+          "supports": [
+            "AI Pro trial lasts 30 days and is available to users with paid and complimentary IDE licenses",
+            "Trial activation requires linking a payment card"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 3
     },
     {
       "slug": "sourcegraph-cody",
@@ -1920,7 +2197,7 @@
       "vendor": "Sourcegraph",
       "category": "coding-assistant",
       "status": "discontinued",
-      "status_notes": "Cody Free and Pro were discontinued for impacted users on July 23, 2025.",
+      "status_notes": "Cody Free and Pro were discontinued for new users in June 2025 and for existing users on July 23, 2025. Sourcegraph has announced Cody end of life on January 31, 2027.",
       "platforms": [
         "vscode",
         "jetbrains",
@@ -1978,14 +2255,19 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
           "type": "official_blog",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "status.notes",
+            "free_tier.available",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
             "Cody Free discontinued July 23, 2025",
             "new signups unavailable June 25, 2025"
@@ -1993,18 +2275,31 @@
           "page_sha256": null
         },
         {
-          "url": "https://6.2.sourcegraph.com/pricing/plans/free",
-          "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://sourcegraph.com/blog/making-cody-free-10x-better",
+          "type": "official_blog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools"
+          ],
           "supports": [
-            "Free plan",
-            "200 chat messages and prompts per month"
+            "Cody Free had 200 chats and commands per month before the plan was discontinued"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://sourcegraph.com/blog/sunsetting-cody-future-of-code-intelligence",
+          "type": "official_blog",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.notes"
+          ],
+          "supports": [
+            "Sourcegraph announced Cody end of life on January 31, 2027"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 2
+      "source_count": 3
     },
     {
       "slug": "warp",
@@ -2017,39 +2312,20 @@
         "desktop",
         "cli"
       ],
-      "free_tier_types": [
-        "dynamic_rate_limit"
-      ],
+      "free_tier_types": [],
       "plan_name": "Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "A Warp account is required for agent usage. The Free plan does not state a card requirement."
       },
       "quantity_published": false,
-      "quota_pools": [
-        {
-          "id": "agent-usage",
-          "name": "Agent/AI usage",
-          "amount": "undisclosed",
-          "unit": "requests",
-          "period": "dynamic",
-          "cap": null,
-          "reset": {
-            "period": "dynamic",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "unknown",
-          "notes": null
-        }
-      ],
-      "quota_summary": "undisclosed requests/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "Wait for vendor-managed limits or upgrade.",
+      "quota_pools": [],
+      "quota_summary": "Free access available; exact allowance undisclosed",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "Current official pricing and billing documentation say the Free plan has no bundled AI usage, while Warp's FAQ says it includes 150 free AI requests per month. The conflict is unresolved; users can bring their own inference or buy credits.",
       "product_url": "https://www.warp.dev/",
       "pricing_url": "https://www.warp.dev/pricing",
       "repo_url": null,
@@ -2067,23 +2343,56 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
+      "notes": [
+        "Warp pricing and its updated billing FAQ say Free has no bundled AI usage, but the official product FAQ still advertises 150 free AI requests per month. The numeric allowance is not recorded until the conflict is resolved."
+      ],
       "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
+      "confidence": "mixed",
       "sources": [
         {
           "url": "https://www.warp.dev/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "Free plan",
-            "AI usage limits require recheck before exact quota"
+            "Free plan includes Warp Agent CLI access and limited cloud agents",
+            "Free has additional agent usage at pay-as-you-go rates and supports user-provided inference",
+            "Current pricing page does not list included monthly AI usage"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.warp.dev/support-and-community/plans-and-billing/pricing-faqs",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Updated billing FAQ states Free has no bundled AI usage; users can buy credits or bring their own inference",
+            "Free users may purchase add-on credits"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://www.warp.dev/faq",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools"
+          ],
+          "supports": [
+            "Official FAQ still says the Free plan includes 150 free AI requests per month"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 3
     },
     {
       "slug": "zed-ai",
@@ -2096,48 +2405,47 @@
         "desktop"
       ],
       "free_tier_types": [
-        "dynamic_rate_limit",
-        "open_source_byok"
+        "time_limited_trial"
       ],
-      "plan_name": "Free/BYOK",
+      "plan_name": "Personal",
       "account_required": "yes",
-      "credit_card_required": "unknown",
+      "credit_card_required": "no",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "unknown",
-        "notes": null
+        "credit_card_required": "no",
+        "notes": "Zed-hosted Edit Predictions and the Pro trial require sign-in; BYOK and external agents can be used without Zed authentication. The trial requires no credit card."
       },
-      "quantity_published": false,
+      "quantity_published": true,
       "quota_pools": [
         {
-          "id": "usage",
-          "name": "AI usage",
-          "amount": "undisclosed",
-          "unit": "requests",
-          "period": "dynamic",
+          "id": "edit-predictions",
+          "name": "Accepted edit predictions",
+          "amount": 2000,
+          "unit": "accepted edit predictions",
+          "period": "undisclosed",
           "cap": null,
           "reset": {
-            "period": "dynamic",
+            "period": "undisclosed",
             "time": null,
             "timezone": null,
-            "notes": null
+            "notes": "The official pricing page publishes 2,000 accepted edit predictions but no reset cadence."
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "The official pricing page does not specify whether this is a monthly, daily, or lifetime allowance."
         }
       ],
-      "quota_summary": "undisclosed requests/dynamic",
-      "reset_summary": "dynamic",
-      "after_exhaustion": "Use BYOK/local provider or follow Zed plan limits.",
+      "quota_summary": "2000 accepted edit predictions/undisclosed",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "The official pricing page publishes 2,000 accepted edit predictions but does not state what happens after they are used. Personal plan still supports BYOK and external agents; hosted models require Pro.",
       "product_url": "https://zed.dev/ai",
       "pricing_url": "https://zed.dev/pricing",
       "repo_url": null,
       "trial": {
-        "available": false,
-        "duration_days": null,
-        "allowance": null,
+        "available": true,
+        "duration_days": 14,
+        "allowance": "Pro trial includes $5 of GPT-5.6 Luna usage.",
         "recurring": false,
-        "notes": null
+        "notes": "Trial ends after 14 days or when the $5 usage is consumed; no credit card required. The $5 balance is shared across Zed and Delta."
       },
       "models": {
         "available": [],
@@ -2146,23 +2454,52 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
+      "notes": [
+        "Personal is $0 forever; it has a published limit of 2,000 accepted edit predictions, with no reset period stated, and supports unlimited usage with the user's own API keys or external agents.",
+        "Hosted Pro trial usage is a separate offer."
+      ],
+      "last_verified": "2026-11-10",
+      "confidence": "official_exact",
       "sources": [
         {
           "url": "https://zed.dev/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial",
+            "authentication.credit_card_required",
+            "notes"
+          ],
           "supports": [
-            "pricing page",
-            "free/BYOK usage requires recheck before exact quota"
+            "Personal is $0 forever",
+            "Personal includes 2,000 accepted edit predictions with no reset period stated",
+            "Unlimited use with user API keys or external agents",
+            "Pro trial lasts 14 days and includes $5 of GPT-5.6 Luna usage shared across Zed and Delta",
+            "No credit card required for the trial"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://zed.dev/docs/account/plans-and-pricing",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.account_required",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "No authentication is required for the editor itself",
+            "Sign-in is required for LLM-powered features using Zed as the model provider",
+            "Free supports user API keys and external agents; Zed-hosted models require Pro"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "cerebras-inference",
@@ -2177,21 +2514,21 @@
       ],
       "free_tier_types": [
         "one_time_signup",
-        "time_limited_trial"
+        "promotional"
       ],
-      "plan_name": "Free Trial",
+      "plan_name": "Developer Tier promotional credit",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "yes",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "yes",
+        "notes": "A valid payment method is required to receive the one-time promotional credit; the pricing page says the user is not charged or automatically enrolled in paid use."
       },
       "quantity_published": true,
       "quota_pools": [
         {
           "id": "trial-credits",
-          "name": "Free trial credits",
+          "name": "One-time promotional credit",
           "amount": 5,
           "unit": "USD credits",
           "period": "one_time",
@@ -2203,21 +2540,21 @@
             "notes": null
           },
           "rollover": "no",
-          "notes": null
+          "notes": "Valid payment method required; expires 30 days after activation."
         }
       ],
       "quota_summary": "5 USD credits/one time",
       "reset_summary": "not applicable",
-      "after_exhaustion": "Create a developer account or upgrade to Developer tier when trial credits are exhausted.",
+      "after_exhaustion": "API and Playground access pause when the credit expires or is exhausted unless PayGo credits are separately purchased; users are not charged or automatically enrolled in paid use.",
       "product_url": "https://www.cerebras.ai/inference",
       "pricing_url": "https://www.cerebras.ai/pricing",
       "repo_url": null,
       "trial": {
-        "available": true,
+        "available": false,
         "duration_days": null,
-        "allowance": "$5 in free credits after making an account",
+        "allowance": null,
         "recurring": false,
-        "notes": null
+        "notes": "The $5 offer is a promotional credit, not a paid-plan trial; it expires after 30 days and does not auto-enroll the user."
       },
       "models": {
         "available": [],
@@ -2227,28 +2564,38 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://www.cerebras.ai/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "trial"
+          ],
           "supports": [
-            "Free Trial",
-            "$5 in free credits after making an account",
-            "Developer tier has 10x higher rate limits"
+            "Developer Tier offers a one-time $5 promotional credit",
+            "A valid payment method is required",
+            "Credit expires 30 days after activation",
+            "No charge or automatic paid enrollment",
+            "API and Playground access pause after expiry or exhaustion unless PayGo credits are purchased"
           ],
           "page_sha256": null
         },
         {
           "url": "https://inference-docs.cerebras.ai/quickstart",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.account_required"
+          ],
           "supports": [
-            "free API key quickstart"
+            "Users sign up or log in to create an API key"
           ],
           "page_sha256": null
         }
@@ -2271,11 +2618,11 @@
       ],
       "plan_name": "Workers Free",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "Cloudflare publishes the free allocation but does not state a universal payment-method requirement on the reviewed Workers AI pricing page."
       },
       "quantity_published": true,
       "quota_pools": [
@@ -2311,24 +2658,33 @@
       },
       "models": {
         "available": [],
-        "restrictions": []
+        "restrictions": [
+          "Some model endpoints require Workers Paid or prepaid AI Gateway credits; model eligibility can change."
+        ]
       },
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "models.restrictions",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Workers Free",
-            "10,000 Neurons per day",
-            "All limits reset daily at 00:00 UTC"
+            "Workers Free includes 10,000 Neurons per day at no charge",
+            "All limits reset daily at 00:00 UTC",
+            "Some named model endpoints require Workers Paid or prepaid AI Gateway credits",
+            "The pricing page does not state a universal payment-method requirement"
           ],
           "page_sha256": null
         },
@@ -2383,14 +2739,14 @@
             "notes": null
           },
           "rollover": "unknown",
-          "notes": null
+          "notes": "RPM, input TPM, and RPD vary by model and project tier; active limits are shown in Google AI Studio. RPD resets at midnight Pacific time."
         }
       ],
       "quota_summary": "published per model requests/tokens/dynamic",
       "reset_summary": "dynamic",
-      "after_exhaustion": "429 RESOURCE_EXHAUSTED; wait and retry or upgrade/link billing.",
+      "after_exhaustion": "Requests beyond the active per-model or project limits return 429 RESOURCE_EXHAUSTED; wait or change usage tier.",
       "product_url": "https://ai.google.dev/gemini-api",
-      "pricing_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "repo_url": null,
       "trial": {
         "available": false,
@@ -2407,23 +2763,69 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
-          "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.available",
+            "free_tier.types",
+            "models.restrictions"
+          ],
           "supports": [
-            "Free usage tier",
-            "model-specific RPM/TPM/TPD rate limits",
-            "billing tier cap Free N/A"
+            "Gemini API offers a Free tier with free input and output tokens for certain models",
+            "Access and rate limits vary by model and tier"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://aistudio.google.com/docs/rate-limits",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Limits include RPM, input TPM, and RPD and vary by model and tier",
+            "Limits are applied per project",
+            "RPD quotas reset at midnight Pacific time",
+            "Exceeded rate limits return 429 RESOURCE_EXHAUSTED"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/billing",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.credit_card_required",
+            "free_tier.available"
+          ],
+          "supports": [
+            "New accounts begin on the Free tier",
+            "Free tier has no billing tier cap"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/api-key",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "authentication.account_required"
+          ],
+          "supports": [
+            "API keys are associated with Google Cloud projects; new users accept the Terms of Service to create a project and API key"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 4
     },
     {
       "slug": "github-models",
@@ -2472,18 +2874,24 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://docs.github.com/en/github-models",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "status.notes",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "GitHub Models has been retired",
-            "retired July 30, 2026",
-            "inference API no longer available"
+            "GitHub Models was fully retired July 30, 2026",
+            "The playground, model catalog, inference API, and BYOK are no longer available",
+            "GitHub Models was a separate service from GitHub Copilot"
           ],
           "page_sha256": null
         }
@@ -2506,11 +2914,11 @@
       ],
       "plan_name": "Free Plan",
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current rate-limit docs describe the Free tier; the billing FAQ only confirms payment is required to upgrade to Developer."
       },
       "quantity_published": false,
       "quota_pools": [
@@ -2552,18 +2960,25 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://console.groq.com/docs/rate-limits",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "Free Plan Limits",
-            "model-specific RPM/RPD/TPM/TPD table",
-            "429 Too Many Requests"
+            "Groq offers a Free tier with model-specific rate limits",
+            "Free limits include RPM, RPD, TPM, and TPD; exact organization limits are available in the account dashboard",
+            "Limits vary by model and organization; the table does not publish a universal free quota",
+            "The docs do not state whether a payment method is required for the Free tier"
           ],
           "page_sha256": null
         }
@@ -2581,39 +2996,20 @@
         "api",
         "web"
       ],
-      "free_tier_types": [
-        "recurring_monthly"
-      ],
-      "plan_name": "Free user monthly credits",
+      "free_tier_types": [],
+      "plan_name": null,
       "account_required": "yes",
-      "credit_card_required": "no",
+      "credit_card_required": "unknown",
       "authentication": {
         "account_required": "yes",
-        "credit_card_required": "no",
-        "notes": null
+        "credit_card_required": "unknown",
+        "notes": "The current documentation states Free users must purchase credits or upgrade for routed inference; it does not specify a universal payment-method requirement."
       },
-      "quantity_published": true,
-      "quota_pools": [
-        {
-          "id": "monthly-credits",
-          "name": "Monthly routed inference credits",
-          "amount": 0.1,
-          "unit": "USD credits",
-          "period": "month",
-          "cap": null,
-          "reset": {
-            "period": "monthly",
-            "time": null,
-            "timezone": null,
-            "notes": null
-          },
-          "rollover": "no",
-          "notes": null
-        }
-      ],
-      "quota_summary": "0.1 USD credits/month",
-      "reset_summary": "monthly",
-      "after_exhaustion": "After monthly credits, purchase credits/pay-as-you-go or use custom provider keys billed elsewhere.",
+      "quantity_published": false,
+      "quota_pools": [],
+      "quota_summary": "Free access available; exact allowance undisclosed",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "Free users must purchase credits or upgrade to use Inference Providers. Custom provider keys are billed by the provider.",
       "product_url": "https://huggingface.co/inference-providers",
       "pricing_url": "https://huggingface.co/docs/inference-providers/en/pricing",
       "repo_url": null,
@@ -2631,19 +3027,27 @@
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "official_exact",
+      "notes": [
+        "The previously recorded $0.10 monthly free-user credit is no longer included. The current official pricing page says Free users can use Inference Providers by purchasing credits or upgrading; custom provider keys are billed directly by their providers."
+      ],
+      "last_verified": "2026-11-10",
+      "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://huggingface.co/docs/inference-providers/en/pricing",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.credit_card_required",
+            "notes"
+          ],
           "supports": [
-            "Free Users",
-            "$0.10 monthly credits",
-            "monthly credits automatically apply"
+            "Free users receive no included monthly Inference Providers credits",
+            "Free users must purchase credits or upgrade",
+            "Custom provider keys are billed directly by providers"
           ],
           "page_sha256": null
         }
@@ -2708,17 +3112,18 @@
         "NVIDIA AI Enterprise is separate from Developer Program access and is required for production use according to NVIDIA current docs."
       ],
       "notes": [
-        "build.nvidia.com describes NIM as free serverless APIs for development and provides per-model Generate API Key/code snippets.",
-        "Do not treat API calls in the last 30 days or catalog model counts as a user quota.",
-        "Current Free Endpoint examples verified on 2026-09-09 include deepseek-ai/deepseek-v4-pro-0813, poolside/laguna-xs-2.1, and nvidia/nemotron-3.5-lightning-30b-a3b; availability is dynamic."
+        "build.nvidia.com describes NVIDIA-hosted API endpoints for application prototyping and per-model API keys; access requires NVIDIA Developer Program membership.",
+        "As of 2026-11-10, the live catalog displayed 44 Free Endpoint models. Examples visible in the catalog included moonshotai/kimi-k3.1-pro, deepseek-ai/deepseek-v4.1-flash, and nvidia/nemotron-3.5-lightning-30b-a3b; the count and model list are dynamic and are not a user quota.",
+        "NVIDIA Developer Program access includes free hosted API prototyping and downloadable NIM microservices for research, development, and experimentation on up to 16 GPUs. Production requires an NVIDIA AI Enterprise license; its separate 90-day evaluation is not this record’s free tier.",
+        "Do not treat API calls in the last 30 days or catalog model counts as a user quota."
       ],
-      "last_verified": "2026-09-09",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://build.nvidia.com/explore",
           "type": "official_docs",
-          "retrieved_at": "2026-09-09",
+          "retrieved_at": "2026-11-10",
           "supports_fields": [
             "product_url",
             "free_tier.available",
@@ -2726,24 +3131,25 @@
             "deployment"
           ],
           "supports": [
-            "Get API Key",
-            "Free serverless APIs for development",
-            "Accelerated by DGX Cloud",
-            "Self-Host on your GPU infrastructure"
+            "NVIDIA API catalog offers browser prototyping with NVIDIA-hosted endpoints",
+            "NVIDIA describes the endpoints as free serverless APIs for development",
+            "Catalog offers per-model API key creation and self-hosted options"
           ],
           "page_sha256": null
         },
         {
           "url": "https://build.nvidia.com/models",
           "type": "official_docs",
-          "retrieved_at": "2026-09-09",
+          "retrieved_at": "2026-11-10",
           "supports_fields": [
-            "models.restrictions"
+            "models.restrictions",
+            "notes"
           ],
           "supports": [
-            "Free Endpoint availability appears as model catalog metadata",
-            "Download Available appears as separate model catalog metadata",
-            "model catalog count is a dated snapshot, not a user quota"
+            "Catalog marks Free Endpoint and Download Available as separate model metadata",
+            "As of 2026-11-10 the catalog displayed 44 Free Endpoint models",
+            "Model availability and count are dynamic and are not a universal quota",
+            "Catalog listed current Free Endpoint examples recorded in notes"
           ],
           "page_sha256": null
         },
@@ -2762,95 +3168,42 @@
             "trial.notes"
           ],
           "supports": [
-            "NVIDIA-hosted endpoints for application prototyping in the NVIDIA API catalog",
-            "Developer Program enrollment to access NIM for development and testing",
-            "Developer Program members have free access to NIM API endpoints for prototyping",
-            "downloadable NIM microservices for research, application development, and experimentation on up to 16 GPUs",
-            "production use requires an NVIDIA AI Enterprise license",
-            "NVIDIA AI Enterprise has a separate 90-day evaluation path"
+            "Developer Program enrollment gives free access to NIM API endpoints for prototyping",
+            "Downloadable NIM microservices for research, development, and experimentation on up to 16 GPUs",
+            "Production use requires an NVIDIA AI Enterprise license",
+            "The separate NVIDIA AI Enterprise evaluation is 90 days"
           ],
           "page_sha256": null
         },
         {
           "url": "https://docs.api.nvidia.com/nim/docs/api-quickstart",
           "type": "official_docs",
-          "retrieved_at": "2026-09-09",
+          "retrieved_at": "2026-11-10",
           "supports_fields": [
             "authentication.account_required",
             "deployment"
           ],
           "supports": [
-            "NIM API endpoint can be used through browser UI and Python code",
-            "hosted by NVIDIA on NVIDIA DGX Cloud",
-            "Get API Key from a model page",
-            "signing up makes the user a member of the Developer Program"
+            "NIM API quickstart uses a Developer Program API key",
+            "NVIDIA-hosted NIM endpoints run on DGX Cloud"
           ],
           "page_sha256": null
         },
         {
           "url": "https://docs.api.nvidia.com/nim/reference/llm-apis",
           "type": "official_docs",
-          "retrieved_at": "2026-09-09",
+          "retrieved_at": "2026-11-10",
           "supports_fields": [
             "deployment"
           ],
           "supports": [
-            "LLM NIM URL is https://integrate.api.nvidia.com",
-            "chat completions endpoint is POST /v1/chat/completions",
-            "LLM endpoints support code generation among other tasks"
-          ],
-          "page_sha256": null
-        },
-        {
-          "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4-pro-0813",
-          "type": "official_docs",
-          "retrieved_at": "2026-09-09",
-          "supports_fields": [
-            "models.restrictions",
-            "notes",
-            "deployment"
-          ],
-          "supports": [
-            "deepseek-ai/deepseek-v4-pro-0813 is a current verified Free Endpoint example",
-            "model page describes coding tasks",
-            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
-          ],
-          "page_sha256": null
-        },
-        {
-          "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
-          "type": "official_docs",
-          "retrieved_at": "2026-09-09",
-          "supports_fields": [
-            "models.restrictions",
-            "notes",
-            "deployment"
-          ],
-          "supports": [
-            "poolside/laguna-xs-2.1 is a current verified Free Endpoint example",
-            "model page describes long-horizon agentic coding and terminal tasks",
-            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
-          ],
-          "page_sha256": null
-        },
-        {
-          "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b",
-          "type": "official_docs",
-          "retrieved_at": "2026-09-09",
-          "supports_fields": [
-            "models.restrictions",
-            "notes",
-            "deployment"
-          ],
-          "supports": [
-            "nvidia/nemotron-3.5-lightning-30b-a3b is a current verified Free Endpoint example",
-            "model page also marks Download Available",
-            "OpenAI Python client example uses base_url https://integrate.api.nvidia.com/v1"
+            "LLM API base endpoint is integrate.api.nvidia.com",
+            "Chat completions use POST /v1/chat/completions"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 8
+      "source_count": 5
     },
     {
       "slug": "openrouter",
@@ -2891,12 +3244,12 @@
             "notes": null
           },
           "rollover": "no",
-          "notes": "If at least 10 credits are purchased, free model limit can be 1000 requests/day."
+          "notes": "Free model variants are capped at 20 requests per minute and 50 per day; failed attempts count. The daily limit increases to 1,000 after at least $10 of credits has been purchased."
         }
       ],
       "quota_summary": "50 requests/day",
       "reset_summary": "daily",
-      "after_exhaustion": "Free models are low-rate-limit; buy credits or use paid models for more capacity.",
+      "after_exhaustion": "Wait for the daily reset. Free variants are capped at 20 requests per minute and 50 per day; after the account has purchased at least $10 of credits, the daily cap rises to 1,000. Failed attempts count toward the daily cap; only models with a :free variant use this quota.",
       "product_url": "https://openrouter.ai/",
       "pricing_url": "https://openrouter.ai/docs/faq",
       "repo_url": null,
@@ -2915,33 +3268,56 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_exact",
       "sources": [
         {
           "url": "https://openrouter.ai/docs/faq",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
           "supports": [
-            "free models",
-            "50 free model API requests per day",
-            "1000 requests per day if at least 10 credits purchased"
+            "Free variants have rate limits distinct from paid provider limits",
+            "Free variants do not require a credit purchase"
           ],
           "page_sha256": null
         },
         {
           "url": "https://openrouter.ai/docs/guides/routing/model-variants/free",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.types",
+            "models.restrictions"
+          ],
           "supports": [
-            ":free model variant"
+            "Only catalog models with a :free variant can be used through that variant",
+            "Free variants may have different rate limits and availability than paid versions",
+            "Paid fallback models are billable"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://openrouter.ai/collections/free-models/",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Free variants are capped at 20 requests per minute and 50 per day",
+            "The daily cap rises to 1,000 after at least $10 of credits are purchased",
+            "Failed requests count toward the daily cap",
+            "Free variants do not require a credit purchase"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 2
+      "source_count": 3
     },
     {
       "slug": "aider",
@@ -2991,27 +3367,36 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://aider.chat/docs/",
+          "url": "https://aider.chat/docs/llms",
           "type": "official_docs",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "models.available"
+          ],
           "supports": [
-            "open-source coding assistant",
-            "BYOK/local usage"
+            "Aider connects to free or paid API providers and local models",
+            "Provider usage and rate limits are determined by the provider"
           ],
           "page_sha256": null
         },
         {
           "url": "https://github.com/Aider-AI/aider",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "free_tier.types"
+          ],
           "supports": [
-            "open-source repository"
+            "Aider is a public Apache-2.0 terminal coding assistant"
           ],
           "page_sha256": null
         }
@@ -3066,32 +3451,29 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://cline.bot/pricing",
           "type": "official_pricing",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
-          "supports": [
-            "client free",
-            "BYOK/provider-dependent inference"
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "models.available"
           ],
-          "page_sha256": null
-        },
-        {
-          "url": "https://github.com/cline/cline",
-          "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
           "supports": [
-            "open-source client"
+            "Cline is free for individual developers",
+            "AI inference is paid by usage or through BYOK; no subscription for the open-source client",
+            "Users may provide provider API keys"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 2
+      "source_count": 1
     },
     {
       "slug": "continue",
@@ -3142,22 +3524,40 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://github.com/continuedev/continue",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "models.available"
+          ],
           "supports": [
-            "open-source coding assistant",
-            "BYOK/local model support"
+            "Continue is an active open-source coding agent"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://docs.continue.dev/customize/models",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.after_exhaustion",
+            "models.available"
+          ],
+          "supports": [
+            "Continue supports provider API keys and local models; inference usage depends on the selected provider"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "goose",
@@ -3187,9 +3587,9 @@
       "quota_summary": "Open-source client; inference/provider limits apply",
       "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on chosen extension/model provider.",
-      "product_url": "https://block.github.io/goose/",
-      "pricing_url": "https://github.com/block/goose",
-      "repo_url": "https://github.com/block/goose",
+      "product_url": "https://github.com/aaif-goose/goose",
+      "pricing_url": "https://github.com/aaif-goose/goose",
+      "repo_url": "https://github.com/aaif-goose/goose",
       "trial": {
         "available": false,
         "duration_days": null,
@@ -3208,17 +3608,22 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://github.com/block/goose",
+          "url": "https://github.com/aaif-goose/goose",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "product_url",
+            "repo_url",
+            "free_tier.available",
+            "free_tier.types"
+          ],
           "supports": [
-            "open-source AI agent",
-            "BYOK/provider-dependent inference"
+            "Current canonical public repository for the open-source agent",
+            "Repository license and About section identify the tool as an open-source coding/development agent"
           ],
           "page_sha256": null
         }
@@ -3237,23 +3642,41 @@
         "local"
       ],
       "free_tier_types": [
-        "open_source_byok"
+        "open_source_byok",
+        "dynamic_rate_limit"
       ],
-      "plan_name": "Open-source client",
-      "account_required": "not_applicable",
-      "credit_card_required": "not_applicable",
+      "plan_name": "Free & Open Source",
+      "account_required": "unknown",
+      "credit_card_required": "unknown",
       "authentication": {
-        "account_required": "not_applicable",
-        "credit_card_required": "not_applicable",
-        "notes": null
+        "account_required": "unknown",
+        "credit_card_required": "unknown",
+        "notes": "The open-source client supports local/BYOK use; the pricing page does not state account or payment requirements for Auto Free."
       },
-      "quantity_published": false,
-      "quota_pools": [],
-      "quota_summary": "Open-source client; inference/provider limits apply",
-      "reset_summary": "provider specific/not applicable",
-      "after_exhaustion": "Inference cost and limits depend on configured provider.",
+      "quantity_published": true,
+      "quota_pools": [
+        {
+          "id": "free-model-requests",
+          "name": "Auto Free model requests",
+          "amount": 200,
+          "unit": "requests",
+          "period": "dynamic",
+          "cap": null,
+          "reset": {
+            "period": "dynamic",
+            "time": null,
+            "timezone": null,
+            "notes": "Rolling/hourly rate is per IP."
+          },
+          "rollover": "not_applicable",
+          "notes": "Auto Free routes to provider free models; no hosted Kilo credit is required."
+        }
+      ],
+      "quota_summary": "200 requests/dynamic",
+      "reset_summary": "dynamic",
+      "after_exhaustion": "Auto Free model requests are limited to 200 per hour per IP. Use BYOK or local models, or wait for capacity to return.",
       "product_url": "https://kilocode.ai/",
-      "pricing_url": "https://github.com/Kilo-Org/kilocode",
+      "pricing_url": "https://kilo.ai/pricing/",
       "repo_url": "https://github.com/Kilo-Org/kilocode",
       "trial": {
         "available": false,
@@ -3273,22 +3696,46 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
-      "confidence": "official_undisclosed",
+      "last_verified": "2026-11-10",
+      "confidence": "official_exact",
       "sources": [
         {
-          "url": "https://github.com/Kilo-Org/kilocode",
-          "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "url": "https://kilo.ai/pricing/",
+          "type": "official_pricing",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "pricing_url",
+            "free_tier.plan_name",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "authentication.account_required",
+            "authentication.credit_card_required"
+          ],
           "supports": [
-            "open-source coding agent",
-            "BYOK/provider-dependent inference"
+            "Kilo Code Free is open-source and works with any model",
+            "Auto Free routes to provider free models without hosted credit",
+            "Free models have 200 requests per hour per IP",
+            "The pricing page does not state account or payment requirements for Auto Free"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://kilo.ai/docs/getting-started/rate-limits-and-costs",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Free models kilo-auto/free are limited to 200 requests per hour per IP",
+            "Auto Free requests cost $0 on Kilo; BYOK is billed by the provider"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "opencode",
@@ -3317,9 +3764,9 @@
       "quota_summary": "Open-source client; inference/provider limits apply",
       "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on configured provider.",
-      "product_url": "https://opencode.ai/",
-      "pricing_url": "https://github.com/sst/opencode",
-      "repo_url": "https://github.com/sst/opencode",
+      "product_url": "https://github.com/anomalyco/opencode",
+      "pricing_url": "https://github.com/anomalyco/opencode",
+      "repo_url": "https://github.com/anomalyco/opencode",
       "trial": {
         "available": false,
         "duration_days": null,
@@ -3338,17 +3785,22 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://github.com/sst/opencode",
+          "url": "https://github.com/anomalyco/opencode",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "product_url",
+            "repo_url",
+            "free_tier.available",
+            "free_tier.types"
+          ],
           "supports": [
-            "open-source terminal coding agent",
-            "provider-dependent inference"
+            "Current canonical public repository for the open-source agent",
+            "Repository license and About section identify the tool as an open-source coding/development agent"
           ],
           "page_sha256": null
         }
@@ -3383,9 +3835,9 @@
       "quota_summary": "Open-source client; inference/provider limits apply",
       "reset_summary": "provider specific/not applicable",
       "after_exhaustion": "Inference cost and limits depend on configured LLM provider.",
-      "product_url": "https://www.all-hands.dev/",
-      "pricing_url": "https://github.com/All-Hands-AI/OpenHands",
-      "repo_url": "https://github.com/All-Hands-AI/OpenHands",
+      "product_url": "https://github.com/OpenHands/OpenHands",
+      "pricing_url": "https://github.com/OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
       "trial": {
         "available": false,
         "duration_days": null,
@@ -3404,17 +3856,22 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
-          "url": "https://github.com/All-Hands-AI/OpenHands",
+          "url": "https://github.com/OpenHands/OpenHands",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "product_url",
+            "repo_url",
+            "free_tier.available",
+            "free_tier.types"
+          ],
           "supports": [
-            "open-source coding agent",
-            "provider-dependent inference"
+            "Current canonical public repository for the open-source agent",
+            "Repository license and About section identify the tool as an open-source coding/development agent"
           ],
           "page_sha256": null
         }
@@ -3470,17 +3927,25 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://github.com/QwenLM/qwen-code",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "free_tier.after_exhaustion",
+            "models.available"
+          ],
           "supports": [
-            "open-source command-line coding agent",
-            "provider-dependent inference"
+            "Qwen Code is an active open-source coding agent",
+            "The client supports provider APIs and local models; inference cost depends on the selected provider",
+            "Qwen Account subscription is a separate authentication option"
           ],
           "page_sha256": null
         }
@@ -3489,19 +3954,20 @@
     },
     {
       "slug": "roo-code",
-      "name": "Roo Code",
+      "name": "Roo Code (discontinued)",
       "vendor": "Roo Code",
       "category": "open-source-agent",
-      "status": "active",
-      "status_notes": null,
+      "status": "discontinued",
+      "status_notes": "Roo Code Extension, Cloud, and Router were shut down on May 15, 2026; the extension repository is archived.",
       "platforms": [
         "vscode",
         "local"
       ],
       "free_tier_types": [
-        "open_source_byok"
+        "discontinued",
+        "legacy"
       ],
-      "plan_name": "Open-source client",
+      "plan_name": "Roo Code (retired)",
       "account_required": "not_applicable",
       "credit_card_required": "not_applicable",
       "authentication": {
@@ -3511,11 +3977,11 @@
       },
       "quantity_published": false,
       "quota_pools": [],
-      "quota_summary": "Open-source client; inference/provider limits apply",
-      "reset_summary": "provider specific/not applicable",
-      "after_exhaustion": "Inference cost and rate limits depend on connected model provider.",
-      "product_url": "https://roocode.com/",
-      "pricing_url": "https://github.com/RooCodeInc/Roo-Code",
+      "quota_summary": "Legacy/discontinued entry; no current hosted quota",
+      "reset_summary": "undisclosed",
+      "after_exhaustion": "The Roo Code Extension, Cloud, and Router were shut down on May 15, 2026. The GitHub repository is archived.",
+      "product_url": "https://github.com/RooCodeInc/Roo-Code-Docs/blob/main/docs/sunset.md",
+      "pricing_url": null,
       "repo_url": "https://github.com/RooCodeInc/Roo-Code",
       "trial": {
         "available": false,
@@ -3525,32 +3991,51 @@
         "notes": null
       },
       "models": {
-        "available": [
-          "BYOK",
-          "local models"
-        ],
+        "available": [],
         "restrictions": []
       },
       "deployment": [],
       "runtime_limits": [],
       "eligibility": [],
-      "notes": [],
-      "last_verified": "2026-08-27",
+      "notes": [
+        "Roo Code maintainers directed users to Cline as an open-source extension alternative."
+      ],
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
+          "url": "https://github.com/RooCodeInc/Roo-Code-Docs/blob/main/docs/sunset.md",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "status.notes",
+            "free_tier.available",
+            "free_tier.after_exhaustion",
+            "notes"
+          ],
+          "supports": [
+            "Roo Code Extension, Cloud, and Router shut down May 15, 2026",
+            "The maintainers recommend Cline as an open-source extension alternative"
+          ],
+          "page_sha256": null
+        },
+        {
           "url": "https://github.com/RooCodeInc/Roo-Code",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "status.notes",
+            "free_tier.available"
+          ],
           "supports": [
-            "open-source VS Code agent",
-            "BYOK/provider-dependent inference"
+            "The Roo-Code repository is archived and read-only; it was archived by the owner on May 15, 2026"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "swe-agent",
@@ -3600,22 +4085,43 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
           "url": "https://github.com/SWE-agent/SWE-agent",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability",
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.after_exhaustion",
+            "models.available"
+          ],
           "supports": [
-            "open-source software engineering agent",
-            "provider-dependent inference"
+            "Repository remains active and identifies SWE-agent as an open-source agent",
+            "Inference uses the language model configured by the user",
+            "Local models are supported through OpenAI-compatible endpoints",
+            "MIT license is published in the project metadata"
+          ],
+          "page_sha256": null
+        },
+        {
+          "url": "https://github.com/SWE-agent/SWE-agent/blob/main/docs/installation/keys.md",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "models.available",
+            "free_tier.after_exhaustion"
+          ],
+          "supports": [
+            "Users provide model provider API keys or configure a local inference endpoint"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     },
     {
       "slug": "tabby",
@@ -3666,22 +4172,40 @@
       "runtime_limits": [],
       "eligibility": [],
       "notes": [],
-      "last_verified": "2026-08-27",
+      "last_verified": "2026-11-10",
       "confidence": "official_undisclosed",
       "sources": [
         {
+          "url": "https://tabby.tabbyml.com/docs/welcome/",
+          "type": "official_docs",
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "free_tier.available",
+            "free_tier.types",
+            "free_tier.quota_pools",
+            "deployment",
+            "models.available"
+          ],
+          "supports": [
+            "Tabby is a free, open-source, self-hosted AI coding assistant",
+            "Users choose compatible coding models and provide their own model infrastructure"
+          ],
+          "page_sha256": null
+        },
+        {
           "url": "https://github.com/TabbyML/tabby",
           "type": "official_repo",
-          "retrieved_at": "2026-08-27",
-          "supports_fields": [],
+          "retrieved_at": "2026-11-10",
+          "supports_fields": [
+            "status.availability"
+          ],
           "supports": [
-            "self-hosted AI coding assistant",
-            "open-source repository"
+            "Tabby is an active open-source repository"
           ],
           "page_sha256": null
         }
       ],
-      "source_count": 1
+      "source_count": 2
     }
   ]
 }

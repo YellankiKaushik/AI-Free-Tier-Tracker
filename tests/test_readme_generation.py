@@ -38,8 +38,8 @@ def test_quota_summary_labels_multiple_pools_and_singularizes_one():
     records = load_records()
     coderabbit = next(record for record in records if record["slug"] == "coderabbit")
     summary = quota_summary(coderabbit)
-    assert "PR reviews: 3 reviews/day" in summary
-    assert "IDE reviews: 1 review/day" in summary
+    assert "PR reviews: 1 review/dynamic" in summary
+    assert "IDE reviews: 3 reviews/dynamic" in summary
 
 
 def test_nvidia_empty_pool_summary_is_developer_access():

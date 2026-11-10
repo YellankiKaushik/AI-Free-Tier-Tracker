@@ -14,8 +14,9 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: Cloudflare publishes the free allocation but does not state a universal payment-method requirement
+    on the reviewed Workers AI pricing page.
 free_tier:
   available: true
   types:
@@ -36,12 +37,13 @@ free_tier:
       notes: null
     rollover: 'no'
     notes: Some models require paid billing method.
-  after_exhaustion: Further operations fail above free allocation unless on Workers
-    Paid or prepaid AI Gateway credits.
+  after_exhaustion: Further operations fail above free allocation unless on Workers Paid or prepaid AI
+    Gateway credits.
   rollover: 'no'
 models:
   available: []
-  restrictions: []
+  restrictions:
+  - Some model endpoints require Workers Paid or prepaid AI Gateway credits; model eligibility can change.
 project_limits: []
 deployment: []
 runtime_limits: []
@@ -57,17 +59,23 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://developers.cloudflare.com/workers-ai/platform/pricing/
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - models.restrictions
+    - authentication.credit_card_required
     supports:
-    - Workers Free
-    - 10,000 Neurons per day
+    - Workers Free includes 10,000 Neurons per day at no charge
     - All limits reset daily at 00:00 UTC
+    - Some named model endpoints require Workers Paid or prepaid AI Gateway credits
+    - The pricing page does not state a universal payment-method requirement
     page_sha256: null
   - url: https://developers.cloudflare.com/workers-ai/
     type: official_docs

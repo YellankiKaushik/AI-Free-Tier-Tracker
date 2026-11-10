@@ -14,8 +14,9 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current rate-limit docs describe the Free tier; the billing FAQ only confirms payment is
+    required to upgrade to Developer.
 free_tier:
   available: true
   types:
@@ -56,15 +57,22 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
   - url: https://console.groq.com/docs/rate-limits
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
     supports:
-    - Free Plan Limits
-    - model-specific RPM/RPD/TPM/TPD table
-    - 429 Too Many Requests
+    - Groq offers a Free tier with model-specific rate limits
+    - Free limits include RPM, RPD, TPM, and TPD; exact organization limits are available in the account
+      dashboard
+    - Limits vary by model and organization; the table does not publish a universal free quota
+    - The docs do not state whether a payment method is required for the Free tier
     page_sha256: null

@@ -59,15 +59,22 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://www.augmentcode.com/blog/augment-codes-pricing-is-changing
     type: official_blog
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - authentication.credit_card_required
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial.available
+    - trial.allowance
     supports:
     - Trial users
-    - 30,000 credit pool
-    - valid credit card
+    - Trial users receive a one-time pool of 30,000 credits after signup with a valid credit card
+    - After using the trial pool, users can choose a paid plan or move to the Free plan
+    - No recurring free credit grant is stated
     page_sha256: null

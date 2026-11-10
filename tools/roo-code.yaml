@@ -1,14 +1,15 @@
 schema_version: 2
-name: Roo Code
+name: Roo Code (discontinued)
 slug: roo-code
 vendor: Roo Code
 category: open-source-agent
-product_url: https://roocode.com/
-pricing_url: https://github.com/RooCodeInc/Roo-Code
+product_url: https://github.com/RooCodeInc/Roo-Code-Docs/blob/main/docs/sunset.md
+pricing_url: null
 repo_url: https://github.com/RooCodeInc/Roo-Code
 status:
-  availability: active
-  notes: null
+  availability: discontinued
+  notes: Roo Code Extension, Cloud, and Router were shut down on May 15, 2026; the extension repository
+    is archived.
 platforms:
 - vscode
 - local
@@ -17,18 +18,18 @@ authentication:
   credit_card_required: not_applicable
   notes: null
 free_tier:
-  available: true
+  available: false
   types:
-  - open_source_byok
-  plan_name: Open-source client
+  - discontinued
+  - legacy
+  plan_name: Roo Code (retired)
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Inference cost and rate limits depend on connected model provider.
+  after_exhaustion: The Roo Code Extension, Cloud, and Router were shut down on May 15, 2026. The GitHub
+    repository is archived.
   rollover: not_applicable
 models:
-  available:
-  - BYOK
-  - local models
+  available: []
   restrictions: []
 project_limits: []
 deployment: []
@@ -43,16 +44,32 @@ trial:
   allowance: null
   recurring: false
   notes: null
-notes: []
+notes:
+- Roo Code maintainers directed users to Cline as an open-source extension alternative.
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
+  - url: https://github.com/RooCodeInc/Roo-Code-Docs/blob/main/docs/sunset.md
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - status.notes
+    - free_tier.available
+    - free_tier.after_exhaustion
+    - notes
+    supports:
+    - Roo Code Extension, Cloud, and Router shut down May 15, 2026
+    - The maintainers recommend Cline as an open-source extension alternative
+    page_sha256: null
   - url: https://github.com/RooCodeInc/Roo-Code
     type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - status.notes
+    - free_tier.available
     supports:
-    - open-source VS Code agent
-    - BYOK/provider-dependent inference
+    - The Roo-Code repository is archived and read-only; it was archived by the owner on May 15, 2026
     page_sha256: null

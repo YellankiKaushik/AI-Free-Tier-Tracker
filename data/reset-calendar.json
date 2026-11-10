@@ -5,17 +5,6 @@
   "scheduled_reset_groups": {
     "billing_cycle": [
       {
-        "tool": "kiro",
-        "name": "Kiro",
-        "pool": "credits",
-        "pool_name": "Credits",
-        "amount": 50,
-        "unit": "credits",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
         "tool": "atlassian-rovo-dev",
         "name": "Atlassian Rovo Dev",
         "pool": "usage",
@@ -24,32 +13,10 @@
         "unit": "credits",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
+        "notes": "Usage stops until the next billing cycle when the free allowance is exhausted."
       }
     ],
     "daily": [
-      {
-        "tool": "qoder",
-        "name": "Qoder",
-        "pool": "basic-models",
-        "pool_name": "Basic models",
-        "amount": "undisclosed",
-        "unit": "messages",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "base44",
-        "name": "Base44",
-        "pool": "message-credits",
-        "pool_name": "Message credits",
-        "amount": 25,
-        "unit": "credits",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
       {
         "tool": "bolt",
         "name": "Bolt.new",
@@ -86,46 +53,13 @@
       {
         "tool": "replit",
         "name": "Replit Starter",
-        "pool": "agent-credits",
-        "pool_name": "Agent credits",
+        "pool": "free-daily-usage",
+        "pool_name": "Free daily usage",
         "amount": "undisclosed",
-        "unit": "credits",
+        "unit": "usage",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "coderabbit",
-        "name": "CodeRabbit",
-        "pool": "pr-reviews",
-        "pool_name": "PR reviews",
-        "amount": 3,
-        "unit": "reviews",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "coderabbit",
-        "name": "CodeRabbit",
-        "pool": "ide-reviews",
-        "pool_name": "IDE reviews",
-        "amount": 1,
-        "unit": "reviews",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "coderabbit",
-        "name": "CodeRabbit",
-        "pool": "cli-reviews",
-        "pool_name": "CLI reviews",
-        "amount": 3,
-        "unit": "reviews",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
+        "notes": "Pricing says daily usage but publishes no reset time."
       },
       {
         "tool": "cloudflare-workers-ai",
@@ -152,6 +86,28 @@
     ],
     "monthly": [
       {
+        "tool": "kiro",
+        "name": "Kiro",
+        "pool": "credits",
+        "pool_name": "Credits",
+        "amount": 50,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "Free individual limits reset at the start of each monthly billing cycle."
+      },
+      {
+        "tool": "base44",
+        "name": "Base44",
+        "pool": "message-credits",
+        "pool_name": "Message credits",
+        "amount": 25,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": null
+      },
+      {
         "tool": "base44",
         "name": "Base44",
         "pool": "integration-credits",
@@ -169,17 +125,6 @@
         "pool_name": "Monthly tokens",
         "amount": 1000000,
         "unit": "tokens",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "emergent",
-        "name": "Emergent",
-        "pool": "credits",
-        "pool_name": "Credits",
-        "amount": 10,
-        "unit": "credits",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
         "notes": null
@@ -207,17 +152,6 @@
         "notes": null
       },
       {
-        "tool": "v0",
-        "name": "v0",
-        "pool": "included-credits",
-        "pool_name": "Included credits",
-        "amount": 5,
-        "unit": "USD credits",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
         "tool": "github-copilot",
         "name": "GitHub Copilot Free",
         "pool": "completions",
@@ -231,13 +165,24 @@
       {
         "tool": "github-copilot",
         "name": "GitHub Copilot Free",
-        "pool": "premium-requests",
-        "pool_name": "Premium requests",
+        "pool": "ai-credits",
+        "pool_name": "GitHub AI Credits",
         "amount": "undisclosed",
-        "unit": "requests",
+        "unit": "AI credits",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
+        "notes": "Monthly allowance; exact Copilot Free amount is not published in the plan comparison."
+      },
+      {
+        "tool": "jetbrains-ai-assistant",
+        "name": "JetBrains AI Assistant",
+        "pool": "cloud-ai-credits",
+        "pool_name": "AI Free cloud credits",
+        "amount": 3,
+        "unit": "AI credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "Renews every 30 days from the date the AI license was activated."
       },
       {
         "tool": "sourcegraph-cody",
@@ -249,17 +194,6 @@
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
         "notes": null
-      },
-      {
-        "tool": "hugging-face-inference",
-        "name": "Hugging Face Inference Providers",
-        "pool": "monthly-credits",
-        "pool_name": "Monthly routed inference credits",
-        "amount": 0.1,
-        "unit": "USD credits",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
       }
     ]
   },
@@ -267,31 +201,9 @@
     "dynamic": [
       {
         "tool": "cursor",
-        "name": "Cursor Hobby",
+        "name": "Cursor Free",
         "pool": "agent-requests",
-        "pool_name": "Agent requests",
-        "amount": "undisclosed",
-        "unit": "requests",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "cursor",
-        "name": "Cursor Hobby",
-        "pool": "tab-completions",
-        "pool_name": "Tab completions",
-        "amount": "undisclosed",
-        "unit": "completions",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "trae",
-        "name": "TRAE",
-        "pool": "basic-usage",
-        "pool_name": "Basic usage",
+        "pool_name": "AI usage",
         "amount": "undisclosed",
         "unit": "usage",
         "reset_time": "undisclosed",
@@ -300,36 +212,25 @@
       },
       {
         "tool": "windsurf",
-        "name": "Windsurf",
-        "pool": "free-usage",
-        "pool_name": "Free usage",
+        "name": "Devin Desktop (formerly Windsurf)",
+        "pool": "agent-usage",
+        "pool_name": "Agent usage",
         "amount": "undisclosed",
-        "unit": "credits",
+        "unit": "usage",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
         "notes": null
       },
       {
-        "tool": "create-xyz",
-        "name": "Create.xyz",
-        "pool": "usage",
-        "pool_name": "Free usage",
+        "tool": "qoder",
+        "name": "Qoder",
+        "pool": "basic-models",
+        "pool_name": "Basic models",
         "amount": "undisclosed",
-        "unit": "credits",
+        "unit": "messages",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
-      },
-      {
-        "tool": "github-spark",
-        "name": "GitHub Spark",
-        "pool": "usage",
-        "pool_name": "Spark usage",
-        "amount": "undisclosed",
-        "unit": "dynamic",
-        "reset_time": "undisclosed",
-        "timezone": "undisclosed",
-        "notes": null
+        "notes": "No exact refresh period is published for limited basic-model messages."
       },
       {
         "tool": "openai-codex",
@@ -343,26 +244,37 @@
         "notes": null
       },
       {
-        "tool": "warp",
-        "name": "Warp",
-        "pool": "agent-usage",
-        "pool_name": "Agent/AI usage",
-        "amount": "undisclosed",
-        "unit": "requests",
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "pr-reviews",
+        "pool_name": "PR reviews",
+        "amount": 1,
+        "unit": "reviews",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
+        "notes": "1 reviews per developer per rolling hour."
       },
       {
-        "tool": "zed-ai",
-        "name": "Zed AI",
-        "pool": "usage",
-        "pool_name": "AI usage",
-        "amount": "undisclosed",
-        "unit": "requests",
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "ide-reviews",
+        "pool_name": "IDE reviews",
+        "amount": 3,
+        "unit": "reviews",
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
-        "notes": null
+        "notes": "3 reviews per developer per rolling hour."
+      },
+      {
+        "tool": "coderabbit",
+        "name": "CodeRabbit",
+        "pool": "cli-reviews",
+        "pool_name": "CLI reviews",
+        "amount": 3,
+        "unit": "reviews",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "3 reviews per developer per rolling hour."
       },
       {
         "tool": "gemini-api",
@@ -385,6 +297,17 @@
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
         "notes": null
+      },
+      {
+        "tool": "kilo-code",
+        "name": "Kilo Code",
+        "pool": "free-model-requests",
+        "pool_name": "Auto Free model requests",
+        "amount": 200,
+        "unit": "requests",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "Rolling/hourly rate is per IP."
       }
     ],
     "provider_specific": [
@@ -392,7 +315,7 @@
         "tool": "replit",
         "name": "Replit Starter",
         "pool": "published-apps",
-        "pool_name": "Published live project",
+        "pool_name": "Published live projects",
         "amount": 1,
         "unit": "project",
         "reset_time": "undisclosed",
@@ -409,6 +332,30 @@
         "reset_time": "undisclosed",
         "timezone": "undisclosed",
         "notes": null
+      }
+    ],
+    "undisclosed": [
+      {
+        "tool": "emergent",
+        "name": "Emergent",
+        "pool": "credits",
+        "pool_name": "Credits",
+        "amount": 10,
+        "unit": "credits",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "Official pricing says monthly; official help says the free grant is on the first day. Cadence is unresolved."
+      },
+      {
+        "tool": "zed-ai",
+        "name": "Zed AI",
+        "pool": "edit-predictions",
+        "pool_name": "Accepted edit predictions",
+        "amount": 2000,
+        "unit": "accepted edit predictions",
+        "reset_time": "undisclosed",
+        "timezone": "undisclosed",
+        "notes": "The official pricing page publishes 2,000 accepted edit predictions but no reset cadence."
       }
     ]
   }

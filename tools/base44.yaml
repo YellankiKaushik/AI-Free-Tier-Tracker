@@ -14,12 +14,11 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current pricing page does not state whether a payment method is required.
 free_tier:
   available: true
   types:
-  - recurring_daily
   - recurring_monthly
   plan_name: Free
   quantity_published: true
@@ -29,14 +28,15 @@ free_tier:
     amount: 25
     unit: credits
     period: month
-    cap: 5/day
+    cap: null
     reset:
-      period: daily
+      period: monthly
       time: null
       timezone: null
       notes: null
-    rollover: 'no'
-    notes: null
+    rollover: unknown
+    notes: Current pricing publishes 25 message credits monthly; a separate daily cap and rollover rule
+      are not shown.
   - id: integration-credits
     name: Integration credits
     amount: 100
@@ -48,14 +48,17 @@ free_tier:
       time: null
       timezone: null
       notes: null
-    rollover: 'no'
-    notes: null
-  after_exhaustion: Wait for daily/monthly limits to refresh or upgrade.
-  rollover: 'no'
+    rollover: unknown
+    notes: Official pricing publishes the monthly quantity; it does not publish the previously recorded
+      5-per-day cap or a rollover rule.
+  after_exhaustion: Wait for monthly credits to refresh or upgrade; the current pricing page does not
+    specify rollover.
+  rollover: unknown
 models:
   available: []
   restrictions: []
-project_limits: []
+project_limits:
+- Free plan allows up to 5 apps.
 deployment: []
 runtime_limits: []
 storage_limits: []
@@ -70,16 +73,22 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
   - url: https://base44.com/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
+    - project_limits
     supports:
-    - Free plan
-    - 25 message credits/month
-    - 5/day
-    - 100 integration credits/month
+    - Free plan includes 25 message credits per month and 100 integration credits per month
+    - Free plan allows up to 5 apps
+    - Current pricing page does not publish a separate 5-per-day message cap, rollover rule, or payment-method
+      requirement
     page_sha256: null

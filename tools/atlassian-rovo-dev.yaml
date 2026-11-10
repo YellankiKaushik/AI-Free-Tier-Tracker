@@ -8,7 +8,9 @@ pricing_url: https://www.atlassian.com/software/rovo-dev/pricing
 repo_url: null
 status:
   availability: active
-  notes: null
+  notes: Atlassian announced that standalone Rovo Dev is reaching end of life and its capabilities are
+    moving into eligible Jira and Teamwork Collection subscriptions; the official pricing page does not
+    give a final standalone end date as of 2026-11-10.
 platforms:
 - cli
 - cloud
@@ -27,17 +29,18 @@ free_tier:
     name: Rovo Dev credits
     amount: 350
     unit: credits
-    period: month
+    period: billing_cycle
     cap: null
     reset:
       period: billing_cycle
       time: null
       timezone: null
-      notes: null
+      notes: Usage stops until the next billing cycle when the free allowance is exhausted.
     rollover: 'no'
     notes: null
-  after_exhaustion: Rovo Dev stops working until usage resets in the next billing
-    cycle or the user upgrades.
+  after_exhaustion: Rovo Dev Free stops working until the next billing cycle; an organization can upgrade
+    users to Standard, which has a separate 2,000-credit monthly allowance and may incur charges for extra
+    use.
   rollover: 'no'
 models:
   available: []
@@ -57,23 +60,31 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_exact
   sources:
-  - url: https://support.atlassian.com/rovo/docs/view-your-rovo-dev-credit-usage/
+  - url: https://support.atlassian.com/rovo/docs/rovo-dev-rollout/
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
     supports:
-    - Rovo Dev Free
-    - 350 credits per user per month
-    - stops working until next billing cycle
+    - Rovo Dev Free grants 350 credits per user, per month, per site
+    - Unused free usage stops at exhaustion until the next billing cycle
+    - Rovo Dev Standard has a separate paid allowance
     page_sha256: null
   - url: https://www.atlassian.com/software/rovo-dev/pricing
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.notes
+    - free_tier.plan_name
+    - free_tier.quota_pools
     supports:
-    - Standard includes 2,000 Rovo Dev credits per developer per month
-    - extra usage is $0.01 per credit
+    - Standalone Rovo Dev is reaching end of life; capabilities are moving into eligible Jira and Teamwork
+      Collection subscriptions
+    - Standard is priced at $20 per developer per month and includes 2,000 credits
+    - The page links to transition FAQ; it does not state a final end date
     page_sha256: null

@@ -4,7 +4,7 @@ slug: jetbrains-ai-assistant
 vendor: JetBrains
 category: coding-assistant
 product_url: https://www.jetbrains.com/ai/
-pricing_url: https://www.jetbrains.com/help/ai/ai-service-license.html
+pricing_url: https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html
 repo_url: null
 status:
   availability: active
@@ -15,30 +15,31 @@ platforms:
 authentication:
   account_required: 'yes'
   credit_card_required: 'no'
-  notes: null
+  notes: AI Free is free. Activating the separate 30-day AI Pro trial requires linking a payment card.
 free_tier:
   available: true
   types:
-  - one_time_signup
+  - recurring_monthly
   - time_limited_trial
-  plan_name: AI FREE
-  quantity_published: false
+  plan_name: AI Free
+  quantity_published: true
   quota_pools:
-  - id: cloud-llm
-    name: Cloud LLM usage
-    amount: undisclosed
-    unit: quota
-    period: one_time
+  - id: cloud-ai-credits
+    name: AI Free cloud credits
+    amount: 3
+    unit: AI credits
+    period: month
     cap: null
     reset:
-      period: not_applicable
+      period: monthly
       time: null
       timezone: null
-      notes: null
+      notes: Renews every 30 days from the date the AI license was activated.
     rollover: 'no'
-    notes: null
-  after_exhaustion: After trial/free quota, continue with AI FREE limitations or upgrade.
-  rollover: unknown
+    notes: Individual AI Free allowance; unused credits do not roll over.
+  after_exhaustion: AI Free credits renew every 30 days; use external or local models, or upgrade for
+    more cloud AI usage.
+  rollover: 'no'
 models:
   available: []
   restrictions: []
@@ -47,25 +48,63 @@ deployment: []
 runtime_limits: []
 storage_limits: []
 concurrency_limits: []
-eligibility: []
+eligibility:
+- AI Free requires an active JetBrains IDE license and IDE version 2025.1 or later.
+- AI Free is unavailable in IntelliJ IDEA Community Edition, PyCharm Community Edition, and Android Studio.
+- JetBrains AI is unavailable in China; external or local models remain available.
 regions: []
 trial:
   available: true
   duration_days: 30
-  allowance: AI Pro trial with limited time and usage volume
+  allowance: AI Pro trial with 10 AI Credits for individual users.
   recurring: false
-  notes: Available to new users with paid or complimentary JetBrains IDE licenses.
-notes: []
+  notes: Available to new users with paid or complimentary JetBrains IDE licenses. Starting the trial
+    requires linking a payment card; after the trial, users can continue on AI Free.
+notes:
+- Current 2026.2 plan documentation publishes 3 AI Free credits every 30 days; an older AI service licensing
+  page still describes a one-time limited quota.
+- The separate AI Pro trial lasts 30 days and includes 10 AI Credits for individual users; a payment card
+  is required to start the trial.
 verification:
-  last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  last_verified: '2026-11-10'
+  confidence: official_exact
   sources:
+  - url: https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - trial
+    - eligibility
+    - authentication.credit_card_required
+    - notes
+    supports:
+    - AI Free includes 3 AI Credits per month, renewed every 30 days for individual users
+    - AI Free quota renews every 30 days and unused credits do not roll over
+    - AI Pro trial is 30 days and includes 10 AI Credits for individuals
+    - AI Trial activation requires linking a payment card
+    - AI Free is unavailable in IntelliJ IDEA Community Edition, PyCharm Community Edition, and Android
+      Studio
+    page_sha256: null
   - url: https://www.jetbrains.com/help/ai/ai-service-license.html
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - eligibility
+    - notes
     supports:
-    - AI FREE plan
-    - one-time non-renewable limited quota
-    - AI TRIAL lasts 30 days
+    - Older AI service licensing page describes a one-time, non-renewable limited quota
+    page_sha256: null
+  - url: https://www.jetbrains.com/help/ai-assistant/jetbrains-ai-subscription.html
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - trial
+    - eligibility
+    supports:
+    - AI Pro trial lasts 30 days and is available to users with paid and complimentary IDE licenses
+    - Trial activation requires linking a payment card
     page_sha256: null

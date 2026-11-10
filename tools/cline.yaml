@@ -23,8 +23,7 @@ free_tier:
   plan_name: Open-source client
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Inference cost and limits depend on the selected model provider
-    or local model.
+  after_exhaustion: Inference cost and limits depend on the selected model provider or local model.
   rollover: not_applicable
 models:
   available:
@@ -46,21 +45,20 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
   - url: https://cline.bot/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - models.available
     supports:
-    - client free
-    - BYOK/provider-dependent inference
-    page_sha256: null
-  - url: https://github.com/cline/cline
-    type: official_repo
-    retrieved_at: '2026-08-27'
-    supports_fields: []
-    supports:
-    - open-source client
+    - Cline is free for individual developers
+    - AI inference is paid by usage or through BYOK; no subscription for the open-source client
+    - Users may provide provider API keys
     page_sha256: null

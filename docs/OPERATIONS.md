@@ -2,7 +2,7 @@
 
 ## What runs automatically
 
-- `Validate tracker data` runs on every push and pull request. It lints, validates canonical YAML, runs tests, regenerates artifacts, and checks that generated files are committed. It has read-only repository access.
+- `Validate tracker data` runs on pushes to `main` and on pull requests targeting `main`. It lints, validates canonical YAML, runs tests, regenerates artifacts, and checks that generated files are committed. It has read-only repository access. Feature-branch pushes are checked when a pull request is opened or updated, avoiding a duplicate run for each push.
 - `Deploy dashboard` runs on pushes to `main`. It builds the static site and deploys it to GitHub Pages. A manual dispatch on a non-`main` branch builds the artifact but skips deployment.
 - The stale-data and source-health workflows have no cron trigger. They run only after a maintainer starts them with `workflow_dispatch`.
 

@@ -14,12 +14,11 @@ platforms:
 - cloud
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
+  credit_card_required: unknown
   notes: null
 free_tier:
   available: true
-  types:
-  - recurring_monthly
+  types: []
   plan_name: Free
   quantity_published: true
   quota_pools:
@@ -27,17 +26,20 @@ free_tier:
     name: Credits
     amount: 10
     unit: credits
-    period: month
+    period: undisclosed
     cap: null
     reset:
-      period: monthly
+      period: undisclosed
       time: null
       timezone: null
-      notes: null
-    rollover: 'no'
-    notes: null
-  after_exhaustion: Wait for monthly reset or upgrade.
-  rollover: 'no'
+      notes: Official pricing says monthly; official help says the free grant is on the first day. Cadence
+        is unresolved.
+    rollover: unknown
+    notes: The current official pricing page says 10 free monthly credits, while official help says 10
+      credits on the first day.
+  after_exhaustion: Free-credit refresh cadence is unclear because current official pricing and help pages
+    describe the 10-credit grant differently.
+  rollover: unknown
 models:
   available: []
   restrictions: []
@@ -54,16 +56,33 @@ trial:
   allowance: null
   recurring: false
   notes: null
-notes: []
+notes:
+- Official pricing describes 10 free monthly credits; official help says 10 credits on the first day.
+  Confirm whether the Free grant recurs before recording a reset cadence.
 verification:
   last_verified: '2026-08-27'
-  confidence: official_exact
+  confidence: mixed
   sources:
   - url: https://emergent.sh/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.plan_name
+    - free_tier.quota_pools
     supports:
-    - Free plan
-    - 10 credits/month
+    - Free plan is $0 per month and includes 10 free monthly credits
+    - The pricing page does not make the Free grant's reset date or card requirement clear
+    page_sha256: null
+  - url: https://help.emergent.sh/plans-the-free-tier
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - notes
+    supports:
+    - Free tier gives 10 credits on the first day
+    - Official help describes the 10-credit amount as a first-day grant and says subscription credits
+      recharge monthly
+    - The help page does not explicitly say that the Free grant repeats monthly
     page_sha256: null

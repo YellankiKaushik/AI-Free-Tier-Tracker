@@ -42,15 +42,26 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
+  - url: https://claude.com/pricing
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - authentication.credit_card_required
+    supports:
+    - Claude Code is not included in the Claude Free plan; it is included in paid plans
+    - Pricing does not state whether a payment card is required for API usage
+    page_sha256: null
   - url: https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code
     type: official_help
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.after_exhaustion
     supports:
-    - Enterprise seat usage pool
-    - API key pay-as-you-go
-    - no standalone free quota published
+    - Enterprise access uses a seat usage pool
+    - API key access is billed per token through the API
+    - No standalone free Claude Code quota is published
     page_sha256: null

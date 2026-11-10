@@ -1,10 +1,10 @@
 schema_version: 2
-name: Cursor Hobby
+name: Cursor Free
 slug: cursor
 vendor: Anysphere
 category: agentic-ide
 product_url: https://cursor.com/
-pricing_url: https://cursor.com/en-US/pricing
+pricing_url: https://cursor.com/pricing
 repo_url: null
 status:
   availability: active
@@ -14,19 +14,19 @@ platforms:
 - vscode
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: The current pricing page does not state whether a payment method is required.
 free_tier:
   available: true
   types:
   - dynamic_rate_limit
-  plan_name: Hobby
+  plan_name: Free
   quantity_published: false
   quota_pools:
   - id: agent-requests
-    name: Agent requests
+    name: AI usage
     amount: undisclosed
-    unit: requests
+    unit: usage
     period: dynamic
     cap: null
     reset:
@@ -35,21 +35,8 @@ free_tier:
       timezone: null
       notes: null
     rollover: unknown
-    notes: null
-  - id: tab-completions
-    name: Tab completions
-    amount: undisclosed
-    unit: completions
-    period: dynamic
-    cap: null
-    reset:
-      period: dynamic
-      time: null
-      timezone: null
-      notes: null
-    rollover: unknown
-    notes: null
-  after_exhaustion: Wait for vendor-managed limits to refresh or upgrade.
+    notes: Current pricing describes limited AI/agent usage without publishing a quantity or reset.
+  after_exhaustion: Exact Free AI usage and reset limits are not published; upgrade for higher limits.
   rollover: unknown
 models:
   available: []
@@ -69,15 +56,22 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://cursor.com/en-US/pricing
+  - url: https://cursor.com/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - name
+    - pricing_url
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
     supports:
-    - Hobby plan
-    - limited Agent requests
-    - limited Tab completions
+    - Cursor Free costs $0 per month
+    - Free includes limited AI usage and limited Agent and Chat requests
+    - Exact Free quantities and reset periods are not published
+    - The pricing page does not state whether payment details are required
     page_sha256: null

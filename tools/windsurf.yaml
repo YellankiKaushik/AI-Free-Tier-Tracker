@@ -1,21 +1,23 @@
 schema_version: 2
-name: Windsurf
+name: Devin Desktop (formerly Windsurf)
 slug: windsurf
-vendor: Windsurf
+vendor: Cognition
 category: agentic-ide
-product_url: https://windsurf.com/
-pricing_url: https://windsurf.com/pricing
+product_url: https://devin.ai/desktop
+pricing_url: https://devin.ai/pricing
 repo_url: null
 status:
   availability: active
-  notes: null
+  notes: Devin Desktop is the new name for Windsurf. The official page says the IDE and existing plans/pricing
+    carry over; the Free plan provides a light, unpublished agent quota plus unlimited inline edits and
+    Tab completions.
 platforms:
 - desktop
 - vscode
 authentication:
   account_required: 'yes'
-  credit_card_required: 'no'
-  notes: null
+  credit_card_required: unknown
+  notes: Current Devin pricing does not state whether a payment card is required for the Free plan.
 free_tier:
   available: true
   types:
@@ -23,10 +25,10 @@ free_tier:
   plan_name: Free
   quantity_published: false
   quota_pools:
-  - id: free-usage
-    name: Free usage
+  - id: agent-usage
+    name: Agent usage
     amount: undisclosed
-    unit: credits
+    unit: usage
     period: dynamic
     cap: null
     reset:
@@ -35,8 +37,10 @@ free_tier:
       timezone: null
       notes: null
     rollover: unknown
-    notes: null
-  after_exhaustion: Use base/free capabilities or upgrade when premium usage is exhausted.
+    notes: The official pricing page describes a light agent quota but publishes no exact quantity, unit,
+      or reset period.
+  after_exhaustion: The exact Free agent quota and reset are unpublished. The Free plan includes unlimited
+    inline edits and Tab completions; paid tiers include increased agent quotas.
   rollover: unknown
 models:
   available: []
@@ -56,14 +60,36 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
-  - url: https://windsurf.com/pricing
-    type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+  - url: https://devin.ai/desktop
+    type: official_docs
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - name
+    - vendor
+    - product_url
+    - status.notes
+    - platforms
     supports:
-    - Free plan
-    - usage limits not normalized in tracker
+    - Devin Desktop is the new name for Windsurf
+    - Windsurf IDE experience and existing plans carry over
+    - The page describes the current desktop product
+    page_sha256: null
+  - url: https://devin.ai/pricing
+    type: official_pricing
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - pricing_url
+    - free_tier.plan_name
+    - free_tier.quota_pools
+    - free_tier.after_exhaustion
+    - authentication.credit_card_required
+    supports:
+    - Free plan is $0
+    - Free plan has a light quota to code with agents; exact amount is unpublished
+    - Free includes unlimited inline edits and Tab completions
+    - Paid plans have increased quotas
+    - The pricing page does not state a payment-card requirement
     page_sha256: null

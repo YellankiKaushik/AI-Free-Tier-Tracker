@@ -25,8 +25,7 @@ free_tier:
   plan_name: Retired service
   quantity_published: false
   quota_pools: []
-  after_exhaustion: Service retired; use Azure AI Foundry or GitHub Copilot where
-    appropriate.
+  after_exhaustion: Service retired; use Azure AI Foundry or GitHub Copilot where appropriate.
   rollover: not_applicable
 models:
   available: []
@@ -46,15 +45,20 @@ trial:
   notes: null
 notes: []
 verification:
-  last_verified: '2026-08-27'
+  last_verified: '2026-11-10'
   confidence: official_undisclosed
   sources:
   - url: https://docs.github.com/en/github-models
     type: official_docs
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - status.availability
+    - status.notes
+    - free_tier.available
+    - free_tier.types
+    - free_tier.after_exhaustion
     supports:
-    - GitHub Models has been retired
-    - retired July 30, 2026
-    - inference API no longer available
+    - GitHub Models was fully retired July 30, 2026
+    - The playground, model catalog, inference API, and BYOK are no longer available
+    - GitHub Models was a separate service from GitHub Copilot
     page_sha256: null

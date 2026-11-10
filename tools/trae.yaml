@@ -18,24 +18,26 @@ authentication:
 free_tier:
   available: true
   types:
-  - dynamic_rate_limit
-  plan_name: Free/Basic usage
+  - one_time_signup
+  - time_limited_trial
+  plan_name: Free
   quantity_published: false
   quota_pools:
   - id: basic-usage
-    name: Basic usage
+    name: Free usage
     amount: undisclosed
     unit: usage
-    period: dynamic
+    period: one_time
     cap: null
     reset:
-      period: dynamic
+      period: not_applicable
       time: null
       timezone: null
-      notes: null
+      notes: The official pricing page describes the Free allowance as one-time, without a published amount.
     rollover: unknown
-    notes: null
-  after_exhaustion: When usage runs out, follow TRAE pricing FAQ/reset behavior.
+    notes: The plan page does not publish a numeric allowance.
+  after_exhaustion: The current pricing page does not state what happens after the one-time Free allowance
+    is exhausted.
   rollover: unknown
 models:
   available: []
@@ -48,23 +50,46 @@ concurrency_limits: []
 eligibility: []
 regions: []
 trial:
-  available: false
-  duration_days: null
-  allowance: null
+  available: true
+  duration_days: 14
+  allowance: All Pro features during the trial; the exact trial usage amount is not published.
   recurring: false
-  notes: null
-notes: []
+  notes: New users must add a payment method within 48 hours after signup. At the end of the trial, users
+    can choose a membership plan or remove the payment method and switch to Free.
+notes:
+- Current official pricing responses expose inconsistent plan tables. One official pricing variant describes
+  Free usage as a one-time allowance, while another displays only the paid Lite, Pro, Pro+, and Ultra tiers.
+  The exact Free allowance and current plan presentation remain unresolved.
 verification:
   last_verified: '2026-08-27'
-  confidence: official_undisclosed
+  confidence: mixed
   sources:
   - url: https://www.trae.ai/pricing
     type: official_pricing
-    retrieved_at: '2026-08-27'
-    supports_fields: []
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - free_tier.available
+    - free_tier.types
+    - free_tier.plan_name
+    - free_tier.quantity_published
+    - free_tier.quota_pools
+    - trial.available
     supports:
-    - Pricing FAQ
-    - Basic Usage
-    - Bonus Usage
-    - what happens when usage runs out
+    - One official pricing variant lists Free with limited usage, a one-time free allowance, and limited Autocomplete
+    - A different pricing response lists paid Lite, Pro, Pro+, and Ultra tiers without a Free row
+    - Exact Free usage amount and exhaustion behavior are not published in either response
+    page_sha256: null
+  - url: https://www.trae.ai/blog/trae_membership_0213
+    type: official_blog
+    retrieved_at: '2026-11-10'
+    supports_fields:
+    - trial.available
+    - trial.duration_days
+    - trial.allowance
+    - trial.notes
+    supports:
+    - New users can receive a 14-day Pro trial
+    - Trial requires adding a payment method within 48 hours after signup
+    - Trial includes Pro features; the article does not state an exact usage amount
+    - After the trial users can choose a plan or remove the payment method and switch to Free
     page_sha256: null

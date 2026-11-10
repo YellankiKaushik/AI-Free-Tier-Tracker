@@ -36,121 +36,118 @@ Canonical records live in [`tools/`](tools/). Generated artifacts are:
 ## Dataset Statistics
 
 - Total tracked tools: **43**
-- Active tools: **41**
-- Recurring/dynamic free access records: **25**
-- Open-source/BYOK clients: **14**
-- Official exact records: **14**
-- Official undisclosed records: **26**
+- Active tools: **39**
+- Recurring/dynamic free access records: **20**
+- Open-source/BYOK clients: **11**
+- Official exact records: **15**
+- Official undisclosed records: **23**
 
 ## Active Recurring And Dynamic Hosted Access
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Cursor Hobby](https://cursor.com/en-US/pricing) | agentic-ide | Agent requests: undisclosed requests/dynamic; Tab completions: undisclosed completions/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits/billing cycle | billing cycle | no | official exact | 2026-08-27 |
-| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | daily, not applicable | no | mixed | 2026-08-27 |
-| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Windsurf](https://windsurf.com/pricing) | agentic-ide | undisclosed credits/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Base44](https://base44.com/pricing) | app-builder | Message credits: 25 credits/month (cap 5/day); Integration credits: 100 credits/month | daily, monthly | no | official exact | 2026-08-27 |
-| [Bolt.new](https://bolt.new/pricing) | app-builder | Daily tokens: 300000 tokens/day; Monthly tokens: 1000000 tokens/month | daily, monthly | no | official exact | 2026-08-27 |
-| [Create.xyz](https://www.create.xyz/pricing) | app-builder | undisclosed credits/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Emergent](https://emergent.sh/pricing) | app-builder | 10 credits/month | monthly | no | official exact | 2026-08-27 |
-| [GitHub Spark](https://github.com/features/spark) | app-builder | undisclosed dynamic/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Lovable](https://lovable.dev/pricing) | app-builder | Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month | daily, monthly | no | official exact | 2026-08-27 |
-| [v0](https://api2.v0.dev/pricing) | app-builder | Included credits: 5 USD credits/month; Messages: 7 messages/day | daily, monthly | no | official exact | 2026-08-27 |
-| [Replit Starter](https://ld.replit.com/pricing) | cloud-ide | Agent credits: undisclosed credits/day; Published live project: 1 project/provider specific | daily, provider specific | no | mixed | 2026-08-27 |
-| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits/month | billing cycle | no | official exact | 2026-08-27 |
-| [OpenAI Codex](https://help.openai.com/en/articles/11369540) | coding-agent | undisclosed requests/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 3 reviews/day; IDE reviews: 1 review/day; CLI reviews: 3 reviews/day; Files per review: 150 files/provider specific | daily, provider specific | no | official exact | 2026-08-27 |
-| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | Completions: 2000 completions/month; Premium requests: undisclosed requests/month | monthly | no | mixed | 2026-08-27 |
-| [Warp](https://www.warp.dev/pricing) | coding-assistant | undisclosed requests/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons/day | daily | no | official exact | 2026-08-27 |
-| [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits/month | monthly | no | official exact | 2026-08-27 |
-| [NVIDIA NIM](https://docs.api.nvidia.com/nim/docs/product) | model-api | Free developer/prototyping access; universal quota undisclosed | dynamic/undisclosed | unknown | official undisclosed | 2026-09-09 |
-| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests/day | daily | no | official exact | 2026-08-27 |
+| [Cursor Free](https://cursor.com/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Devin Desktop (formerly Windsurf)](https://devin.ai/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits/month | monthly | unknown | official exact | 2026-11-10 |
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | dynamic, not applicable | unknown | mixed | 2026-11-10 |
+| [Base44](https://base44.com/pricing) | app-builder | Message credits: 25 credits/month; Integration credits: 100 credits/month | monthly | unknown | official exact | 2026-11-10 |
+| [Bolt.new](https://bolt.new/pricing) | app-builder | Daily tokens: 300000 tokens/day; Monthly tokens: 1000000 tokens/month | daily, monthly | no | official exact | 2026-11-10 |
+| [Lovable](https://lovable.dev/pricing) | app-builder | Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month | daily, monthly | no | official exact | 2026-11-10 |
+| [v0](https://api2.v0.dev/pricing) | app-builder | New-user credits: 5 USD credits/one time; Messages: 7 messages/day | daily, not applicable | unknown | official exact | 2026-11-10 |
+| [Replit Starter](https://replit.com/pricing) | cloud-ide | Free daily usage: undisclosed usage/day; Published live projects: 1 project/provider specific | daily, provider specific | no | official undisclosed | 2026-11-10 |
+| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits/billing cycle | billing cycle | no | official exact | 2026-11-10 |
+| [OpenAI Codex](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) | coding-agent | undisclosed requests/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 1 review/dynamic; IDE reviews: 3 reviews/dynamic; CLI reviews: 3 reviews/dynamic; Files per review: 150 files/provider specific | dynamic, provider specific | no | official exact | 2026-11-10 |
+| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | Completions: 2000 completions/month; GitHub AI Credits: undisclosed AI credits/month | monthly | unknown | mixed | 2026-11-10 |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html) | coding-assistant | 3 AI credits/month | monthly | no | official exact | 2026-11-10 |
+| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons/day | daily | unknown | official exact | 2026-11-10 |
+| [Gemini API](https://ai.google.dev/gemini-api/docs/pricing) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-11-10 |
+| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [NVIDIA NIM](https://docs.api.nvidia.com/nim/docs/product) | model-api | Free developer/prototyping access; universal quota undisclosed | dynamic/undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests/day | daily | no | official exact | 2026-11-10 |
+| [Kilo Code](https://kilo.ai/pricing/) | open-source-agent | 200 requests/dynamic | dynamic | unknown | official exact | 2026-11-10 |
 
 ## App Builders
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Base44](https://base44.com/pricing) | app-builder | Message credits: 25 credits/month (cap 5/day); Integration credits: 100 credits/month | daily, monthly | no | official exact | 2026-08-27 |
-| [Bolt.new](https://bolt.new/pricing) | app-builder | Daily tokens: 300000 tokens/day; Monthly tokens: 1000000 tokens/month | daily, monthly | no | official exact | 2026-08-27 |
-| [Create.xyz](https://www.create.xyz/pricing) | app-builder | undisclosed credits/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Emergent](https://emergent.sh/pricing) | app-builder | 10 credits/month | monthly | no | official exact | 2026-08-27 |
-| [GitHub Spark](https://github.com/features/spark) | app-builder | undisclosed dynamic/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Lovable](https://lovable.dev/pricing) | app-builder | Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month | daily, monthly | no | official exact | 2026-08-27 |
-| [v0](https://api2.v0.dev/pricing) | app-builder | Included credits: 5 USD credits/month; Messages: 7 messages/day | daily, monthly | no | official exact | 2026-08-27 |
+| [Anything](https://www.anything.com/pricing) | app-builder | Free access available; exact allowance undisclosed | undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [Base44](https://base44.com/pricing) | app-builder | Message credits: 25 credits/month; Integration credits: 100 credits/month | monthly | unknown | official exact | 2026-11-10 |
+| [Bolt.new](https://bolt.new/pricing) | app-builder | Daily tokens: 300000 tokens/day; Monthly tokens: 1000000 tokens/month | daily, monthly | no | official exact | 2026-11-10 |
+| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Emergent](https://emergent.sh/pricing) | app-builder | 10 credits/undisclosed | undisclosed | unknown | mixed | 2026-08-27 |
+| [Lovable](https://lovable.dev/pricing) | app-builder | Build credits: 5 credits/day (cap 30/month); Cloud credits: 20 credits/month; AI credits: 4 credits/month | daily, monthly | no | official exact | 2026-11-10 |
+| [v0](https://api2.v0.dev/pricing) | app-builder | New-user credits: 5 USD credits/one time; Messages: 7 messages/day | daily, not applicable | unknown | official exact | 2026-11-10 |
 
 ## Coding Assistants And Agents
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Cursor Hobby](https://cursor.com/en-US/pricing) | agentic-ide | Agent requests: undisclosed requests/dynamic; Tab completions: undisclosed completions/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits/billing cycle | billing cycle | no | official exact | 2026-08-27 |
-| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | daily, not applicable | no | mixed | 2026-08-27 |
-| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Windsurf](https://windsurf.com/pricing) | agentic-ide | undisclosed credits/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Claude Code](https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code) | cli-agent | Free access available; exact allowance undisclosed | undisclosed | unknown | official undisclosed | 2026-08-27 |
-| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits/month | billing cycle | no | official exact | 2026-08-27 |
-| [OpenAI Codex](https://help.openai.com/en/articles/11369540) | coding-agent | undisclosed requests/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits/one time | not applicable | yes | official exact | 2026-08-27 |
-| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 3 reviews/day; IDE reviews: 1 review/day; CLI reviews: 3 reviews/day; Files per review: 150 files/provider specific | daily, provider specific | no | official exact | 2026-08-27 |
-| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | Completions: 2000 completions/month; Premium requests: undisclosed requests/month | monthly | no | mixed | 2026-08-27 |
-| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai/ai-service-license.html) | coding-assistant | undisclosed quota/one time | not applicable | no | official undisclosed | 2026-08-27 |
-| [Warp](https://www.warp.dev/pricing) | coding-assistant | undisclosed requests/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
+| [Cursor Free](https://cursor.com/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Devin Desktop (formerly Windsurf)](https://devin.ai/pricing) | agentic-ide | undisclosed usage/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits/month | monthly | unknown | official exact | 2026-11-10 |
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | dynamic, not applicable | unknown | mixed | 2026-11-10 |
+| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage/one time | not applicable | unknown | mixed | 2026-08-27 |
+| [Claude Code](https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code) | cli-agent | Free access available; exact allowance undisclosed | undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [Atlassian Rovo Dev](https://www.atlassian.com/software/rovo-dev/pricing) | coding-agent | 350 credits/billing cycle | billing cycle | no | official exact | 2026-11-10 |
+| [OpenAI Codex](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) | coding-agent | undisclosed requests/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits/one time | not applicable | yes | official exact | 2026-11-10 |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 1 review/dynamic; IDE reviews: 3 reviews/dynamic; CLI reviews: 3 reviews/dynamic; Files per review: 150 files/provider specific | dynamic, provider specific | no | official exact | 2026-11-10 |
+| [GitHub Copilot Free](https://docs.github.com/en/copilot/get-started/plans) | coding-assistant | Completions: 2000 completions/month; GitHub AI Credits: undisclosed AI credits/month | monthly | unknown | mixed | 2026-11-10 |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html) | coding-assistant | 3 AI credits/month | monthly | no | official exact | 2026-11-10 |
+| [Warp](https://www.warp.dev/pricing) | coding-assistant | Free access available; exact allowance undisclosed | undisclosed | unknown | mixed | 2026-08-27 |
+| [Zed AI](https://zed.dev/pricing) | coding-assistant | 2000 accepted edit predictions/undisclosed | undisclosed | no | official exact | 2026-11-10 |
 
 ## Model/API Free Tiers Useful To Agents
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits/one time | not applicable | no | official exact | 2026-08-27 |
-| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons/day | daily | no | official exact | 2026-08-27 |
-| [Gemini API](https://ai.google.dev/gemini-api/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-08-27 |
-| [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | 0.1 USD credits/month | monthly | no | official exact | 2026-08-27 |
-| [NVIDIA NIM](https://docs.api.nvidia.com/nim/docs/product) | model-api | Free developer/prototyping access; universal quota undisclosed | dynamic/undisclosed | unknown | official undisclosed | 2026-09-09 |
-| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests/day | daily | no | official exact | 2026-08-27 |
+| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits/one time | not applicable | yes | official exact | 2026-11-10 |
+| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/platform/pricing/) | model-api | 10000 neurons/day | daily | unknown | official exact | 2026-11-10 |
+| [Gemini API](https://ai.google.dev/gemini-api/docs/pricing) | model-api | published per model requests/tokens/dynamic | dynamic | no | official undisclosed | 2026-11-10 |
+| [Groq API](https://console.groq.com/docs/rate-limits) | model-api | published per model requests/tokens/dynamic | dynamic | unknown | official undisclosed | 2026-11-10 |
+| [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/en/pricing) | model-api | Free access available; exact allowance undisclosed | undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [NVIDIA NIM](https://docs.api.nvidia.com/nim/docs/product) | model-api | Free developer/prototyping access; universal quota undisclosed | dynamic/undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [OpenRouter Free Models](https://openrouter.ai/docs/faq) | model-api | 50 requests/day | daily | no | official exact | 2026-11-10 |
 
 ## Trials, Signup Grants, And Promotions
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | daily, not applicable | no | mixed | 2026-08-27 |
-| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits/one time | not applicable | yes | official exact | 2026-08-27 |
-| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 3 reviews/day; IDE reviews: 1 review/day; CLI reviews: 3 reviews/day; Files per review: 150 files/provider specific | daily, provider specific | no | official exact | 2026-08-27 |
-| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai/ai-service-license.html) | coding-assistant | undisclosed quota/one time | not applicable | no | official undisclosed | 2026-08-27 |
-| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits/one time | not applicable | no | official exact | 2026-08-27 |
+| [Kiro](https://kiro.dev/pricing/) | agentic-ide | 50 credits/month | monthly | unknown | official exact | 2026-11-10 |
+| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | dynamic, not applicable | unknown | mixed | 2026-11-10 |
+| [TRAE](https://www.trae.ai/pricing) | agentic-ide | undisclosed usage/one time | not applicable | unknown | mixed | 2026-08-27 |
+| [v0](https://api2.v0.dev/pricing) | app-builder | New-user credits: 5 USD credits/one time; Messages: 7 messages/day | daily, not applicable | unknown | official exact | 2026-11-10 |
+| [Augment Code](https://www.augmentcode.com/blog/augment-codes-pricing-is-changing) | coding-assistant | 30000 credits/one time | not applicable | yes | official exact | 2026-11-10 |
+| [CodeRabbit](https://docs.coderabbit.ai/management/plans) | coding-assistant | PR reviews: 1 review/dynamic; IDE reviews: 3 reviews/dynamic; CLI reviews: 3 reviews/dynamic; Files per review: 150 files/provider specific | dynamic, provider specific | no | official exact | 2026-11-10 |
+| [JetBrains AI Assistant](https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html) | coding-assistant | 3 AI credits/month | monthly | no | official exact | 2026-11-10 |
+| [Zed AI](https://zed.dev/pricing) | coding-assistant | 2000 accepted edit predictions/undisclosed | undisclosed | no | official exact | 2026-11-10 |
+| [Cerebras Inference](https://www.cerebras.ai/pricing) | model-api | 5 USD credits/one time | not applicable | yes | official exact | 2026-11-10 |
 
 ## Open-Source/BYOK Agents
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Qoder](https://docs.qoder.com/account/pricing) | agentic-ide | Pro trial credits: 300 credits/one time; Basic models: undisclosed messages/dynamic | daily, not applicable | no | mixed | 2026-08-27 |
-| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Zed AI](https://zed.dev/pricing) | coding-assistant | undisclosed requests/dynamic | dynamic | unknown | official undisclosed | 2026-08-27 |
-| [Aider](https://aider.chat/docs/) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Cline](https://cline.bot/pricing) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Continue](https://github.com/continuedev/continue) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Goose](https://github.com/block/goose) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Kilo Code](https://github.com/Kilo-Org/kilocode) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [OpenCode](https://github.com/sst/opencode) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [OpenHands](https://github.com/All-Hands-AI/OpenHands) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Qwen Code](https://github.com/QwenLM/qwen-code) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Roo Code](https://github.com/RooCodeInc/Roo-Code) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [SWE-agent](https://github.com/SWE-agent/SWE-agent) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
-| [Tabby](https://github.com/TabbyML/tabby) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-08-27 |
+| [Dyad](https://github.com/dyad-sh/dyad) | app-builder | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Aider](https://aider.chat/docs/) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Cline](https://cline.bot/pricing) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Continue](https://github.com/continuedev/continue) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Goose](https://github.com/aaif-goose/goose) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Kilo Code](https://kilo.ai/pricing/) | open-source-agent | 200 requests/dynamic | dynamic | unknown | official exact | 2026-11-10 |
+| [OpenCode](https://github.com/anomalyco/opencode) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [OpenHands](https://github.com/OpenHands/OpenHands) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Qwen Code](https://github.com/QwenLM/qwen-code) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [SWE-agent](https://github.com/SWE-agent/SWE-agent) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
+| [Tabby](https://github.com/TabbyML/tabby) | open-source-agent | Open-source client; inference/provider limits apply | provider specific/not applicable | not applicable | official undisclosed | 2026-11-10 |
 
 ## Legacy And Discontinued Entries
 
 | Tool | Category | Free allowance | Reset | Card | Evidence | Last verified |
 |---|---|---|---|---|---|---|
-| [Sourcegraph Cody](https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans) | coding-assistant | 200 messages/month | monthly | no | official exact | 2026-08-27 |
-| [GitHub Models](https://docs.github.com/en/github-models) | model-api | Legacy/discontinued entry; no current hosted quota | undisclosed | no | official undisclosed | 2026-08-27 |
+| [GitHub Spark](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/) | app-builder | Legacy/discontinued entry; no current hosted quota | undisclosed | unknown | official undisclosed | 2026-11-10 |
+| [Sourcegraph Cody](https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans) | coding-assistant | 200 messages/month | monthly | no | official exact | 2026-11-10 |
+| [GitHub Models](https://docs.github.com/en/github-models) | model-api | Legacy/discontinued entry; no current hosted quota | undisclosed | no | official undisclosed | 2026-11-10 |
+| [Roo Code (discontinued)](https://github.com/RooCodeInc/Roo-Code-Docs/blob/main/docs/sunset.md) | open-source-agent | Legacy/discontinued entry; no current hosted quota | undisclosed | not applicable | official undisclosed | 2026-11-10 |
 <!-- GENERATED:TOOLS:END -->
 ## Reset Calendar
 
